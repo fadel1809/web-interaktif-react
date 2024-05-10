@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Satoshi';
+    src: url('./assets/fonts/Satoshi-Variable.ttf') format('truetype');
+    /* Ganti './fonts/satoshi.ttf' dengan path yang sesuai ke file font di proyek Anda */
+}
