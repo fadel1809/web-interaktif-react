@@ -15,7 +15,7 @@ import { FaChevronDown } from "react-icons/fa6";
 import { FaChevronUp } from "react-icons/fa6";
 import { MdArrowOutward } from "react-icons/md";
 import { GiFullMotorcycleHelmet } from "react-icons/gi";
-
+import { useNavigate } from 'react-router-dom';
 import indrive from "../assets/images/indrive.png"
 import maxim from "../assets/images/maxim.png"
 import gojek from "../assets/images/gojek.png"
@@ -31,7 +31,30 @@ import human from "../assets/images/human.png"
 import tandaSeru from "../assets/images/tanda-seru.png"
 import puzzle from "../assets/images/puzzle.png"
 import vectorEnd from "../assets/images/vector-end.png"
+
 const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const buttonClickTransformasi = () => {
+    navigate('/detailTransformasi');
+  };
+
+  const buttonClickAntara = () => {
+    navigate('/detailAntara');
+  };
+  
+  const buttonClickPro = () => {
+    navigate('/detailPro');
+  };
+
+  const buttonClickLow = () => {
+    navigate('/detailLow');
+  };
+  
+  const buttonClickMengurangi = () => {
+    navigate('/detailMengurangi');
+  };
+
   return (
     <Wrapper>
       <div>
@@ -794,7 +817,7 @@ const LandingPage = () => {
                       mitra menjadi karyawan tetap pada 2021 lalu. Hal tersebut
                       dikabulkan oleh Mahkamah Agung
                     </p>
-                    <button className=" flex items-center mt-2">
+                    <button className=" flex items-center mt-2" onClick={buttonClickTransformasi}>
                       Baca Detail
                       <MdArrowOutward />
                     </button>
@@ -819,7 +842,7 @@ const LandingPage = () => {
                       Penjelasan atas pertanyaan ini terkait erat dengan kondisi
                       pasar kerja
                     </p>
-                    <button className=" flex items-center mt-2">
+                    <button className=" flex items-center mt-2" onClick={buttonClickAntara}>
                       Baca Detail
                       <MdArrowOutward />
                     </button>
@@ -846,7 +869,7 @@ const LandingPage = () => {
                       Penjelasan atas pertanyaan ini terkait erat dengan kondisi
                       pasar kerja
                     </p>
-                    <button className=" flex items-center mt-2">
+                    <button className=" flex items-center mt-2" onClick={buttonClickPro}>
                       Baca Detail
                       <MdArrowOutward />
                     </button>
@@ -873,7 +896,7 @@ const LandingPage = () => {
                       pekerja di sektor gig yang memiliki kualitas rendah dan
                       tidak mempunyai daya tawar tinggi
                     </p>
-                    <button className=" flex items-center mt-2">
+                    <button className=" flex items-center mt-2" onClick={buttonClickLow}>
                       Baca Detail
                       <MdArrowOutward />
                     </button>
@@ -886,7 +909,7 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={puzzle} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Mengurai Keterkaitan Sharing Economy dan Economy Gig dari
+                      Mengurangi Keterkaitan Sharing Economy dan Economy Gig dari
                       Perspektif Transportasi Online
                     </h1>
                   </div>
@@ -898,7 +921,7 @@ const LandingPage = () => {
                       layanan, atau sumber daya. Selaras dengan hal tersebut,
                       hal ini juga yang terjadi pada
                     </p>
-                    <button className=" flex items-center mt-2">
+                    <button className=" flex items-center mt-2" onClick={buttonClickMengurangi}>
                       Baca Detail
                       <MdArrowOutward />
                     </button>

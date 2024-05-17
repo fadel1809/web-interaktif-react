@@ -7,6 +7,7 @@ export default {
         "orange-primary": "#DD5746",
         "blue-primary": "#4793AF",
         "orange-bg": "#E65B48",
+        "pinky": "#E48073",
       },
     },
   },
