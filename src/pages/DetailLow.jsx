@@ -4,24 +4,32 @@ import Background from "../assets/images/background-detail.png";
 import IconSecurity from "../assets/images/icon-security.png"
 import { FaArrowLeft } from "react-icons/fa";
 import { GiFullMotorcycleHelmet } from "react-icons/gi";
+import { useNavigate } from 'react-router-dom';
 
 const DetailLow = () => {
+  const navigate = useNavigate();
+
+  const buttonClickHome = () => {
+    navigate("/")
+  }
+  
   return (
     <Wrapper>
       <div>
         <Navbar />
-        <div className="relative flex flex-col min-h-screen md:pt-14">
+        <div className="relative flex flex-col bg-cream-primary min-h-screen md:pt-14">
           <div className="relative flex-grow">
             <img
               src={Background}
-              className="absolute inset-0 w-full h-full md:object-fill z-0"
+              className="absolute inset-0 w-full h-full object-cover md:object-fill z-0"
             />
 
-            <div id="content" className="relative z-10 p-10 text-justify rounded-xl mx-6 mb-96 mt-10 md:p-10 md:mb-96 md:rounded-3xl md:mx-64 bg-white">
-              <button className="flex items-center space-x-2 mb-8 md:mb-4 text-lg font-bold text-pinky">
+            <div id="content" className="relative z-10 p-10 text-justify rounded-xl mx-6 mb-96 md:p-10 md:mb-96 md:rounded-3xl md:mx-64 bg-white">
+              <button className="flex items-center space-x-2 mb-8 md:mb-4 text-lg font-bold text-pink-primary" onClick={buttonClickHome}>
                 <FaArrowLeft />
                 <span>Home</span>
               </button>
+
 
               <div className="flex items-center text-justify mb-8 md:mb-4">
                 <img src={IconSecurity} alt="Icon Jam" className="w-10 h-10 mr-2" />
@@ -34,7 +42,7 @@ const DetailLow = () => {
               <p className='mb-4'>Mereka mungkin terjebak dalam pekerjaan yang tidak menawarkan banyak kesempatan untuk meningkatkan kapabilitasnya, tetapi nasi sudah menjadi bubur. Saat ini yang dibutuhkan bagi para pekerja gig adalah dukungan berupa insentif dan fasilitas yang memungkinkan mereka untuk meningkatkan kemampuan dan mendapatkan pekerjaan dengan tingkat keterampilan yang lebih tinggi. Prioritas pemerintah yakni memberikan pelatihan keterampilan kepada para pekerja gig, khususnya mereka yang sifatnya <i>low skill labor</i>.</p>
               <p className='mb-4'>Kini, yang perlu menjadi perhatian bagi Kementerian Ketenagakerjaan maupun aplikator adalah memastikan sosialiasi dan penyebaran program yang cukup luas kepada para pengemudi ojek <i>online</i>, sehingga mereka dapat mengetahui dan memanfaatkan program tersebut dengan sebaik mungkin.</p>
             </div>
-            <div className="relative text-white bg-orange-bg mx-auto px-8 -mt-72 md:-mt-60 py-6 md:px-60 z-0">
+            <div className="relative text-white bg-pink-primary mx-auto px-8 -mt-72 md:-mt-60 py-6 md:px-60 z-0">
               <div className="flex flex-col md:flex-row justify-between ">
                 <div className="mb-4 md:mb-0">
                   <h2 className="mt-4 font-bold">Foto</h2>

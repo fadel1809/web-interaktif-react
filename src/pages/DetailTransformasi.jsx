@@ -4,24 +4,32 @@ import Background from "../assets/images/background-detail.png";
 import IconJam from "../assets/images/icon-jam.png";
 import { FaArrowLeft } from "react-icons/fa";
 import { GiFullMotorcycleHelmet } from "react-icons/gi";
+import { useNavigate } from 'react-router-dom';
 
 const DetailTransformasi = () => {
+  const navigate = useNavigate();
+
+  const buttonClickHome = () => {
+    navigate("/")
+  }
+
   return (
     <Wrapper>
       <div>
         <Navbar />
-        <div className="relative flex flex-col min-h-screen md:pt-14">
+        <div className="relative flex flex-col bg-cream-primary min-h-screen md:pt-14">
           <div className="relative flex-grow">
             <img
               src={Background}
-              className="absolute inset-0 w-full h-full md:object-fill z-0"
+              className="absolute inset-0 w-full h-full object-cover md:object-fill z-0"
             />
 
-            <div id="content" className="relative z-10 p-10 text-justify rounded-xl mx-6 mb-96 mt-10 md:p-10 md:mb-96 md:rounded-3xl md:mx-64 bg-white">
-              <button className="flex items-center space-x-2 mb-8 md:mb-4 text-lg font-bold text-pinky">
+            <div id="content" className="relative z-10 p-10 text-justify rounded-xl mx-6 mb-96 md:p-10 md:mb-96 md:rounded-3xl md:mx-64 bg-white">
+              <button className="flex items-center space-x-2 mb-8 md:mb-4 text-lg font-bold text-pink-primary" onClick={buttonClickHome}>
                 <FaArrowLeft />
                 <span>Home</span>
               </button>
+
 
               <div className="flex items-center text-justify mb-8 md:mb-4">
                 <img src={IconJam} alt="Icon Jam" className="w-10 h-10 mr-2" />
@@ -40,7 +48,7 @@ const DetailTransformasi = () => {
               </div>
               <p className='mb-4'>Uber sempat beroperasi di Indonesia pada tahun 2015. Namun, setelah beberapa tahun beroperasi, Uber menghentikan layanannya di Indonesia pada tahun 2018, Uber menjual bisnisnya di Asia Tenggara kepada Grab, yang kemudian mengambil alih operasi Uber di wilayah tersebut. Beberapa faktor mengapa Uber tidak dapat bertahan lama di Indonesia karena Uber menghadapi persaingan ketat dari layanan transportasi <i>online</i> lokal, seperti Gojek dan Grab. </p>
             </div>
-            <div className="relative text-white bg-orange-bg mx-auto px-8 -mt-72 md:-mt-60 py-6 md:px-60 z-0">
+            <div className="relative text-white bg-pink-detail mx-auto px-8 -mt-72 md:-mt-60 py-6 md:px-60 z-0">
               <div className="flex flex-col md:flex-row justify-between ">
                 <div className="mb-4 md:mb-0">
                   <h2 className="mt-4 font-bold">Foto</h2>

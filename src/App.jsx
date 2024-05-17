@@ -6,11 +6,16 @@ import DetailAntara from './pages/DetailAntara';
 import DetailLow from './pages/DetailLow';
 import DetailTransformasi from './pages/DetailTransformasi';
 import DetailPro from './pages/DetailPro';
+import DetailUpaya from './pages/DetailUpaya'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <LandingPage />,
+  },
+  {
+    path: '/detailUpaya',
+    element: <DetailUpaya />,
   },
   {
     path: '/detailMengurai',

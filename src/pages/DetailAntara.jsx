@@ -4,21 +4,28 @@ import Background from "../assets/images/background-detail.png";
 import IconTanya from "../assets/images/icon-tanda-tanya.png"
 import { FaArrowLeft } from "react-icons/fa";
 import { GiFullMotorcycleHelmet } from "react-icons/gi";
+import { useNavigate } from 'react-router-dom';
 
 const DetailAntara = () => {
+  const navigate = useNavigate();
+
+  const buttonClickHome = () => {
+    navigate("/")
+  }
+
   return (
     <Wrapper>
       <div>
         <Navbar />
-        <div className="relative flex flex-col min-h-screen md:pt-14">
+        <div className="relative flex flex-col min-h-screen bg-cream-primary md:pt-14">
           <div className="relative flex-grow">
             <img
               src={Background}
-              className="absolute inset-0 w-full h-full md:object-fill z-0"
+              className="absolute inset-0 w-full h-full object-cover md:object-fill z-0"
             />
 
-            <div id="content" className="relative z-10 p-10 text-justify rounded-xl mx-6 mb-96 mt-10 md:p-10 md:mb-96 md:rounded-3xl md:mx-64 bg-white">
-              <button className="flex items-center space-x-2 mb-8 md:mb-4 text-lg font-bold text-pinky">
+            <div id="content" className="relative z-10 p-10 text-justify rounded-xl mx-6 mb-96 md:p-10 md:mb-96 md:rounded-3xl md:mx-64 bg-white">
+              <button className="flex items-center space-x-2 mb-8 md:mb-4 text-lg font-bold text-pink-primary" onClick={buttonClickHome}>
                 <FaArrowLeft />
                 <span>Home</span>
               </button>
@@ -38,7 +45,7 @@ const DetailAntara = () => {
               <p className='mb-4'>Fleksibilitas menjadi ciri utama dalam ekonomi gig karena model bisnis ini menekankan pada ketersediaan layanan atau pekerjaan sesuai permintaan. Keistimewaan ini juga memungkinkan para pekerja atau penyedia layanan untuk bekerja sesuai dengan jadwal yang mereka tentukan sendiri, tanpa keterikatan pada jam kerja yang tetap atau lokasi tertentu, sehingga pada konteks ekonomi gig pada bidang layanan jasa transportasi <i>online</i>, perusahaan dilarang untuk memaksa pekerjanya bekerja dalam batas waktu tertentu.</p>
               <p className="mb-4">“<i>Platform</i> tidak boleh memaksa pekerja itu untuk kerja selama beberapa jam tertentu, itu yang pertama. Yang kedua adalah <i>platform</i> ini memberikan kesempatan yang sama bagi para mitra untuk mendapatkan penghasilan di mana pun, dari manapun, jam kapanpun, untuk mendapatkan kesempatan yang sama. Sehingga kita bisa lihat di situ ada pembagian pendapatan yang adil bagi para mitra,” ujarnya.</p>
             </div>
-            <div className="relative text-white bg-orange-bg mx-auto px-8 -mt-72 md:-mt-60 py-6 md:px-60 z-0">
+            <div className="relative text-white bg-pink-primary mx-auto px-8 -mt-72 md:-mt-60 py-6 md:px-60 z-0">
               <div className="flex flex-col md:flex-row justify-between ">
                 <div className="mb-4 md:mb-0">
                   <h2 className="mt-4 font-bold">Foto</h2>

@@ -35,6 +35,10 @@ import vectorEnd from "../assets/images/vector-end.png"
 const LandingPage = () => {
   const navigate = useNavigate();
 
+  const buttonClickUpaya = () => {
+    navigate("/detailUpaya")
+  }
+
   const buttonClickTransformasi = () => {
     navigate('/detailTransformasi');
   };
@@ -344,7 +348,7 @@ const LandingPage = () => {
                 <div className="flex justify-center">
                   <button
                     type="button"
-                    className="bg-orange-bg text-white rounded rounded-md px-5 py-2 mt-5"
+                    className="bg-orange-bg text-white rounded rounded-md px-5 py-2 mt-5" onClick={buttonClickUpaya}
                   >
                     Read More
                   </button>
