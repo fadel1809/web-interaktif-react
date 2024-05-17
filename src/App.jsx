@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import LandingPage from './pages/LandingPage';
-import DetailMengurangi from './pages/DetailMengurangi';
+import DetailMengurai from './pages/DetailMengurai';
 import DetailAntara from './pages/DetailAntara';
 import DetailLow from './pages/DetailLow';
 import DetailTransformasi from './pages/DetailTransformasi';
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
     element: <LandingPage />,
   },
   {
-    path: '/detailMengurangi',
-    element: <DetailMengurangi />,
+    path: '/detailMengurai',
+    element: <DetailMengurai />,
   },
   {
     path: '/detailAntara',

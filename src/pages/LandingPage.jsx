@@ -42,7 +42,7 @@ const LandingPage = () => {
   const buttonClickAntara = () => {
     navigate('/detailAntara');
   };
-  
+
   const buttonClickPro = () => {
     navigate('/detailPro');
   };
@@ -50,9 +50,9 @@ const LandingPage = () => {
   const buttonClickLow = () => {
     navigate('/detailLow');
   };
-  
-  const buttonClickMengurangi = () => {
-    navigate('/detailMengurangi');
+
+  const buttonClickMengurai = () => {
+    navigate('/detailMengurai');
   };
 
   return (
@@ -921,7 +921,7 @@ const LandingPage = () => {
                       layanan, atau sumber daya. Selaras dengan hal tersebut,
                       hal ini juga yang terjadi pada
                     </p>
-                    <button className=" flex items-center mt-2" onClick={buttonClickMengurangi}>
+                    <button className=" flex items-center mt-2" onClick={buttonClickMengurai}>
                       Baca Detail
                       <MdArrowOutward />
                     </button>
