@@ -4,6 +4,8 @@ import Background from "../assets/images/background-detail.png";
 import { FaArrowLeft } from "react-icons/fa";
 import { GiFullMotorcycleHelmet } from "react-icons/gi";
 import { useNavigate, Link } from 'react-router-dom';
+// import ImageUpah from "../assets/images/bagan-sect4.png"
+import ImageKemnaker from "../assets/images/image-kemnaker.png"
 
 const DetailUpaya = () => {
   const navigate = useNavigate();
@@ -31,9 +33,31 @@ const DetailUpaya = () => {
 
               <h1 className="text-2xl font-bold mb-4">Upaya Kementerian Ketenagakerjaan untuk Meningkatkan Kesejahteraan Pengemudi Ojol</h1>
               <p className="mb-4">Sudah satu tahun berlalu usai Direktorat Jenderal Pembinaan Hubungan Industrial dan Jaminan Sosial Kementerian Ketenagakerjaan, Indah Anggoro Putri, menyatakan bahwa kementerian akan mengatur regulasi mengenai persoalan terkait ojek <i>online</i>, meliputi:</p>
-              {/* MASUKAN GAMBAR */}
+              <div className="flex justify-center items-center">
+                <div className="flex flex-col md:flex-row items-center md:space-x-7 md:mb-10">
+                  <div className="text-center p-2 mb-7 w-52 md:w-36 bg-white rounded-lg shadow-blue-primary shadow-lg border border-blue-primary">
+                    Jaminan Sosial
+                  </div>
+                  <div className="hidden md:block w-6 h-4 border-b-2 border-gray-500 border-dashed absolute transform rotate-45" style={{ top: '20rem', left: '10.9rem' }}></div>
+                  <div className="text-center p-2 mb-7 w-52 md:w-36 md:mt-20 bg-white rounded-lg shadow-blue-primary shadow-lg border border-blue-primary">
+                    Upah
+                  </div>
+                  <div className="hidden md:block w-6 h-8 border-b-2 border-gray-500 border-dashed absolute transform -rotate-45" style={{ top: '20rem', left: '20.6rem' }}></div>
+                  <div className="text-center p-2 mb-7 w-52 md:w-52 bg-white rounded-lg shadow-blue-primary shadow-lg border border-blue-primary">
+                    Ketiadaan Status Hubungan Kerja
+                  </div>
+                  <div className="hidden md:block w-12 h-8 border-b-2 border-gray-500 border-dashed rounded-xl absolute transform -rotate-[150deg]" style={{ top: '19.5rem', left: '35.7rem' }}></div>
+                  <div className="text-center p-2 mb-7 w-52 md:w-40 md:mt-20 bg-white rounded-lg shadow-blue-primary shadow-lg border border-blue-primary">
+                    Waktu Jam Kerja
+                  </div>
+                </div>
+              </div>
               <p className='mb-4'>Walaupun hingga saat ini memang belum ada peraturan yang jelas yang dikhususkan kepada mitra ojek <i>online</i>, Kementerian Ketenagakerjaan menegaskan bahwa pihaknya masih terus berupaya dalam mempelajari dan membuat regulasi untuk mereka. Nantinya, regulasi yang kelak direalisasikan, akan lebih condong kepada penekanan syarat kerja dan jaminan sosial.</p>
               <p className='mb-4'>“Pada dasarnya memang ada inisiasi untuk melakukan pembuatan regulasi. Namun, titik berat dari regulasi tersebut lebih kepada perlindungan-perlindungan yang sesuai dengan karakteristik dari bisnis model mereka. Kita masih melakukan komunikasi dengan beberapa pihak seperti pengemudi, aplikator, Kominfo dan Kemenhub, “ ujar Arjuna selaku Direktorat Hubungan Kerja dan Pengupahan Kementerian Ketenagakerja.</p>
+              <figure className='my-4'>
+                <img src={ImageKemnaker} className="container mx-auto size-full md:size-1/2" alt="Foto: Natia Rizky" />
+                <figcaption className="text-center text-sm">Foto: Natia Rizky</figcaption>
+              </figure>
               <p className='mb-4'>Profesi sebagai  pengemudi ojek <i>online</i> sendiri merupakan pekerjaan yang termasuk ke dalam ekonomi gig, jenis pekerjaan yang sifatnya sementara tanpa batasan yang pasti, berpusat pada permintaan atau proyek tertentu (pekerja yang berbasis permintaan). Yang menjadi keunggulan pada model bisnis ini adalah dari segi fleksibilitasnya. Pengemudi ojek <i>online</i> bekerja secara fleksibel, dalam artian, mereka dapat memilih jam kerjanya sendiri.</p>
               <p className='mb-4'>Sistem ekonomi gig merujuk pada model pekerjaan di mana seseorang bekerja sebagai pekerja lepas (kontrak) untuk tugas-tugas yang spesifik, dan seringkali melalui <i>platform</i> digital atau aplikasi. Keunggulan lain pada pekerja gig yakni mereka dapat menciptakan peluang lebih besar untuk mendapatkan penghasilan tambahan. Pasalnya, pekerja gig dapat mengambil beberapa pekerjaan sekaligus untuk menambah penghasilan mereka.</p>
               <p className='mb-4'>Namun, di balik keunggulan tersebut, perlu diketahui bahwa tidak selamanya pekerja gig membawa kemaslahatan bagi para pekerjanya. Fleksibilitas ini juga membawa risiko, terutama dalam hal perlindungan sosial bagi para pekerja gig. Bahkan, menurut <b className='underline'>laporan Bank Dunia</b> <b>(hyperlink ke world bank)</b> <Link className="text-blue-500 underline" to="https://www.worldbank.org/en/topic/jobsanddevelopment/publication/online-gig-work-enabled-by-digital-platforms">Working Without Borders: The Promise and Peril of Online Gig Work (worldbank.org)</Link> pekerja gig memiliki tingkat kerentanan yang lebih tinggi karena tidak sepenuhnya tercakup oleh skema perlindungan sosial.</p>

@@ -11,6 +11,9 @@ export default {
         "pink-primary": "#EE99C2",
         "cream-primary": "#FFE3CA",
       },
+      shadow: {
+        "custom": "4px 4px 10px rgba(0, 0, 0, 0.1)",
+      }
     },
   },
   plugins: [],

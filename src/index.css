@@ -7,3 +7,9 @@
     src: url('./assets/fonts/Satoshi-Variable.ttf') format('truetype');
     /* Ganti './fonts/satoshi.ttf' dengan path yang sesuai ke file font di proyek Anda */
 }
+
+@layer utilities {
+    .shadow-blue-primary {
+      box-shadow: 5px 5px 0 theme('colors.blue-primary');
+    }
+}
