@@ -2,7 +2,6 @@
 import Wrapper from "../assets/wrapper/landingPage"
 import Navbar from "../components/Navbar"
 import Stroke from "../assets/images/stroke.png"
-import gojek3 from "../assets/images/gojek3.jpeg"
 import gojek1 from "../assets/images/gojek1.png";
 import gojek2 from "../assets/images/gojek2.png";
 import cloud1 from "../assets/images/cloud1.png"
@@ -16,6 +15,7 @@ import { FaChevronUp } from "react-icons/fa6";
 import { MdArrowOutward } from "react-icons/md";
 import { GiFullMotorcycleHelmet } from "react-icons/gi";
 import { useNavigate } from 'react-router-dom';
+import grab from "../assets/images/grab.png"
 import indrive from "../assets/images/indrive.png"
 import maxim from "../assets/images/maxim.png"
 import gojek from "../assets/images/gojek.png"
@@ -31,9 +31,12 @@ import human from "../assets/images/human.png"
 import tandaSeru from "../assets/images/tanda-seru.png"
 import puzzle from "../assets/images/puzzle.png"
 import vectorEnd from "../assets/images/vector-end.png"
-
+import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4"
+import vidSect1 from "../assets/video/Final.mp4"
 const LandingPage = () => {
   const navigate = useNavigate();
+
+
 
   const buttonClickUpaya = () => {
     navigate("/detailUpaya")
@@ -61,30 +64,42 @@ const LandingPage = () => {
 
   return (
     <Wrapper>
-      <div>
+      <div className="bg-[#FFE3CA]">
         <Navbar />
         {/* SECTION-1 */}
         <div
           id="section1-div"
-          className="flex justify-center z-10 absolute left-32 right-32 top-32"
+          className="flex justify-center z-10 absolute left-32 right-32 top-32 "
         >
-          <div className="bg-blue-primary w-[940px] h-[660px] relative rounded-xl">
-            <img src={gojek2} alt="" className=" absolute right-0 h-1/3" />
+          <div className="bg-[#0C359E] w-[940px] h-[660px] relative rounded-xl">
+            <img src={gojek2} alt="" className=" absolute right-0 h-1/3 " />
             <h1 className="text-white text-4xl pt-16 text-center px-56 font-bold">
               Kesejahteraan Ojek Daring, Murni atau Ilusi?
             </h1>
             <img src={gojek1} alt="" className="absolute top-16" />
-            <img
+
+            <div className="absolute bottom-0 left-[5.5em] z-50   ">
+              <video
+                src={vidSect1}
+                className=" rounded rounded-t-lg w-[90%] z-50"
+                controls={true}
+                autoPlay={true}
+              >
+                <source src={vidSect1} type="video/mp4" />
+                Browser Anda tidak mendukung tag video.
+              </video>
+            </div>
+            {/* <img
               src={gojek3}
               alt=""
               className="absolute bottom-0 w-10/12 inset-x-20 rounded-xl"
-            />
+            /> */}
           </div>
         </div>
 
         <section id="section-1" className="bg-white">
-          <img src={Stroke} alt="" className="mt-10 z-0" />
-          <img src={cloud2} alt="" className="absolute w-80 top-[730px]" />
+          <img src={Stroke} alt="" className="mt-10 z-0 bg-[#FFE3CA]" />
+          <img src={cloud2} alt="" className="absolute z-50 w-64 top-[760px]" />
           <img
             src={cloud3}
             alt=""
@@ -94,10 +109,14 @@ const LandingPage = () => {
         {/* !!SECTION-1 */}
 
         {/* SECTION-1 part 2 */}
-        <section id="section-1-2" className="bg-orange-bg h-[800px] relative ">
+        <section id="section-1-2" className="bg-[#EE99C2] h-[700px] relative ">
           <img src={building} className="absolute w-full z-0" alt="" />
-          <img src={cloud1} className="absolute w-96 top-0 right-0" alt="" />
-          <div className="flex flex-col justify-center items-center absolute z-10 top-48">
+          <img
+            src={cloud1}
+            className="absolute w-80 top-[63px] right-0"
+            alt=""
+          />
+          <div className="flex flex-col justify-center items-center absolute z-10 top-[150px]">
             <div className="bg-white w-7/12 rounded rounded-[13px] ">
               <div
                 id="heading"
@@ -151,20 +170,20 @@ const LandingPage = () => {
         {/* !!SECTION-1 part 2 */}
         {/* Section 2  */}
         <section id="section-2">
-          <div className="bg-[#F4F4F4]">
-            <div id="padding" className="px-40 py-40 flex justify-center">
+          <div className="bg-[#FFE3CA]">
+            <div id="padding" className="px-20 py-40 flex justify-center">
               <div id="box">
                 <div id="heading" className="flex justify-center mb-20">
-                  <h1 className="text-3xl font-bold">
-                    Cerita <span className="text-orange-bg">Ojek Online</span>
+                  <h1 className="text-3xl font-bold text-[#3D3D3D] ">
+                    Cerita <span className="text-[#EE99C2]">Ojek Online</span>
                   </h1>
                 </div>
 
                 <div id="box-ojol">
-                  <div className="grid lg:grid-cols-3 sm:grid-cols-1 flex justify-center">
+                  <div className="grid lg:grid-cols-4 sm:grid-cols-1 flex justify-center">
                     <div
                       id="box-1"
-                      className="bg-[#FFCC00] rounded rounded-[14px] px-5 py-8 mr-5"
+                      className="bg-[#FFCC00] rounded rounded-[14px] px-5 h-fit py-8 mr-5"
                     >
                       <div
                         id="row1"
@@ -173,7 +192,7 @@ const LandingPage = () => {
                         <h1 className="text-[#FFEC41] text-3xl absolute left-0">
                           1
                         </h1>
-                        <img src={maxim} className="w-48" alt="" />
+                        <img src={maxim} className="w-28" alt="" />
                       </div>
                       <div id="row2 flex justify-center">
                         <h1 className="text-white font-bold text-lg flex justify-center px-10 py-8 text-center">
@@ -181,14 +200,11 @@ const LandingPage = () => {
                         </h1>
                       </div>
                       <div id="row3">
-                        <div className="bg-white rounded rounded-[12px] py-3 px-2">
+                        <div className="bg-white rounded rounded-[12px] text-sm py-3 px-2">
                           <p>
                             Bayu (27), sedang asyik mengobrol dengan rekan
                             sejawatnya di sebuah tempat yang berada di daerah
-                            Ciputat, Tangerang Selatan. Bangunan di mana tempat
-                            Bayu bersama teman-temannya bercengkrama itu tidak
-                            terlalu besar, tidak juga terlalu sempit, dapat
-                            dikatakan tempat tersebut merupakan
+                            Ciputat, Tangerang Selatan. Bangunan...
                           </p>
                           <button
                             type="button"
@@ -202,7 +218,7 @@ const LandingPage = () => {
                     </div>
                     <div
                       id="box-2"
-                      className="bg-[#00AA13] rounded rounded-[14px] px-5 py-8 mx-5"
+                      className="bg-[#00AA13] rounded rounded-[14px] px-5 py-8 h-fit mx-5"
                     >
                       <div
                         id="row1"
@@ -211,22 +227,20 @@ const LandingPage = () => {
                         <h1 className="text-[#09DE20] text-3xl absolute left-0">
                           2
                         </h1>
-                        <img src={gojek} className="w-48" alt="" />
+                        <img src={gojek} className="w-28" alt="" />
                       </div>
                       <div id="row2 flex justify-center">
-                        <h1 className="text-white font-bold text-lg flex justify-center px-10 py-5 text-center">
+                        <h1 className="text-white font-bold text-md flex justify-center px-10 py-3 text-center">
                           Ojol Wanita Mengenang Masa Lalu, Nasib Gojek Tidak
                           Lagi Seperti Dulu
                         </h1>
                       </div>
                       <div id="row3">
-                        <div className="bg-white rounded rounded-[12px] py-3 px-2">
+                        <div className="bg-white rounded rounded-[12px] py-3 px-2 text-sm">
                           <p>
                             Perempuan tak semata-mata dilahirkan hanya untuk
                             melahirkan dan menciptakan keturunan kembali, dalam
-                            kata lain, perempuan tidak hanya terbatas pada peran
-                            sebagai ibu atau istri saja. Di era modern, persepsi
-                            terhadap peran perempuan di...
+                            kata lain...
                           </p>
                           <button
                             type="button"
@@ -240,7 +254,7 @@ const LandingPage = () => {
                     </div>
                     <div
                       id="box-3"
-                      className="bg-[#B4E750] rounded rounded-[14px] px-5 py-8 ml-5"
+                      className="bg-[#B4E750] rounded rounded-[14px] px-5 py-8 ml-5 h-fit"
                     >
                       <div
                         id="row1"
@@ -249,21 +263,55 @@ const LandingPage = () => {
                         <h1 className="text-[#DCFB9B] text-3xl absolute left-0">
                           3
                         </h1>
-                        <img src={indrive} className="w-48" alt="" />
+                        <img src={indrive} className="w-28" alt="" />
                       </div>
                       <div id="row2 flex justify-center">
-                        <h1 className="text-white font-bold text-lg flex justify-center px-10 py-9 text-center">
+                        <h1 className="text-white font-bold text-lg flex justify-center px-10 py-8 text-center">
                           Di Balik Cerita Aplikasi Ojol asal Rusia
                         </h1>
                       </div>
                       <div id="row3">
-                        <div className="bg-white rounded rounded-[12px] py-3 px-2">
+                        <div className="bg-white rounded rounded-[12px] py-3 px-2 text-sm">
                           <p>
                             Indrive, mungkin beberapa di antara Anda masih asing
                             dengan nama tersebut. Dapat dikatakan, jasa layanan
-                            transportasi yang masih baru ini memiliki perbedaan
-                            yang paling signifikan dibandingkan dengan pesaing
-                            hal ini juga yang menjadi keunggulan bagi...
+                            transportasi yang masih baru ini memiliki
+                            perbedaan...
+                          </p>
+                          <button
+                            type="button"
+                            className="flex items-center mt-5"
+                          >
+                            Read More
+                            <MdArrowOutward />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      id="box-4"
+                      className="bg-[#00B14F] rounded rounded-[14px] px-5 py-8 h-fit ml-10"
+                    >
+                      <div
+                        id="row1"
+                        className="flex items-center justify-center relative"
+                      >
+                        <h1 className="text-[#33F589] text-3xl absolute left-0">
+                          4
+                        </h1>
+                        <img src={grab} className="w-20" alt="" />
+                      </div>
+                      <div id="row2 flex justify-center">
+                        <h1 className="text-white font-bold text-lg flex justify-center px-10 py-8 text-center">
+                          Ilusi Kesejahteragaan Bagi Maxim
+                        </h1>
+                      </div>
+                      <div id="row3">
+                        <div className="bg-white text-sm rounded rounded-[12px] py-3 px-2">
+                          <p>
+                            Bayu (27), sedang asyik mengobrol dengan rekan
+                            sejawatnya di sebuah tempat yang berada di daerah
+                            Ciputat, Tangerang Selatan. Bangunan...
                           </p>
                           <button
                             type="button"
@@ -284,20 +332,205 @@ const LandingPage = () => {
         {/* Section 2 */}
         {/* Sectionn 3  */}
         <section id="section-3">
-          <div className="bg-[#F4F4F4]">
+          <div className="bg-[#FFE3CA]">
             <div id="padding-sect3" className="px-40 py-14 ">
               <div
                 id="box-sect3"
-                className="bg-[#4793AF] rounded rounded-[13px] mb-20"
+                className="bg-[#0C359E] rounded rounded-[13px] mb-20"
               >
-                <div className="row-sect-3 flex items-center justify-center px-8 py-5">
-                  <h1 className="text-white text-3xl font-bold">
-                    Menolak Status 'Mitra, Ketua Asosiasi Ojek Daring Dorong
-                    Perubahan Status Pengemudi Ojol
-                  </h1>
-                  <button type="submit">
-                    <FaChevronDown className="text-white" />
-                  </button>
+                <div className="row-sect-3 flex flex-col items-center justify-center px-8 py-5">
+                  <div className="flex">
+                    <h1 className="text-white text-3xl font-bold">
+                      Menolak Status 'Mitra, Ketua Asosiasi Ojek Daring Dorong
+                      Perubahan Status Pengemudi Ojol
+                    </h1>
+                    <button>
+                      <FaChevronDown className="text-white" />
+                    </button>
+                  </div>
+
+                  <div className=" text-white">
+                    <p className="my-2">
+                      Ketua Umum Asosiasi Pengemudi Ojek Daring Garda Indonesia,
+                      Igun Wicaksono, menyayangkan pemerintah lantaran belum ada
+                      kepastian hukum sampai detik ini mengenai status
+                      kemitraan. Menurutnya, status pengemudi ojek online
+                      sebagai “mitra” dianggap tidak memiliki kejelasan. Igun
+                      juga berharap agar para pengemudi ojek online dapat diubah
+                      menjadi karyawan tetap.
+                    </p>
+                    <p className="mb-2">
+                      “Kita ingin membuka peluang dari rekan-rekan pengemudi ini
+                      agar bisa menjadi karyawan atau pekerja tetap di
+                      perusahaan aplikasi dengan status sebagai driver, karena
+                      dengan posisi saat ini yang disebut mitra, kami menilai
+                      ini hal yang tidak jelas. Mitra seperti apa yang dimaksud
+                      oleh mereka? kami ini juga sebenarnya adalah konsumen,”
+                      ujar Igun.
+                    </p>
+                    <p className="mb-2">
+                      Menurut Ketum Asosiasi Pengemudi Ojek Daring Garda
+                      Indonesia itu, para pengemudi ojek online yang saat ini
+                      berstatus sebagai “mitra” juga merupakan bagian dari
+                      konsumen. Igun menyatakan bahwa mitra menggunakan aplikasi
+                      yang dimiliki oleh perusahaan. Tak hanya itu, mitra juga
+                      diharuskan membayar potongan yang diterima dari para
+                      pelanggan, baik itu penumpang, antaran barang maupun
+                      makanan, sehingga dirinya menyebut mitra juga merupakan
+                      bagian dari konsumen.
+                    </p>
+                    <p className="mb-2">
+                      Pekerja ekonomi gig, dalam hal ini pengemudi ojek online,
+                      memiliki ciri tersendiri dengan merujuk pada model bisnis
+                      di mana pekerja gig memiliki tingkat fleksibilitas
+                      dibanding pekerja tetap. Hal ini juga yang menjadi
+                      keunggulan bagi para pekerja gig economy karena
+                      ketersediaan waktu yang fleksibel menjadi hal yang sangat
+                      berharga bagi individu yang juga memiliki tanggung jawab
+                      lain, seperti kegiatan belajar, tanggung jawab keluarga,
+                      atau bahkan aspirasi untuk bekerja paruh waktu tambahan.
+                    </p>
+                    <p className="mb-2">
+                      Asosiasi Pengemudi Ojek Daring Garda Indonesia merupakan
+                      perkumpulan yang terbentuk akibat peristiwa demonstrasi
+                      yang dilakukan oleh para pengemudi ojek online di Istana
+                      Merdeka, Jakarta Pusat, pada 27 Maret 2018 lalu. Aksi
+                      tersebut diberi nama dengan “Gabungan Aksi Roda dua
+                      Indonesia” atau disingkat Garda Indonesia.
+                    </p>
+                    <p className="mb-2">
+                      Aksi demo tersebut digelar untuk menuntut hak kepada
+                      pemerintah atas pendapatan yang terus menurun pada saat
+                      itu, demo juga digelar dengan tujuan supaya tidak timbul
+                      monopoli dari perusahaan aplikasi. Pada aksi demonstrasi
+                      itu juga para pengemudi ojek online meminta tarif diatur
+                      oleh pihak pemerintah dan juga legalitas dari ojek online.
+                    </p>
+                    <p className="mb-2">
+                      Berangkat dari aksi tersebut, pada awal Agustus tahun 2018
+                      lalu, Kementerian Perhubungan mengundang seluruh elemen
+                      ojek online untuk mendiskusikan permasalahan yang terjadi,
+                      hingga akhirnya terbit Peraturan Menteri Perhubungan
+                      Republik Indonesia nomor 12 tahun 2019 tentang
+                      perlindungan keselamatan pengguna sepeda motor. Namun,
+                      peraturan tersebut hanya membahas mengenai kemitraan,
+                      keselamatan, biaya jasa, hingga aturan suspend. Peraturan
+                      tersebut tidak mencantumkan angka pasti dari tarif ojol
+                      dan ketiadaan sanksi apabila terdapat aplikator yang
+                      melanggar melebihi batas tarif.
+                    </p>
+                    <p className="mb-2">
+                      “Aturan yang sudah ditentukan oleh Kementerian Perhubungan
+                      masih sebatas diskresi menteri perhubungan, bukan sebagai
+                      acuan undang-undang atau bukan sebagai legalitas, sehingga
+                      pada Peraturan Menteri Perhubungan nomor 12 tidak
+                      mencantumkan apabila perusahaan aplikasi melakukan
+                      pelanggaran tarif, ini yang membuat akhirnya tarif berlaku
+                      liar karena tidak ada sanksi hukum dari para pelaku
+                      aplikator,” ujarnya.
+                    </p>
+                    <p className="mb-2">
+                      Peraturan Menteri Perhubungan Nomor PM. 12 Tahun 2019
+                      merupakan peraturan pertama yang mengatur ojek online di
+                      Indonesia. Peraturan ini awalnya dianggap sebagai
+                      kemenangan bagi para pengemudi ojek online karena akhirnya
+                      memberikan landasan hukum bagi layanan ojek online. Namun
+                      keberadaannya banyak menimbulkan kritik dan permasalahan,
+                      misalnya terkait terbatasnya ruang lingkup serta kurang
+                      optimalnya pengawasan dan pelaksanaannya.
+                    </p>
+                    <p className="mb-2">
+                      Berselang empat tahun kemudian, yakni pada Agustus 2022
+                      lalu, Kementerian Perhubungan menerbitkan aturan yakni
+                      Keputusan Menteri Perhubungan nomor 564 tahun 2022
+                      mengenai Pedoman Perhitungan Biaya Jasa Penggunaan Sepeda
+                      Motor yang Digunakan untuk Kepentingan Masyarakat yang
+                      Dilakukan dengan Aplikasi. Dari sinilah Kementerian
+                      Perhubungan mulai memperhatikan masalah tarif pada ojek
+                      online dengan merinci biaya jasa penggunaan sepeda motor.
+                    </p>
+                    <p className="mb-2">
+                      Isu mengenai tarif kerap kali menjadi persoalan yang
+                      banyak dikeluhkan. Hal ini dikarenakan terdapat aplikator
+                      yang bermain di “tarif bawah” sehingga menimbulkan
+                      kerugian bagi para pengemudi.
+                    </p>
+                    <p className="mb-2">
+                      “Jadi ada satu perusahaan aplikasi, sebut saja perusahaan
+                      A,misalkan perusahaan ini patuh sesuai peraturan Menteri
+                      Perhubungan, dengan tarif Rp. 2.500 per kilometer. Namun,
+                      karena aplikasi A ini lebih laku, aplikasi B agar dapat
+                      laku juga akhirnya dia bermain di tarif bawah. Maksudnya
+                      di tarif bawah itu di luar dari peraturan menteri yang
+                      sudah ditentukan, jadi misalnya di bawah Rp.2000, akhirnya
+                      di sini terjadilah perang tarif, dan ini yang akan
+                      dirugikan adalah para pengemudi,” tegas Igun.
+                    </p>
+                    <p className="mb-2">
+                      Persaingan antara aplikasi layanan transportasi online
+                      seringkali menjadi perlombaan untuk mendapatkan lebih
+                      banyak pelanggan dengan menawarkan tarif yang lebih rendah
+                      daripada yang seharusnya. Hal tersebut sangat disayangkan
+                      karena ojol tidak dapat bersaing secara sehat sesuai tarif
+                      yang ditentukan oleh pemerintah, sehingga Igun mendorong
+                      pemerintah untuk membuat undang-undang perihal sanksi
+                      hukum apabila terdapat aplikator yang melanggar melebihi
+                      batas tarif.
+                    </p>
+                    <p className="mb-2">
+                      “Ini (masalah tarif) yang banyak dikeluhkan. Maka itu kami
+                      memerlukan adanya undang-undang,” timpalnya.
+                    </p>
+                    <p className="mb-2">
+                      Kini sudah hampir satu dekade usai kehadiran transportasi
+                      online membuka peluang bagi ekonomi gig di Indonesia.
+                      Pertumbuhan ekonomi gig yang semakin pesat tidak diikuti
+                      oleh regulasi yang memadai untuk memberikan pedoman yang
+                      jelas bagi semua pihak yang terlibat dalam industri ini.
+                      Igun Wicaksono berharap pada masa pemerintahan yang akan
+                      datang, para pemangku kepentingan dapat menjamin
+                      kesejahteraan pekerja pengemudi ojek online.
+                    </p>
+                    <p className="mb-2">
+                      “Kami berharap pemerintah selanjutnya adalah baik itu
+                      legislatif maupun eksekutif yang akan menjabat di periode
+                      yang baru ini bisa mendorong undang-undang legalitas bagi
+                      pengemudi ojek daring ini bisa masuk dalam prioritas
+                      legislasi nasional. Jadi dengan hal itu adanya jaminan
+                      kesejahteraan juga, jaminan perlindungan maupun jaminan
+                      keselamatan dari para pengemudi ojek online secara tidak
+                      langsung. Dengan adanya undang-undang, jaminan
+                      perlindungan sosial bisa dapatkan,” terangnya.
+                    </p>
+                    <p className="mb-2">
+                      Menurut Igun, dengan adanya undang-undang diharapkan dapat
+                      membantu para pengemudi dalam mendapatkan perlindungan
+                      kesehatan dan keselamatan kerja yang memadai. Pasalnya
+                      pekerjaan sebagai pengemudi ojek online memiliki risiko
+                      yang tinggi mengingat mereka menghabiskan waktu banyak di
+                      perjalanan. Dalam hal ini pula pengemudi merupakan aset
+                      dari aplikator sehingga aplikator harus menjaga para mitra
+                      ojol dengan baik.
+                    </p>
+                    <p className="mb-2">
+                      “Sebagai contoh mungkin dalam undang-undang itu pihak
+                      perusahaan aplikasi wajib untuk memberikan santunan sosial
+                      apabila si pengemudi terlibat kecelakaan dan akhirnya
+                      terjadi cacat atau meninggal dunia, bagi keluarga yang
+                      ditinggalkan atau keluarga pengemudi yang pengemudinya
+                      cacat. Terus juga keselamatan pun begitu, karena
+                      keselamatan ini tidak hanya keselamatan bagi pengemudinya
+                      juga, tetapi juga bagi penumpang yang dibawa ataupun pihak
+                      ketiga lain yang terlibat dalam kecelakaan,” jelasnya.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex-col justify-center w-full ">
+                  <hr className="border-1 w-full" />
+                  <p className="flex justify-center items-center py-2 text-white">
+                    Tutup
+                    <FaChevronUp className="ml-3 text-black-50 text-sm" />
+                  </p>
                 </div>
               </div>
             </div>
@@ -306,7 +539,7 @@ const LandingPage = () => {
         {/* section 3 */}
         {/* Section 4 */}
         <section id="section-4">
-          <img src={vectorSect4} className="absolute z-0 bg-[#F4F4F4]" alt="" />
+          <img src={vectorSect4} className="absolute z-0 bg-[#FFE3CA]" alt="" />
           <div className="relative flex flex-col justify-center">
             <div className="pt-[4.5rem] px-72" id="box-1-sect4">
               <div className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-10">
@@ -316,7 +549,7 @@ const LandingPage = () => {
                     Kesejahteraan Pengemudi Ojol
                   </h1>
                 </div>
-                <div className="content">
+                <div className="content text-sm text-[#525252]">
                   <p className="py-3">
                     Sudah satu tahun berlalu usai Direktorat Jenderal Pembinaan
                     Hubungan Industrial dan Jaminan Sosial Kementerian
@@ -348,20 +581,21 @@ const LandingPage = () => {
                 <div className="flex justify-center">
                   <button
                     type="button"
-                    className="bg-orange-bg text-white rounded rounded-md px-5 py-2 mt-5" onClick={buttonClickUpaya}
+                    className="bg-[#EE99C2] text-white rounded rounded-md px-5 py-2 mt-5"
+                    onClick={buttonClickUpaya}
                   >
                     Read More
                   </button>
                 </div>
               </div>
-              <div className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-8 mt-10">
+              <div className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-8 mt-40">
                 <div className="heading flex justify-center">
                   <h1 className="text-[#3D3D3D] text-3xl font-bold flex justify-center text-center">
                     Pandangan Ahli mengenai Dinamika Pekerja Kontrak di Industri
                     Transportasi Online
                   </h1>
                 </div>
-                <div className="content">
+                <div className="content text-sm text-[#525252]">
                   <p className="py-3">
                     Tren pekerja lepas atau pekerja kontrak saat ini nampaknya
                     tengah menjadi pekerjaan yang cukup digemari di Indonesia,
@@ -429,12 +663,12 @@ const LandingPage = () => {
         {/* Section 4 */}
         {/* section 5 */}
         <section className="" id="section-5">
-          <div className="bg-[#F4F4F4]">
-            <div className="flex flex-col justify-center py-32 px-72">
+          <div className="bg-[#FFE3CA]">
+            <div className="flex flex-col justify-center py-32 px-72 mt-14">
               <div className="heading">
                 <h1 className="text-2xl font-bold text-[#3D3D3D] text-center px-48">
                   Dilema Mengubah Status Mitra Menjadi {"            "}
-                  <span className="text-orange-bg">Karyawan Tetap</span>
+                  <span className="text-[#EE99C2]">Karyawan Tetap</span>
                 </h1>
               </div>
               <div className="content text-[#3D3D3D] ">
@@ -488,8 +722,8 @@ const LandingPage = () => {
                   Republik Indonesia nomor 20 tahun 2008 sebagai berikut:
                 </p>
                 <div
-                  className="text-[#FCFCFC] border border-[#E65B48]  rounded rounded-lg px-5 py-4 my-5"
-                  style={{ boxShadow: "5px 10px #E65B48" }}
+                  className="text-[#FCFCFC] bg-white border border-[#EE99C2]  rounded rounded-lg px-5 py-4 my-5"
+                  style={{ boxShadow: "5px 10px #EE99C2" }}
                 >
                   <p className="text-[#3D3D3D] font-bold">Pasal 36</p>
                   <ol className="text-[#3D3D3D] ">
@@ -514,7 +748,7 @@ const LandingPage = () => {
                   secara sepihak, hingga dilarang untuk membentuk serikat
                   pekerja
                 </p>
-                <div className="rounded rounded-2xl bg-[#4793AF] px-5 py-7 my-5">
+                <div className="rounded rounded-2xl bg-[#0C359E] px-5 py-7 my-5">
                   <div className="flex justify-between items-center">
                     <h1 className="text-white text-2xl font-bold">
                       Lemah Mitra, Timpang Kontrak
@@ -530,31 +764,41 @@ const LandingPage = () => {
                       id="persen"
                       className=" bg-[#FCFCFC] rounded-2xl px-3 py-2 w-11/12"
                     >
-                      <div className="flex items-center">
-                        <img src={persen} className="size-1/12" alt="" />
+                      <div className="flex items-center my-3">
+                        <img src={persen} className="w-[2.8em]" alt="" />
                         <h1 className="ml-2 font-bold">
                           Potongan Aplikator ke Mitra
                         </h1>
                       </div>
-                      <div>
+                      <div className="px-3">
                         <table className="w-full">
                           <tr>
-                            <td>N = 225</td>
+                            <td className="">
+                              <p className="py-2">N = 225</p>
+                            </td>
                           </tr>
-                          <tr className="bg-[#E1F7E7] rounded rounded-lg">
-                            <td>20%</td>
-                            <td>: 52.9%</td>
+                          <tr className="">
+                            <td className="bg-[#E1F7E7] rounded-l-md">
+                              <p className="py-1">20%</p>
+                            </td>
+                            <td className="bg-[#E1F7E7] rounded-r-md">
+                              <p className="py-2">: 52.9%</p>
+                            </td>
                           </tr>
                           <tr>
-                            <td>15%</td>
+                            <td>
+                              <p className="py-2">15%</p>
+                            </td>
                             <td>: 0.4%</td>
                           </tr>
-                          <tr>
-                            <td>10%</td>
+                          <tr className="">
+                            <td className="py-2">10%</td>
                             <td>: 17.8%</td>
                           </tr>
-                          <tr>
-                            <td>Tidak Menjawab</td>
+                          <tr className="">
+                            <td>
+                              <p className="py-2">Tidak Menjawab</p>
+                            </td>
                             <td>: 28.9%</td>
                           </tr>
                         </table>
@@ -564,29 +808,43 @@ const LandingPage = () => {
                       id="peta"
                       className=" bg-[#FCFCFC] rounded-2xl px-3 py-2 w-11/12"
                     >
-                      <div className="flex items-center">
-                        <img src={peta} className="size-1/12" alt="" />
+                      <div className="flex items-center my-3">
+                        <img src={peta} className="w-[2.8em]" alt="" />
                         <h1 className="ml-2 font-bold">Tarif per KM</h1>
                       </div>
-                      <div>
+                      <div className="px-3">
                         <table className="w-full">
                           <tr className="bg-[#E1F7E7]">
-                            <td>Jam Normal</td>
-                            <td>: Rp 2.500 - Rp. 2.800</td>
+                            <td className="bg-[#E1F7E7] rounded rounded-l-md">
+                              <p className="py-2">Jam Normal</p>
+                            </td>
+                            <td className="bg-[#E1F7E7] rounded rounded-r-md">
+                              <p className="py-2">: Rp 2.500 - Rp. 2.800</p>
+                            </td>
                           </tr>
                           <tr>
-                            <td>(N = 139)</td>
-                          </tr>
-                          <tr className="bg-[#E1F7E7]">
-                            <td>Jam Sibuk </td>
-                            <td>: Rp 2.500 - Rp. 4.000</td>
+                            <td>
+                              <p className="py-2">(N = 139)</p>
+                            </td>
                           </tr>
                           <tr>
-                            <td>10%</td>
+                            <td className="bg-[#E1F7E7] rounded rounded-l-md">
+                              <p className="py-2">Jam Sibuk </p>
+                            </td>
+                            <td className="bg-[#E1F7E7] rounded rounded-r-md">
+                              <p className="py-2">Rp 2.500 - Rp. 4.000</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p className="py-2">10%</p>
+                            </td>
                             <td>: 17.8%</td>
                           </tr>
                           <tr>
-                            <td>(N = 147)</td>
+                            <td>
+                              <p className="py-2">(N = 147)</p>
+                            </td>
                           </tr>
                         </table>
                       </div>
@@ -597,40 +855,56 @@ const LandingPage = () => {
                       id="dolar"
                       className=" bg-[#FCFCFC] rounded-2xl px-3 py-2 w-11/12"
                     >
-                      <div className="flex items-center">
-                        <img src={dolar} className="size-1/12" alt="" />
+                      <div className="flex items-center my-3 ">
+                        <img src={dolar} className="w-[2.8em]" alt="" />
                         <h1 className="ml-2 font-bold">
                           Performa minimal untuk bonus
                         </h1>
                       </div>
-                      <div>
+                      <div className="px-3">
                         <table className="w-full">
                           <tr>
-                            <td>(N = 225)</td>
+                            <td>
+                              <p className="py-2">(N = 225)</p>
+                            </td>
                           </tr>
                           <tr>
-                            <td>80%</td>
+                            <td>
+                              <p className="py-2">80%</p>
+                            </td>
                             <td>: Rp 2.500 - Rp. 2.800</td>
                           </tr>
 
                           <tr>
-                            <td>85% </td>
+                            <td>
+                              <p className="py-2">85%</p>
+                            </td>
                             <td>: Rp 2.500 - Rp. 4.000</td>
                           </tr>
-                          <tr className="bg-[#E1F7E7]">
-                            <td>90%</td>
+                          <tr>
+                            <td className="bg-[#E1F7E7] rounded rounded-l-md">
+                              <p className="py-2">90%</p>
+                            </td>
+                            <td className="bg-[#E1F7E7] rounded rounded-r-md ">
+                              : 17.8%
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p className="py-2">95%</p>
+                            </td>
                             <td>: 17.8%</td>
                           </tr>
                           <tr>
-                            <td>95%</td>
+                            <td>
+                              <p className="py-2">97%</p>
+                            </td>
                             <td>: 17.8%</td>
                           </tr>
                           <tr>
-                            <td>97%</td>
-                            <td>: 17.8%</td>
-                          </tr>
-                          <tr>
-                            <td>Tidak Menjawab</td>
+                            <td>
+                              <p className="py-2">Tidak Menjawab</p>
+                            </td>
                             <td>: 17.8%</td>
                           </tr>
                         </table>
@@ -640,40 +914,55 @@ const LandingPage = () => {
                       id="bintangungu"
                       className=" bg-[#FCFCFC] rounded-2xl px-3 py-2 w-11/12"
                     >
-                      <div className="flex items-center">
-                        <img src={bintangUngu} className="size-1/12" alt="" />
+                      <div className="flex items-center my-3">
+                        <img src={bintangUngu} className="w-[2.8em]" alt="" />
                         <h1 className="ml-2 font-bold">
                           Rating minimal untuk bonus
                         </h1>
                       </div>
-                      <div>
+                      <div className="px-3">
                         <table className="w-full">
                           <tr>
-                            <td>(N = 225)</td>
+                            <td>
+                              <p className="py-2">(N = 225)</p>
+                            </td>
                           </tr>
                           <tr>
-                            <td>4-4,4</td>
+                            <td>
+                              <p className="py-2">4 - 4,4</p>
+                            </td>
                             <td>: Rp 2.500 - Rp. 2.800</td>
                           </tr>
-
                           <tr>
-                            <td>4,5 </td>
+                            <td>
+                              <p className="py-2">4,5</p>
+                            </td>
                             <td>: Rp 2.500 - Rp. 4.000</td>
                           </tr>
-                          <tr className="bg-[#E1F7E7]">
-                            <td>4,6</td>
+                          <tr className="">
+                            <td className="bg-[#E1F7E7] rounded rounded-l-md ">
+                              <p className="py-2">4,6</p>
+                            </td>
+                            <td className="bg-[#E1F7E7] rounded rounded-r-md ">
+                              : 17.8%
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p className="py-2">4,7</p>
+                            </td>
                             <td>: 17.8%</td>
                           </tr>
                           <tr>
-                            <td>4,7</td>
+                            <td>
+                              <p className="py-2">4,8</p>
+                            </td>
                             <td>: 17.8%</td>
                           </tr>
                           <tr>
-                            <td>4,8</td>
-                            <td>: 17.8%</td>
-                          </tr>
-                          <tr>
-                            <td>Tidak Menjawab</td>
+                            <td>
+                              <p className="py-2">Tidak Menjawab</p>
+                            </td>
                             <td>: 17.8%</td>
                           </tr>
                         </table>
@@ -683,40 +972,54 @@ const LandingPage = () => {
                   <div className="flex justify-center">
                     <div
                       id="bintangungu"
-                      className=" bg-[#FCFCFC] rounded-2xl px-3 py-2  w-5/12 mt-3"
+                      className=" bg-[#FCFCFC] rounded-2xl px-3 py-2  w-6/12 mt-3"
                     >
-                      <div className="flex items-center">
-                        <img src={kado} className="size-1/12" alt="" />
+                      <div className="flex items-center my-3">
+                        <img src={kado} className="w-[2.8em]" alt="" />
                         <h1 className="ml-2 font-bold">
                           Insiden harian mendapatkan bonus
                         </h1>
                       </div>
-                      <div>
+                      <div className="px-3 text-sm ">
                         <table className="w-full">
                           <tr>
-                            <td>(N = 225)</td>
+                            <td>
+                              <p className="py-2">(N = 225)</p>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Setiap hari berhasil mendapatkan bonus</td>
+                            <td>
+                              <p className="py-2">
+                                Setiap hari berhasil mendapatkan bonus
+                              </p>
+                            </td>
                             <td>: Rp 2.500 - Rp. 2.800</td>
                           </tr>
 
                           <tr>
                             <td>
-                              Tidak setiap hari mendapatkan bonus, hanya
-                              beberapa kali sepekan
+                              <p className="py-2">
+                                Tidak setiap hari mendapatkan bonus, hanya
+                                beberapa kali sepekan
+                              </p>
                             </td>
                             <td>: Rp 2.500 - Rp. 4.000</td>
                           </tr>
-                          <tr className="bg-[#E1F7E7]">
-                            <td>
-                              Tidak setiap hari mendapatkan bonus, hanya
-                              beberapa kali sebulan
+                          <tr>
+                            <td className="bg-[#E1F7E7] rounded rounded-l-md">
+                              <p className="py-2">
+                                Tidak setiap hari mendapatkan bonus, hanya
+                                beberapa kali sebulan
+                              </p>
                             </td>
-                            <td>: 17.8%</td>
+                            <td className="bg-[#E1F7E7] rounded rounded-r-md">
+                              : 17.8%
+                            </td>
                           </tr>
                           <tr>
-                            <td>Tidak Menjawab</td>
+                            <td>
+                              <p className="py-2">Tidak Menjawab</p>
+                            </td>
                             <td>: 17.8%</td>
                           </tr>
                         </table>
@@ -749,6 +1052,17 @@ const LandingPage = () => {
                   melainkan hanya akan menimbulkan masalah baru lantaran bisa
                   menjadi bumerang bagi perusahaan maupun mitra.
                 </p>
+                <div className="z-50 flex justify-center my-8">
+                  <video
+                    className="z-50 w-full rounded rounded-lg"
+                    controls={true}
+                    autoPlay={true}
+                  >
+                    <source src={ahliVideo} type="video/mp4" />
+                    Browser Anda tidak mendukung tag video.
+                  </video>
+                </div>
+
                 <p className="mt-5">
                   “Apabila itu (diubah menjadi pekerja formal) dijadikan sebagai
                   sebuah solusi, saya rasa itu malah bisa jadi backfire bagi
@@ -798,7 +1112,7 @@ const LandingPage = () => {
         {/* section 5 */}
         {/* section 6 */}
         <section id="section-7">
-          <div className="bg-[#F4F4F4]">
+          <div className="bg-[#FFE3CA]">
             <div className="flex flex-col justify-center py-30 px-52">
               <div className="grid grid-cols-2 flex justify-items-center">
                 <div
@@ -813,7 +1127,7 @@ const LandingPage = () => {
                       Mengikuti Jejaknya?
                     </h1>
                   </div>
-                  <div className="content text-[#3D3D3D]">
+                  <div className="content  text-[#3D3D3D]">
                     <p className="text-[#3D3D3D]">
                       Pioner perusahaan teknologi asal Inggris yang menyediakan
                       jasa layanan transportasi online, tak lain dan tak bukan
@@ -821,7 +1135,10 @@ const LandingPage = () => {
                       mitra menjadi karyawan tetap pada 2021 lalu. Hal tersebut
                       dikabulkan oleh Mahkamah Agung
                     </p>
-                    <button className=" flex items-center mt-2" onClick={buttonClickTransformasi}>
+                    <button
+                      className=" flex items-center mt-2"
+                      onClick={buttonClickTransformasi}
+                    >
                       Baca Detail
                       <MdArrowOutward />
                     </button>
@@ -846,7 +1163,10 @@ const LandingPage = () => {
                       Penjelasan atas pertanyaan ini terkait erat dengan kondisi
                       pasar kerja
                     </p>
-                    <button className=" flex items-center mt-2" onClick={buttonClickAntara}>
+                    <button
+                      className=" flex items-center mt-2"
+                      onClick={buttonClickAntara}
+                    >
                       Baca Detail
                       <MdArrowOutward />
                     </button>
@@ -873,7 +1193,10 @@ const LandingPage = () => {
                       Penjelasan atas pertanyaan ini terkait erat dengan kondisi
                       pasar kerja
                     </p>
-                    <button className=" flex items-center mt-2" onClick={buttonClickPro}>
+                    <button
+                      className=" flex items-center mt-2"
+                      onClick={buttonClickPro}
+                    >
                       Baca Detail
                       <MdArrowOutward />
                     </button>
@@ -900,7 +1223,10 @@ const LandingPage = () => {
                       pekerja di sektor gig yang memiliki kualitas rendah dan
                       tidak mempunyai daya tawar tinggi
                     </p>
-                    <button className=" flex items-center mt-2" onClick={buttonClickLow}>
+                    <button
+                      className=" flex items-center mt-2"
+                      onClick={buttonClickLow}
+                    >
                       Baca Detail
                       <MdArrowOutward />
                     </button>
@@ -913,8 +1239,8 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={puzzle} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Mengurangi Keterkaitan Sharing Economy dan Economy Gig dari
-                      Perspektif Transportasi Online
+                      Mengurangi Keterkaitan Sharing Economy dan Economy Gig
+                      dari Perspektif Transportasi Online
                     </h1>
                   </div>
                   <div className="content text-[#3D3D3D]">
@@ -925,7 +1251,10 @@ const LandingPage = () => {
                       layanan, atau sumber daya. Selaras dengan hal tersebut,
                       hal ini juga yang terjadi pada
                     </p>
-                    <button className=" flex items-center mt-2" onClick={buttonClickMengurai}>
+                    <button
+                      className=" flex items-center mt-2"
+                      onClick={buttonClickMengurai}
+                    >
                       Baca Detail
                       <MdArrowOutward />
                     </button>
@@ -938,10 +1267,10 @@ const LandingPage = () => {
         {/* section 6 */}
         {/* section 7 */}
         <section id="section-7">
-          <div className="bg-[#F4F4F4] pt-28">
-            <img src={vectorEnd} className="absolute z-0 bg-[#F4F4F4]" alt="" />
+          <div className="bg-[#FFE3CA] pt-28">
+            <img src={vectorEnd} className="absolute z-0 bg-[#FFE3CA]" alt="" />
             <div className="flex justify-center bg-orange-bg">
-              <div className="relative flex flex-col my-12 bg-[#F4F4F4] w-8/12 px-8 py-10 rounded rounded-b-2xl">
+              <div className="relative flex flex-col my-12 bg-[#FFE3CA] w-8/12 px-8 py-10 rounded rounded-b-2xl">
                 <div className="head flex justify-center">
                   <h1 className="font-bold text-2xl mb-5">
                     Title Heading Will Go Here
@@ -1015,7 +1344,7 @@ const LandingPage = () => {
         {/* section 7 */}
         {/* footer */}
 
-        <footer className="bg-orange-bg text-white ">
+        <footer className="bg-[#EE99C2] text-white ">
           <div className="pb-32 pt-10 px-56">
             <div className="grid grid-cols-2 flex justify-items-start">
               <div id="penulis" className="">
