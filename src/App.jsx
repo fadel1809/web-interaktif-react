@@ -1,19 +1,23 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import LandingPage from './pages/LandingPage';
 import DetailMengurai from './pages/DetailMengurai';
 import DetailAntara from './pages/DetailAntara';
 import DetailLow from './pages/DetailLow';
 import DetailTransformasi from './pages/DetailTransformasi';
 import DetailPro from './pages/DetailPro';
+<<<<<<< HEAD
 import DetailUpaya from './pages/DetailUpaya';
 import IndrivePage from './pages/IndrivePage';
 import GojekPage from './pages/GojekPage'
+=======
+import DetailUpaya from './pages/DetailUpaya'
+import LandingPageLayout from './pages/LandingPageLayout'
+>>>>>>> e166c5969c91f0cf1070302e525d63db0fa01c94
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <LandingPage />,
+    element: <LandingPageLayout />,
   },
   {
     path: '/detailUpaya',

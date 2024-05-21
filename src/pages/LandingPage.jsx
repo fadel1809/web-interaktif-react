@@ -32,6 +32,10 @@ import tandaSeru from "../assets/images/tanda-seru.png"
 import puzzle from "../assets/images/puzzle.png"
 import vectorEnd from "../assets/images/vector-end.png"
 import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4"
+<<<<<<< HEAD
+=======
+import vidSect1 from "../assets/video/Final.mp4"
+>>>>>>> e166c5969c91f0cf1070302e525d63db0fa01c94
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -40,10 +44,13 @@ const LandingPage = () => {
     navigate("/gojekPage")
   }
 
+<<<<<<< HEAD
   const buttonClickIndrive = () => {
     navigate('/indrivePage')
   }
 
+=======
+>>>>>>> e166c5969c91f0cf1070302e525d63db0fa01c94
   const buttonClickUpaya = () => {
     navigate("/detailUpaya")
   }
@@ -70,6 +77,7 @@ const LandingPage = () => {
 
   return (
     <Wrapper>
+      
       <div className="bg-[#FFE3CA]">
         <Navbar />
         {/* SECTION-1 */}
@@ -737,12 +745,12 @@ const LandingPage = () => {
                   <p className="text-[#3D3D3D] font-bold">Pasal 36</p>
                   <ol className="text-[#3D3D3D] ">
                     <li>
-                      Dalam melaksanakan kemitraan sebagaimana dimaksud dalam
+                      1. Dalam melaksanakan kemitraan sebagaimana dimaksud dalam
                       pasal 26 para pihak mempunyai kedudukan hukum yang setara
                       dan terhadap mereka berlaku hukum Indonesia.
                     </li>
                     <li>
-                      Pelaksanaan kemitraan diawasi secara tertib dan teratur
+                      2. Pelaksanaan kemitraan diawasi secara tertib dan teratur
                       oleh lembaga yang dibentuk dan bertugas untuk mengawasi
                       persaingan usaha sebagaimana diatur dalam peraturan
                       perundang-undangan.
