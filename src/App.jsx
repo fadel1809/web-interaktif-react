@@ -6,7 +6,9 @@ import DetailAntara from './pages/DetailAntara';
 import DetailLow from './pages/DetailLow';
 import DetailTransformasi from './pages/DetailTransformasi';
 import DetailPro from './pages/DetailPro';
-import DetailUpaya from './pages/DetailUpaya'
+import DetailUpaya from './pages/DetailUpaya';
+import IndrivePage from './pages/IndrivePage';
+import GojekPage from './pages/GojekPage'
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
   {
     path: '/detailTransformasi',
     element: <DetailTransformasi />,
+  },
+  {
+    path: '/indrivePage',
+    element: <IndrivePage />,
+  },
+  {
+    path: '/gojekPage',
+    element: <GojekPage />,
   },
 ]);
 

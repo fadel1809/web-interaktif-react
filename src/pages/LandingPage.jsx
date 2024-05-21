@@ -32,11 +32,17 @@ import tandaSeru from "../assets/images/tanda-seru.png"
 import puzzle from "../assets/images/puzzle.png"
 import vectorEnd from "../assets/images/vector-end.png"
 import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4"
-import vidSect1 from "../assets/video/Final.mp4"
+
 const LandingPage = () => {
   const navigate = useNavigate();
 
+  const buttonClickGojek = () => {
+    navigate("/gojekPage")
+  }
 
+  const buttonClickIndrive = () => {
+    navigate('/indrivePage')
+  }
 
   const buttonClickUpaya = () => {
     navigate("/detailUpaya")
@@ -80,12 +86,12 @@ const LandingPage = () => {
 
             <div className="absolute bottom-0 left-[5.5em] z-50   ">
               <video
-                src={vidSect1}
+
                 className=" rounded rounded-t-lg w-[90%] z-50"
                 controls={true}
                 autoPlay={true}
               >
-                <source src={vidSect1} type="video/mp4" />
+                <source type="video/mp4" />
                 Browser Anda tidak mendukung tag video.
               </video>
             </div>
@@ -245,6 +251,7 @@ const LandingPage = () => {
                           <button
                             type="button"
                             className="flex items-center mt-5"
+                            onClick={buttonClickGojek}
                           >
                             Read More
                             <MdArrowOutward />
@@ -281,9 +288,11 @@ const LandingPage = () => {
                           <button
                             type="button"
                             className="flex items-center mt-5"
+                            onClick={buttonClickIndrive}
                           >
                             Read More
                             <MdArrowOutward />
+                            
                           </button>
                         </div>
                       </div>

@@ -12,4 +12,14 @@
     .shadow-blue-primary {
       box-shadow: 5px 5px 0 theme('colors.blue-primary');
     }
+    .size-indrive {
+      width: 100%;
+      height: auto; /* This maintains the aspect ratio */
+    }
+    
+    .uniform-size {
+      width: 600px; /* Set a fixed width */
+      height: 400px; /* Set a fixed height */
+      object-fit: cover; /* Ensure the image covers the set dimensions while maintaining aspect ratio */
+    }
 }
