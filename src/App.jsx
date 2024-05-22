@@ -5,14 +5,12 @@ import DetailAntara from './pages/DetailAntara';
 import DetailLow from './pages/DetailLow';
 import DetailTransformasi from './pages/DetailTransformasi';
 import DetailPro from './pages/DetailPro';
-<<<<<<< HEAD
-import DetailUpaya from './pages/DetailUpaya';
-import IndrivePage from './pages/IndrivePage';
-import GojekPage from './pages/GojekPage'
-=======
 import DetailUpaya from './pages/DetailUpaya'
 import LandingPageLayout from './pages/LandingPageLayout'
->>>>>>> e166c5969c91f0cf1070302e525d63db0fa01c94
+import GojekPage from './pages/GojekPage'
+import IndrivePage from './pages/IndrivePage'
+import GrabPage from './pages/GrabPage'
+import MaximPage from './pages/MaximPage'
 
 const router = createBrowserRouter([
   {
@@ -50,6 +48,14 @@ const router = createBrowserRouter([
   {
     path: '/gojekPage',
     element: <GojekPage />,
+  },
+  {
+    path: '/maximPage',
+    element: <MaximPage />,
+  },
+  {
+    path: '/grabPage',
+    element: <GrabPage />,
   },
 ]);
 

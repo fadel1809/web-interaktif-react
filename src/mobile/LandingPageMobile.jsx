@@ -24,10 +24,26 @@ import human from "../assets/images/human.png";
 import tandaSeru from "../assets/images/tanda-seru.png";
 import puzzle from "../assets/images/puzzle.png";
 import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4";
-import vidSect1 from "../assets/video/Final.mp4";
+
 const LandingPageMobile = () => {
-  
+
   const navigate = useNavigate();
+
+  const buttonClickGrab = () => {
+    navigate("/grabPage")
+  }
+
+  const buttonClickMaxim = () => {
+    navigate("/maximPage")
+  }
+
+  const buttonClickIndrive = () => {
+    navigate("/indrivePage")
+  }
+
+  const buttonClickGojek = () => {
+    navigate("/gojekPage")
+  }
 
   const buttonClickUpaya = () => {
     navigate("/detailUpaya");
@@ -67,15 +83,15 @@ const LandingPageMobile = () => {
                 </h1>
               </div>
               <div className="content flex justify-center mt-5 ">
-                <video
-                  src={vidSect1}
-                  className=" rounded rounded-t-lg w-[90%] "
-                  controls={true}
-                  autoPlay={true}
-                >
-                  <source src={vidSect1} type="video/mp4" />
-                  Browser Anda tidak mendukung tag video.
-                </video>
+                <iframe
+                  className="rounded-xl"
+                  width="350"
+                  height="200"
+                  src="https://www.youtube.com/embed/fcg8n9NMZt8?si=ucUw-F7nt_kE8uAk"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen>
+                </iframe>
               </div>
             </div>
           </div>
@@ -89,7 +105,7 @@ const LandingPageMobile = () => {
             <div className="px-5 pb-10">
               <div className="bg-white rounded-lg px-3 py-3 ">
                 <div className="head">
-                  <h1 className="text-black font-bold text-xl ">Title</h1>
+                  <h1 className="text-black font-bold text-xl">Title</h1>
                 </div>
                 <div className="content">
                   <p className="mt-2">
@@ -166,6 +182,7 @@ const LandingPageMobile = () => {
                             Ciputat, Tangerang Selatan. Bangunan...
                           </p>
                           <button
+                            onClick={buttonClickMaxim}
                             type="button"
                             className="flex items-center mt-5"
                           >
@@ -205,6 +222,7 @@ const LandingPageMobile = () => {
                         <button
                           type="button"
                           className="flex items-center mt-5"
+                          onClick={buttonClickGojek}
                         >
                           Read More
                           <MdArrowOutward />
@@ -240,6 +258,7 @@ const LandingPageMobile = () => {
                         <button
                           type="button"
                           className="flex items-center mt-5"
+                          onClick={buttonClickIndrive}
                         >
                           Read More
                           <MdArrowOutward />
@@ -273,6 +292,7 @@ const LandingPageMobile = () => {
                           transportasi yang masih baru ini memiliki perbedaan...
                         </p>
                         <button
+                          onClick={buttonClickGrab}
                           type="button"
                           className="flex items-center mt-5"
                         >

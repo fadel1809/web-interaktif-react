@@ -32,25 +32,26 @@ import tandaSeru from "../assets/images/tanda-seru.png"
 import puzzle from "../assets/images/puzzle.png"
 import vectorEnd from "../assets/images/vector-end.png"
 import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4"
-<<<<<<< HEAD
-=======
-import vidSect1 from "../assets/video/Final.mp4"
->>>>>>> e166c5969c91f0cf1070302e525d63db0fa01c94
 
 const LandingPage = () => {
   const navigate = useNavigate();
+
+  const buttonClickGrab = () => {
+    navigate("/grabPage")
+  }
+
+  const buttonClickMaxim = () => {
+    navigate("/maximPage")
+  }
+
+  const buttonClickIndrive = () => {
+    navigate("/indrivePage")
+  }
 
   const buttonClickGojek = () => {
     navigate("/gojekPage")
   }
 
-<<<<<<< HEAD
-  const buttonClickIndrive = () => {
-    navigate('/indrivePage')
-  }
-
-=======
->>>>>>> e166c5969c91f0cf1070302e525d63db0fa01c94
   const buttonClickUpaya = () => {
     navigate("/detailUpaya")
   }
@@ -77,7 +78,7 @@ const LandingPage = () => {
 
   return (
     <Wrapper>
-      
+
       <div className="bg-[#FFE3CA]">
         <Navbar />
         {/* SECTION-1 */}
@@ -93,15 +94,17 @@ const LandingPage = () => {
             <img src={gojek1} alt="" className="absolute top-16" />
 
             <div className="absolute bottom-0 left-[5.5em] z-50   ">
-              <video
 
-                className=" rounded rounded-t-lg w-[90%] z-50"
-                controls={true}
-                autoPlay={true}
-              >
-                <source type="video/mp4" />
-                Browser Anda tidak mendukung tag video.
-              </video>
+              <iframe
+                className="rounded-xl"
+                width="750"
+                height="450"
+                src="https://www.youtube.com/embed/fcg8n9NMZt8?si=ucUw-F7nt_kE8uAk"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen>
+              </iframe>
+
             </div>
             {/* <img
               src={gojek3}
@@ -221,6 +224,7 @@ const LandingPage = () => {
                             Ciputat, Tangerang Selatan. Bangunan...
                           </p>
                           <button
+                            onClick={buttonClickMaxim}
                             type="button"
                             className="flex items-center mt-5"
                           >
@@ -300,7 +304,7 @@ const LandingPage = () => {
                           >
                             Read More
                             <MdArrowOutward />
-                            
+
                           </button>
                         </div>
                       </div>
@@ -331,6 +335,7 @@ const LandingPage = () => {
                             Ciputat, Tangerang Selatan. Bangunan...
                           </p>
                           <button
+                            onClick={buttonClickGrab}
                             type="button"
                             className="flex items-center mt-5"
                           >

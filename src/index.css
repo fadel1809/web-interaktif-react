@@ -22,4 +22,12 @@
       height: 400px; /* Set a fixed height */
       object-fit: cover; /* Ensure the image covers the set dimensions while maintaining aspect ratio */
     }
+    
+    /* Tambahkan ini di file CSS Anda */
+}
+
+@media (min-width: 768px) {
+  .no-bg-desktop {
+    background: none !important;
+  }
 }
