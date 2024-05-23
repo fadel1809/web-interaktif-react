@@ -78,7 +78,6 @@ const LandingPage = () => {
 
   return (
     <Wrapper>
-
       <div className="bg-[#FFE3CA]">
         <Navbar />
         {/* SECTION-1 */}
@@ -94,7 +93,6 @@ const LandingPage = () => {
             <img src={gojek1} alt="" className="absolute top-16" />
 
             <div className="absolute bottom-0 left-[5.5em] z-50   ">
-
               <iframe
                 className="rounded-xl"
                 width="750"
@@ -102,9 +100,8 @@ const LandingPage = () => {
                 src="https://www.youtube.com/embed/fcg8n9NMZt8?si=ucUw-F7nt_kE8uAk"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen>
-              </iframe>
-
+                allowFullScreen
+              ></iframe>
             </div>
             {/* <img
               src={gojek3}
@@ -140,20 +137,19 @@ const LandingPage = () => {
                 className="flex items-center justify-between py-5 px-8"
               >
                 <h1 className="font-bold text-3xl">Title</h1>
-                <FaChevronDown className="text-[#525252]" />
               </div>
               <div id="content" className="text-[#525252] text-md px-8">
                 <p className="my-2">
                   Di antara kebisingan mesin sepeda motor yang menelusuri
                   jalan-jalan, terdapat ketidakpastian yang menyelimuti para
-                  pengemudi ojek online. Mereka tidak hanya membawa penumpang,
-                  tetapi juga beban harapan dan kebutuhan setiap pelanggan,
-                  mereka mencari nafkah dari setiap perjalanan. Namun, di balik
-                  pekerjaan yang mereka lakukan, tersembunyi kenyataan pahit
-                  yang harus mereka hadapi.
+                  pengemudi ojek <i>online</i> . Mereka tidak hanya membawa
+                  penumpang, tetapi juga beban harapan dan kebutuhan setiap
+                  pelanggan, mereka mencari nafkah dari setiap perjalanan.
+                  Namun, di balik pekerjaan yang mereka lakukan, tersembunyi
+                  kenyataan pahit yang harus mereka hadapi.
                 </p>
                 <p>
-                  Mitra merupakan status dari pengemudi ojek online yang
+                  Mitra merupakan status dari pengemudi ojek <i>online</i> yang
                   memberikan kesan kerjasama dan hubungan kesetaraan yang erat.
                   Namun, di balik status sebagai “mitra” kebenaran yang
                   mendasarinya adalah ketidakjelasan hukum dan legalitasnya.
@@ -172,13 +168,6 @@ const LandingPage = () => {
                   berputar? Kesejahteraan dan kesetaraan ini bukan hanya tentang
                   uang, melainkan rasa aman, kesehatan, dan perlindungan memadai
                   yang setara dengan dedikasi mereka.
-                </p>
-              </div>
-              <div className="flex-col justify-center">
-                <hr className="border-2 w-full" />
-                <p className="flex justify-center items-center py-2">
-                  Tutup
-                  <FaChevronUp className="ml-2 text-black-50 text-sm" />
                 </p>
               </div>
             </div>
@@ -304,7 +293,6 @@ const LandingPage = () => {
                           >
                             Read More
                             <MdArrowOutward />
-
                           </button>
                         </div>
                       </div>
@@ -376,10 +364,10 @@ const LandingPage = () => {
                       Ketua Umum Asosiasi Pengemudi Ojek Daring Garda Indonesia,
                       Igun Wicaksono, menyayangkan pemerintah lantaran belum ada
                       kepastian hukum sampai detik ini mengenai status
-                      kemitraan. Menurutnya, status pengemudi ojek online
+                      kemitraan. Menurutnya, status pengemudi ojek <i>online</i>
                       sebagai “mitra” dianggap tidak memiliki kejelasan. Igun
-                      juga berharap agar para pengemudi ojek online dapat diubah
-                      menjadi karyawan tetap.
+                      juga berharap agar para pengemudi ojek <i>online</i> dapat
+                      diubah menjadi karyawan tetap.
                     </p>
                     <p className="mb-2">
                       “Kita ingin membuka peluang dari rekan-rekan pengemudi ini
@@ -392,8 +380,8 @@ const LandingPage = () => {
                     </p>
                     <p className="mb-2">
                       Menurut Ketum Asosiasi Pengemudi Ojek Daring Garda
-                      Indonesia itu, para pengemudi ojek online yang saat ini
-                      berstatus sebagai “mitra” juga merupakan bagian dari
+                      Indonesia itu, para pengemudi ojek <i>online</i> yang saat
+                      ini berstatus sebagai “mitra” juga merupakan bagian dari
                       konsumen. Igun menyatakan bahwa mitra menggunakan aplikasi
                       yang dimiliki oleh perusahaan. Tak hanya itu, mitra juga
                       diharuskan membayar potongan yang diterima dari para
@@ -402,11 +390,11 @@ const LandingPage = () => {
                       bagian dari konsumen.
                     </p>
                     <p className="mb-2">
-                      Pekerja ekonomi gig, dalam hal ini pengemudi ojek online,
-                      memiliki ciri tersendiri dengan merujuk pada model bisnis
-                      di mana pekerja gig memiliki tingkat fleksibilitas
-                      dibanding pekerja tetap. Hal ini juga yang menjadi
-                      keunggulan bagi para pekerja gig economy karena
+                      Pekerja ekonomi gig, dalam hal ini pengemudi ojek {""}
+                      <i>online</i>, memiliki ciri tersendiri dengan merujuk
+                      pada model bisnis di mana pekerja gig memiliki tingkat
+                      fleksibilitas dibanding pekerja tetap. Hal ini juga yang
+                      menjadi keunggulan bagi para pekerja gig economy karena
                       ketersediaan waktu yang fleksibel menjadi hal yang sangat
                       berharga bagi individu yang juga memiliki tanggung jawab
                       lain, seperti kegiatan belajar, tanggung jawab keluarga,
@@ -415,9 +403,9 @@ const LandingPage = () => {
                     <p className="mb-2">
                       Asosiasi Pengemudi Ojek Daring Garda Indonesia merupakan
                       perkumpulan yang terbentuk akibat peristiwa demonstrasi
-                      yang dilakukan oleh para pengemudi ojek online di Istana
-                      Merdeka, Jakarta Pusat, pada 27 Maret 2018 lalu. Aksi
-                      tersebut diberi nama dengan “Gabungan Aksi Roda dua
+                      yang dilakukan oleh para pengemudi ojek <i>online</i> di
+                      Istana Merdeka, Jakarta Pusat, pada 27 Maret 2018 lalu.
+                      Aksi tersebut diberi nama dengan “Gabungan Aksi Roda dua
                       Indonesia” atau disingkat Garda Indonesia.
                     </p>
                     <p className="mb-2">
@@ -425,15 +413,16 @@ const LandingPage = () => {
                       pemerintah atas pendapatan yang terus menurun pada saat
                       itu, demo juga digelar dengan tujuan supaya tidak timbul
                       monopoli dari perusahaan aplikasi. Pada aksi demonstrasi
-                      itu juga para pengemudi ojek online meminta tarif diatur
-                      oleh pihak pemerintah dan juga legalitas dari ojek online.
+                      itu juga para pengemudi ojek <i>online</i> meminta tarif
+                      diatur oleh pihak pemerintah dan juga legalitas dari ojek
+                      <i>online</i>.
                     </p>
                     <p className="mb-2">
                       Berangkat dari aksi tersebut, pada awal Agustus tahun 2018
                       lalu, Kementerian Perhubungan mengundang seluruh elemen
-                      ojek online untuk mendiskusikan permasalahan yang terjadi,
-                      hingga akhirnya terbit Peraturan Menteri Perhubungan
-                      Republik Indonesia nomor 12 tahun 2019 tentang
+                      ojek <i>online</i> untuk mendiskusikan permasalahan yang
+                      terjadi, hingga akhirnya terbit Peraturan Menteri
+                      Perhubungan Republik Indonesia nomor 12 tahun 2019 tentang
                       perlindungan keselamatan pengguna sepeda motor. Namun,
                       peraturan tersebut hanya membahas mengenai kemitraan,
                       keselamatan, biaya jasa, hingga aturan suspend. Peraturan
@@ -453,13 +442,14 @@ const LandingPage = () => {
                     </p>
                     <p className="mb-2">
                       Peraturan Menteri Perhubungan Nomor PM. 12 Tahun 2019
-                      merupakan peraturan pertama yang mengatur ojek online di
-                      Indonesia. Peraturan ini awalnya dianggap sebagai
-                      kemenangan bagi para pengemudi ojek online karena akhirnya
-                      memberikan landasan hukum bagi layanan ojek online. Namun
-                      keberadaannya banyak menimbulkan kritik dan permasalahan,
-                      misalnya terkait terbatasnya ruang lingkup serta kurang
-                      optimalnya pengawasan dan pelaksanaannya.
+                      merupakan peraturan pertama yang mengatur ojek{" "}
+                      <i>online</i> di Indonesia. Peraturan ini awalnya dianggap
+                      sebagai kemenangan bagi para pengemudi ojek <i>online</i>{" "}
+                      karena akhirnya memberikan landasan hukum bagi layanan
+                      ojek <i>online</i>. Namun keberadaannya banyak menimbulkan
+                      kritik dan permasalahan, misalnya terkait terbatasnya
+                      ruang lingkup serta kurang optimalnya pengawasan dan
+                      pelaksanaannya.
                     </p>
                     <p className="mb-2">
                       Berselang empat tahun kemudian, yakni pada Agustus 2022
@@ -469,7 +459,8 @@ const LandingPage = () => {
                       Motor yang Digunakan untuk Kepentingan Masyarakat yang
                       Dilakukan dengan Aplikasi. Dari sinilah Kementerian
                       Perhubungan mulai memperhatikan masalah tarif pada ojek
-                      online dengan merinci biaya jasa penggunaan sepeda motor.
+                      <i>online</i> dengan merinci biaya jasa penggunaan sepeda
+                      motor.
                     </p>
                     <p className="mb-2">
                       Isu mengenai tarif kerap kali menjadi persoalan yang
@@ -489,7 +480,8 @@ const LandingPage = () => {
                       dirugikan adalah para pengemudi,” tegas Igun.
                     </p>
                     <p className="mb-2">
-                      Persaingan antara aplikasi layanan transportasi online
+                      Persaingan antara aplikasi layanan transportasi
+                      <i>online</i>
                       seringkali menjadi perlombaan untuk mendapatkan lebih
                       banyak pelanggan dengan menawarkan tarif yang lebih rendah
                       daripada yang seharusnya. Hal tersebut sangat disayangkan
@@ -505,13 +497,14 @@ const LandingPage = () => {
                     </p>
                     <p className="mb-2">
                       Kini sudah hampir satu dekade usai kehadiran transportasi
-                      online membuka peluang bagi ekonomi gig di Indonesia.
-                      Pertumbuhan ekonomi gig yang semakin pesat tidak diikuti
-                      oleh regulasi yang memadai untuk memberikan pedoman yang
-                      jelas bagi semua pihak yang terlibat dalam industri ini.
-                      Igun Wicaksono berharap pada masa pemerintahan yang akan
-                      datang, para pemangku kepentingan dapat menjamin
-                      kesejahteraan pekerja pengemudi ojek online.
+                      <i>online</i> membuka peluang bagi ekonomi gig di
+                      Indonesia. Pertumbuhan ekonomi gig yang semakin pesat
+                      tidak diikuti oleh regulasi yang memadai untuk memberikan
+                      pedoman yang jelas bagi semua pihak yang terlibat dalam
+                      industri ini. Igun Wicaksono berharap pada masa
+                      pemerintahan yang akan datang, para pemangku kepentingan
+                      dapat menjamin kesejahteraan pekerja pengemudi ojek
+                      <i>online</i>.
                     </p>
                     <p className="mb-2">
                       “Kami berharap pemerintah selanjutnya adalah baik itu
@@ -520,19 +513,19 @@ const LandingPage = () => {
                       pengemudi ojek daring ini bisa masuk dalam prioritas
                       legislasi nasional. Jadi dengan hal itu adanya jaminan
                       kesejahteraan juga, jaminan perlindungan maupun jaminan
-                      keselamatan dari para pengemudi ojek online secara tidak
-                      langsung. Dengan adanya undang-undang, jaminan
+                      keselamatan dari para pengemudi ojek <i>online</i> secara
+                      tidak langsung. Dengan adanya undang-undang, jaminan
                       perlindungan sosial bisa dapatkan,” terangnya.
                     </p>
                     <p className="mb-2">
                       Menurut Igun, dengan adanya undang-undang diharapkan dapat
                       membantu para pengemudi dalam mendapatkan perlindungan
                       kesehatan dan keselamatan kerja yang memadai. Pasalnya
-                      pekerjaan sebagai pengemudi ojek online memiliki risiko
-                      yang tinggi mengingat mereka menghabiskan waktu banyak di
-                      perjalanan. Dalam hal ini pula pengemudi merupakan aset
-                      dari aplikator sehingga aplikator harus menjaga para mitra
-                      ojol dengan baik.
+                      pekerjaan sebagai pengemudi ojek <i>online</i> memiliki
+                      risiko yang tinggi mengingat mereka menghabiskan waktu
+                      banyak di perjalanan. Dalam hal ini pula pengemudi
+                      merupakan aset dari aplikator sehingga aplikator harus
+                      menjaga para mitra ojol dengan baik.
                     </p>
                     <p className="mb-2">
                       “Sebagai contoh mungkin dalam undang-undang itu pihak
@@ -577,14 +570,14 @@ const LandingPage = () => {
                     Hubungan Industrial dan Jaminan Sosial Kementerian
                     Ketenagakerjaan, Indah Anggoro Putri, menyatakan bahwa
                     kementerian akan mengatur regulasi mengenai persoalan
-                    terkait ojek online, meliputi :
+                    terkait ojek <i>online</i>, meliputi :
                   </p>
                   <img src={diagramSect4} className="py-5" alt="" />
                   <p className="pb-3">
                     Walaupun hingga saat ini memang belum ada peraturan yang
-                    jelas yang dikhususkan kepada mitra ojek online, Kementerian
-                    Ketenagakerjaan menegaskan bahwa pihaknya masih terus
-                    berupaya dalam mempelajari dan membuat regulasi untuk
+                    jelas yang dikhususkan kepada mitra ojek <i>online</i>,
+                    Kementerian Ketenagakerjaan menegaskan bahwa pihaknya masih
+                    terus berupaya dalam mempelajari dan membuat regulasi untuk
                     mereka. Nantinya, regulasi yang kelak direalisasikan, akan
                     lebih condong kepada penekanan syarat kerja dan jaminan
                     sosial.
@@ -643,14 +636,14 @@ const LandingPage = () => {
                   </p>
                   <p className="pb-3">
                     Ekonomi gig terbagi menjadi dua jenis, yang pertama adalah
-                    ekonomi gig online base, di mana para pekerjanya dapat
-                    bekerja tanpa perlu berinteraksi tatap muka secara langsung.
-                    Beberapa contoh ekonomi gig online base seperti graphic
-                    designer, programmer, dan lainnya. Sedangkan ekonomi gig
-                    location based, sesuai dengan namanya, jenis ekonomi ini
-                    membutuhkan kehadiran fisik dalam melakukan suatu pekerjaan
-                    di lokasi tertentu, salah satu contohnya ialah driver
-                    ataupun mitra dari transportasi online.
+                    ekonomi gig <i>online</i> base, di mana para pekerjanya
+                    dapat bekerja tanpa perlu berinteraksi tatap muka secara
+                    langsung. Beberapa contoh ekonomi gig <i>online</i> base
+                    seperti graphic designer, programmer, dan lainnya. Sedangkan
+                    ekonomi gig location based, sesuai dengan namanya, jenis
+                    ekonomi ini membutuhkan kehadiran fisik dalam melakukan
+                    suatu pekerjaan di lokasi tertentu, salah satu contohnya
+                    ialah driver ataupun mitra dari transportasi <i>online</i>.
                   </p>
                   <p className="pb-3">
                     Unik. Kalimat itulah yang dilontarkan Nailul Huda selaku
@@ -704,14 +697,15 @@ const LandingPage = () => {
                   pengangguran terbuka di Indonesia menurun drastis.
                 </p>
                 <p className="mb-5">
-                  “Jasa transportasi online ini mengurangi tingkat pengangguran
-                  terbuka yang sangat efektif setelah booming nya transportasi
-                  ojek online tahun 2016,” terang Nailul Huda.
+                  “Jasa transportasi <i>online</i> ini mengurangi tingkat
+                  pengangguran terbuka yang sangat efektif setelah booming nya
+                  transportasi ojek <i>online</i> tahun 2016,” terang Nailul
+                  Huda.
                 </p>
                 <p className="mb-5">
                   Hal yang membedakan ekonomi gig dari segi hukum
-                  ketenagakerjaan dalam konteks transportasi online apabila
-                  dilihat dari jenis pekerjaan lain, yakni terdapat pada
+                  ketenagakerjaan dalam konteks transportasi <i>online</i>
+                  apabila dilihat dari jenis pekerjaan lain, yakni terdapat pada
                   pekerjanya yang dikategorikan sebagai mitra atau partner.
                   Mereka tidak dianggap memiliki hubungan kerja dengan
                   perusahaan gig, tetapi hanya dianggap sebagai mitra atau rekan
@@ -727,9 +721,9 @@ const LandingPage = () => {
                 <p className="mb-5">
                   Namun, nampaknya hingga saat ini penyebutan “mitra” sebagai
                   status kerja dianggap sebagai alasan untuk menghindari
-                  memberikan pengemudi ojek online dari jaminan upah minimum,
-                  jaminan kesehatan, pesangon, upah lembur, hingga kebebasan
-                  untuk berserikat bagi para pekerjanya.
+                  memberikan pengemudi ojek <i>online</i> dari jaminan upah
+                  minimum, jaminan kesehatan, pesangon, upah lembur, hingga
+                  kebebasan untuk berserikat bagi para pekerjanya.
                 </p>
                 <p className="mb-5">
                   Sulistiyani, dalam bukunya yang berjudul “Kemitraan dan
@@ -1054,17 +1048,17 @@ const LandingPage = () => {
                 </div>
                 <p className="">
                   Hingga berbagai kontra pun muncul, beragam masalah mulai dari
-                  upah yang dianggap menyiksa para pengemudi ojek online karena
-                  potongan yang terlalu besar, pengemudi ojek online yang merasa
-                  dieksploitasi oleh aplikator, hingga masalah mengenai status
-                  sebagai mitra yang dianggap tidak memiliki kejelasan sampai
-                  hari ini. Igun Wicaksono, selaku Ketua Umum Ojek Daring Garda
-                  Indonesia, berharap pemerintah dapat mengubah status mitra
-                  menjadi pekerja formal atau sebagai karyawan tetap.
-                  Menurutnya, dengan menyandang status sebagai “mitra”, pekerja
-                  berada di posisi yang rentan karena para pengemudi tidak
-                  mendapatkan hak dan perlindungan hukum selayaknya orang yang
-                  bekerja pada suatu perusahaan.
+                  upah yang dianggap menyiksa para pengemudi ojek <i>online</i>{" "}
+                  karena potongan yang terlalu besar, pengemudi ojek
+                  <i>online</i> yang merasa dieksploitasi oleh aplikator, hingga
+                  masalah mengenai status sebagai mitra yang dianggap tidak
+                  memiliki kejelasan sampai hari ini. Igun Wicaksono, selaku
+                  Ketua Umum Ojek Daring Garda Indonesia, berharap pemerintah
+                  dapat mengubah status mitra menjadi pekerja formal atau
+                  sebagai karyawan tetap. Menurutnya, dengan menyandang status
+                  sebagai “mitra”, pekerja berada di posisi yang rentan karena
+                  para pengemudi tidak mendapatkan hak dan perlindungan hukum
+                  selayaknya orang yang bekerja pada suatu perusahaan.
                 </p>
                 <p className="mt-5">
                   Namun, alih-alih menjadi solusi yang tepat, direktur ekonomi
@@ -1108,8 +1102,9 @@ const LandingPage = () => {
                 <p className="mt-5">
                   Nailul Huda mengatakan bahwa hal yang paling penting untuk
                   dilakukan saat ini adalah bukan semata mata mengubah status
-                  mitra ojek online menjadi pekerja formal, tetapi memberikan
-                  jaminan sosial untuk kesejahteraan para pengemudi ojek online.
+                  mitra ojek <i>online</i> menjadi pekerja formal, tetapi
+                  memberikan jaminan sosial untuk kesejahteraan para pengemudi
+                  ojek <i>online</i>.
                 </p>
                 <p className="mt-5">
                   “Fleksibilitas dari mitra itu akan hilang ketika dia jadi
@@ -1152,10 +1147,10 @@ const LandingPage = () => {
                   <div className="content  text-[#3D3D3D]">
                     <p className="text-[#3D3D3D]">
                       Pioner perusahaan teknologi asal Inggris yang menyediakan
-                      jasa layanan transportasi online, tak lain dan tak bukan
-                      ialah Uber, mengubah status para pengemudi yang tadinya
-                      mitra menjadi karyawan tetap pada 2021 lalu. Hal tersebut
-                      dikabulkan oleh Mahkamah Agung
+                      jasa layanan transportasi {" "} <i>online</i>, tak lain dan tak
+                      bukan ialah Uber, mengubah status para pengemudi yang
+                      tadinya mitra menjadi karyawan tetap pada 2021 lalu. Hal
+                      tersebut dikabulkan oleh Mahkamah Agung
                     </p>
                     <button
                       className=" flex items-center mt-2"
@@ -1300,25 +1295,26 @@ const LandingPage = () => {
                 </div>
                 <div className="content text-[#3D3D3D]">
                   <p className="mb-5">
-                    Pada akhirnya, nasib para pengemudi ojek online saat ini,
-                    masih jauh dari “kesejahteraan” dan “kesetaraan”. Hal ini
-                    terbukti dari banyaknya pengemudi ojek online yang berstatus
-                    sebagai pekerja lepas tanpa jaminan keamanan kerja, jaminan
-                    sosial, atau manfaat lainnya yang seringkali diberikan
-                    kepada pekerja tetap. Ketergantungan pada platform juga
-                    menjadi faktor lain lantaran pengemudi ojek online sering
-                    kali harus mengikuti kebijakan dan tarif yang ditetapkan
-                    oleh platform, tanpa banyak pilihan untuk bernegosiasi atau
-                    mengatur kondisi kerja mereka sendiri.
+                    Pada akhirnya, nasib para pengemudi ojek <i>online</i> saat
+                    ini, masih jauh dari “kesejahteraan” dan “kesetaraan”. Hal
+                    ini terbukti dari banyaknya pengemudi ojek <i>online</i>{" "}
+                    yang berstatus sebagai pekerja lepas tanpa jaminan keamanan
+                    kerja, jaminan sosial, atau manfaat lainnya yang seringkali
+                    diberikan kepada pekerja tetap. Ketergantungan pada platform
+                    juga menjadi faktor lain lantaran pengemudi ojek
+                    <i>online</i> sering kali harus mengikuti kebijakan dan
+                    tarif yang ditetapkan oleh platform, tanpa banyak pilihan
+                    untuk bernegosiasi atau mengatur kondisi kerja mereka
+                    sendiri.
                   </p>
                   <p className="mb-5">
                     Semua faktor ini berkontribusi pada ketidaksetaraan dan
-                    ketidaksejahteraan bagi pengemudi ojek online, dan
+                    ketidaksejahteraan bagi pengemudi ojek <i>online</i>, dan
                     menunjukkan perlunya reformasi kebijakan dan perlindungan
                     yang lebih baik bagi pekerja dalam ekonomi gig.
                   </p>
                   <p className="mb-5">
-                    Rendahnya daya tawar ojek pada ojek online Juga
+                    Rendahnya daya tawar ojek pada ojek <i>online</i> Juga
                     mengakibatkan mereka terpaksa menerima berbagai keputusan
                     penting yang diambil oleh platform tanpa melibatkan mereka
                     sama sekali. Keputusan-keputusan ini termasuk penurunan
@@ -1356,7 +1352,7 @@ const LandingPage = () => {
                     untuk mengadaptasi sistem yang ada dengan perubahan realitas
                     pekerjaan mereka. Kini sudah sepatutnya pemerintah segera
                     mewujudkan perlindungan yang lebih baik bagi pekerja gig di
-                    Indonesia yang kian #FFCC00terus bertambah jumlahnya.
+                    Indonesia yang kian terus bertambah jumlahnya.
                   </p>
                 </div>
               </div>
@@ -1366,29 +1362,35 @@ const LandingPage = () => {
         {/* section 7 */}
         {/* footer */}
 
-        <footer className="bg-[#EE99C2] text-white ">
-          <div className="pb-32 pt-10 px-56">
-            <div className="grid grid-cols-2 flex justify-items-start">
-              <div id="penulis" className="">
-                <h1 className="font-bold text-xl mb-3">Penulis</h1>
-                <p>Tania</p>
-              </div>
+        <div className="relative text-white bg-pink-primary mx-auto px-10 py-6 md:px-48 z-0">
+          <div className="flex flex-col md:flex-row justify-between ">
+            <div className="mb-4 md:mb-0">
+              <h2 className="mt-4 font-bold">Penulis</h2>
+              <p className="mt-6 md:mt-7">Natania Rizky Ananda</p>
             </div>
-            <hr className="text-white border border-2 mt-16" />
-            <div className="flex justify-between">
-              <h1>© 2024 Copyright by example</h1>
-              <nav className="flex justify-center py-3">
-                <GiFullMotorcycleHelmet className="text-white text-xl mr-2" />
-                <h1
-                  className="text-white font-bold text-xl"
-                  style={{ fontFamily: "Poppins, sans-serif" }}
-                >
-                  RideNarrative
-                </h1>
-              </nav>
+            <div className="mb-4 md:mb-0">
+              <h2 className="mt-4 font-bold">Produser</h2>
+              <p className="mt-6 md:mt-7">Natania Rizky Ananda</p>
+            </div>
+            <div className="mb-4 md:mb-0">
+              <h2 className="mt-4 font-bold">Pembimbing</h2>
+              <p className="mt-6 md:mt-7">Ingki Rinaldi, M.Si</p>
+            </div>
+            <div className="mb-4 md:mb-0">
+              <h2 className="mt-4 font-bold">Web Developer</h2>
+              <p className="mt-6 md:mt-7">Muhammad Arlanda</p>
             </div>
           </div>
-        </footer>
+          <div className="mt-10 md:mt-20 flex flex-col items-center md:justify-between border-t border-white pt-4 md:flex-row">
+            <p className="mt-28 md:-mt-20 font-thin text-sm">
+              © 2024 Copyright by RideNarrative
+            </p>
+            <button className="flex space-x-3 md:space-x-2 -mt-24 mb-20 text-2xl font-bold text-white md:text-lg md:mt-2">
+              <GiFullMotorcycleHelmet className="w-9 h-9 md:mt-1 md:w-6 md:h-6" />
+              <span>RideNarrative</span>
+            </button>
+          </div>
+        </div>
 
         {/* footer */}
       </div>
