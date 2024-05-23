@@ -81,16 +81,20 @@ const MaximPage = () => {
                 <div className="relative mx-10 md:mt-10 md:mb-[800px] md:mx-44 text-justify text-md mt-10">
                     <img src={Headline1} className="flex size-10/12 my-10 md:size-fit mx-auto md:my-20"></img>
                     <p className="mb-6">Pekerjaan sebagai pengemudi ojek <i>online</i> yang berstatus sebagai” mitra”, membuat para <i>driver</i> cenderung tereksploitasi oleh aplikator. Pasalnya, di Tanah Air sendiri belum ada payung hukum yang jelas mengenai transportasi ojek <i>online</i>, khususnya aturan mengenai jaminan sosial dan kesehatan bagi pengemudi.</p>
+                    <figure className='md:hidden size-fit mb-6 md:size-6/12'>
+                        <img src={Asset2} className="w-full h-full" alt="Foto: Natania Rizky" />
+                        <figcaption className="text-center mt-1 text-sm">Foto: Natania Rizky</figcaption>
+                    </figure>
                     <p className="mb-6">“Kita nggak ada ketentuan jam kerja karena kita di sini statusnya mitra. Nah kemarin kan juga sempat yang mau ada pengaturan jam kerja dari Kemnaker, itu kita juga sempat tolak juga. Karena kalau seandainya dibatasi ya balik lagi, kita statusnya itu mitra. Kalau kita mau dibatasi jam kerja, harusnya ada hak-hak dan kewajiban yang tegak lurus lah sama hal yang akan diberlakukan,” tegas Bayu.</p>
                     <p className="mb-6">Pada Agustus 2023 lalu, Kementerian Ketenagakerja sempat memiliki wacana untuk mengatur jam kerja ojol menjadi 10 jam per hari nya. Namun, banyak pengemudi ojek <i>online</i> yang keberatan lantaran mereka menganggap pendapatan akan berkurang jika jam kerja akan dibatasi menjadi 10 jam.</p>
                     <div className="relative flex flex-col md:flex-row my-6 md:space-x-4">
                         <figure className='size-fit mb-6 md:size-6/12'>
-                            <img src={Asset1} className="w-full h-full" alt="Foto: Natia Rizky" />
-                            <figcaption className="text-center text-sm mt-1">Foto: Natia Rizky</figcaption>
+                            <img src={Asset1} className="w-full h-full" alt="Foto: Natania Rizky" />
+                            <figcaption className="text-center text-sm mt-1">Foto: Natania Rizky</figcaption>
                         </figure>
-                        <figure className='size-fit mb-6 md:size-6/12'>
-                            <img src={Asset2} className="w-full h-full" alt="Foto: Natia Rizky" />
-                            <figcaption className="text-center mt-1 text-sm">Foto: Natia Rizky</figcaption>
+                        <figure className='hidden md:block size-fit mb-6 md:size-6/12'>
+                            <img src={Asset2} className="w-full h-full" alt="Foto: Natania Rizky" />
+                            <figcaption className="text-center mt-1 text-sm">Foto: Natania Rizky</figcaption>
                         </figure>
                     </div>
                 </div>
