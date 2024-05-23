@@ -32,6 +32,8 @@ import tandaSeru from "../assets/images/tanda-seru.png"
 import puzzle from "../assets/images/puzzle.png"
 import vectorEnd from "../assets/images/vector-end.png"
 import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4"
+import  { useState, useRef, useEffect } from "react";
+import { motion, useViewportScroll, useTransform,useAnimation,useInView } from "framer-motion";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -75,7 +77,18 @@ const LandingPage = () => {
   const buttonClickMengurai = () => {
     navigate('/detailMengurai');
   };
+ 
+ const controls = useAnimation();
+ const { ref, inView } = useInView({
+   triggerOnce: true, // Animasi hanya dipicu sekali saat elemen masuk ke dalam viewport
+   threshold: 0.1, // Persentase elemen yang harus terlihat di viewport sebelum memicu animasi
+ });
 
+ useEffect(() => {
+   if (inView) {
+     controls.start("show");
+   }
+ }, [controls, inView]);
   return (
     <Wrapper>
       <div className="bg-[#FFE3CA]">
@@ -86,22 +99,72 @@ const LandingPage = () => {
           className="flex justify-center z-10 absolute left-32 right-32 top-32 "
         >
           <div className="bg-[#0C359E] w-[940px] h-[660px] relative rounded-xl">
-            <img src={gojek2} alt="" className=" absolute right-0 h-1/3 " />
+            <motion.img
+              src={gojek2}
+              alt=""
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: {
+                    duration: 1,
+                    ease: "easeIn",
+                  },
+                },
+              }}
+              initial="hidden"
+              animate="show"
+              className="absolute right-0 h-1/3 top-2 "
+            />
+
             <h1 className="text-white text-4xl pt-16 text-center px-56 font-bold">
               Kesejahteraan Ojek Daring, Murni atau Ilusi?
             </h1>
-            <img src={gojek1} alt="" className="absolute top-16" />
+            <motion.img
+              src={gojek1}
+              alt=""
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: {
+                    duration: 1,
+                    ease: "easeIn",
+                    delay: 1,
+                  },
+                },
+              }}
+              initial="hidden"
+              animate="show"
+              className="absolute top-16 "
+            />
 
             <div className="absolute bottom-0 left-[5.5em] z-50   ">
-              <iframe
-                className="rounded-xl"
-                width="750"
-                height="450"
+              <motion.iframe
+                initial="hidden"
+                animate="show"
+                variants={{
+                  hidden: { opacity: 0, height: 0 },
+                  show: {
+                    opacity: 1,
+                    transition: {
+                      delay: 2,
+                      duration: 2,
+                      stiffness: 100,
+                      damping: 10,
+                      type: "spring",
+                    },
+                    height: 450,
+                  },
+                }}
                 src="https://www.youtube.com/embed/fcg8n9NMZt8?si=ucUw-F7nt_kE8uAk"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                className="rounded-xl"
+                width={750}
+                height={450}
+                frameBorder={0}
                 allowFullScreen
-              ></iframe>
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              />
             </div>
             {/* <img
               src={gojek3}
@@ -130,19 +193,31 @@ const LandingPage = () => {
             className="absolute w-80 top-[63px] right-0"
             alt=""
           />
-          <div className="flex flex-col justify-center items-center absolute z-10 top-[150px]">
+          <div className="flex flex-col justify-center items-center absolute z-10 top-[150px] ">
             <div className="bg-white w-7/12 rounded rounded-[13px] ">
-              <div
-                id="heading"
-                className="flex items-center justify-between py-5 px-8"
+              <motion.div
+                ref={ref}
+                className="text-[#525252] text-justify text-md px-8 py-5"
+                variants={{
+                  hidden: { opacity: 0, x: -100 }, // Elemen tersembunyi di awal dan di luar layar di sumbu X
+                  show: {
+                    opacity: 1,
+                    x: 0, // Elemen bergerak ke posisi aslinya di sumbu X
+                    transition: {
+                      delay: 0.5, // Delay animasi selama 0.5 detik
+                      type: "spring",
+                      stiffness: 100, // Kekakuan pegas
+                      damping: 10, // Peredaman pegas
+                    },
+                  },
+                }}
+                initial="hidden"
+                animate={controls}
               >
-                <h1 className="font-bold text-3xl">Title</h1>
-              </div>
-              <div id="content" className="text-[#525252] text-md px-8">
-                <p className="my-2">
-                  Di antara kebisingan mesin sepeda motor yang menelusuri
+                <p className="mb-6">
+                  Diantara kebisingan mesin sepeda motor yang menelusuri
                   jalan-jalan, terdapat ketidakpastian yang menyelimuti para
-                  pengemudi ojek <i>online</i> . Mereka tidak hanya membawa
+                  pengemudi ojek <i>online</i>. Mereka tidak hanya membawa
                   penumpang, tetapi juga beban harapan dan kebutuhan setiap
                   pelanggan, mereka mencari nafkah dari setiap perjalanan.
                   Namun, di balik pekerjaan yang mereka lakukan, tersembunyi
@@ -160,7 +235,7 @@ const LandingPage = () => {
                   risiko terjadinya kecelakaan di jalan hingga dapat merenggut
                   nyawa.
                 </p>
-                <p className="mt-2 mb-8">
+                <p className="mt-6">
                   Berbagai konsekuensi pekerjaan mereka lakukan. Namun, apakah
                   langkah mereka yang cepat dan layanan yang efisien itu sejalan
                   dengan hak dan kesejahteraan yang pantas mereka terima?
@@ -169,7 +244,7 @@ const LandingPage = () => {
                   uang, melainkan rasa aman, kesehatan, dan perlindungan memadai
                   yang setara dengan dedikasi mereka.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -181,7 +256,10 @@ const LandingPage = () => {
               <div id="box">
                 <div id="heading" className="flex justify-center mb-20">
                   <h1 className="text-3xl font-bold text-[#3D3D3D] ">
-                    Cerita <span className="text-[#EE99C2]">Ojek Online</span>
+                    Cerita{" "}
+                    <span className="text-[#EE99C2]">
+                      Ojek <i>Online</i>
+                    </span>
                   </h1>
                 </div>
 
@@ -206,7 +284,7 @@ const LandingPage = () => {
                         </h1>
                       </div>
                       <div id="row3">
-                        <div className="bg-white rounded rounded-[12px] text-sm py-3 px-2">
+                        <div className=" text-justify bg-white rounded rounded-[12px] text-sm py-3 px-2">
                           <p>
                             Bayu (27), sedang asyik mengobrol dengan rekan
                             sejawatnya di sebuah tempat yang berada di daerah
@@ -243,7 +321,7 @@ const LandingPage = () => {
                         </h1>
                       </div>
                       <div id="row3">
-                        <div className="bg-white rounded rounded-[12px] py-3 px-2 text-sm">
+                        <div className="bg-white text-justify  rounded rounded-[12px] py-3 px-2 text-sm">
                           <p>
                             Perempuan tak semata-mata dilahirkan hanya untuk
                             melahirkan dan menciptakan keturunan kembali, dalam
@@ -279,7 +357,7 @@ const LandingPage = () => {
                         </h1>
                       </div>
                       <div id="row3">
-                        <div className="bg-white rounded rounded-[12px] py-3 px-2 text-sm">
+                        <div className="bg-white text-justify rounded rounded-[12px] py-3 px-2 text-sm">
                           <p>
                             Indrive, mungkin beberapa di antara Anda masih asing
                             dengan nama tersebut. Dapat dikatakan, jasa layanan
@@ -299,7 +377,7 @@ const LandingPage = () => {
                     </div>
                     <div
                       id="box-4"
-                      className="bg-[#00B14F] rounded rounded-[14px] px-5 py-8 h-fit ml-10"
+                      className="bg-[#00B14F] rounded rounded-[14px] px-5 py-6 h-fit ml-10"
                     >
                       <div
                         id="row1"
@@ -311,16 +389,16 @@ const LandingPage = () => {
                         <img src={grab} className="w-20" alt="" />
                       </div>
                       <div id="row2 flex justify-center">
-                        <h1 className="text-white font-bold text-lg flex justify-center px-10 py-8 text-center">
-                          Ilusi Kesejahteragaan Bagi Maxim
+                        <h1 className="text-white font-bold text-md flex justify-center px-10 py-8 text-center">
+                          Dari Kejayaan Hingga Kesulitan: Perubahan Dinam...
                         </h1>
                       </div>
                       <div id="row3">
-                        <div className="bg-white text-sm rounded rounded-[12px] py-3 px-2">
+                        <div className="bg-white text-justify text-sm rounded rounded-[12px] py-3 px-2">
                           <p>
-                            Bayu (27), sedang asyik mengobrol dengan rekan
-                            sejawatnya di sebuah tempat yang berada di daerah
-                            Ciputat, Tangerang Selatan. Bangunan...
+                            Usai mengantar makanan kepada sang pelanggan, pria
+                            itu mematikan mesin motornya dan berhenti sejenak
+                            untuk menghilangkan dahaga...
                           </p>
                           <button
                             onClick={buttonClickGrab}
@@ -359,8 +437,8 @@ const LandingPage = () => {
                     </button>
                   </div>
 
-                  <div className=" text-white">
-                    <p className="my-2">
+                  <div className=" text-white text-justify ">
+                    <p className="my-6">
                       Ketua Umum Asosiasi Pengemudi Ojek Daring Garda Indonesia,
                       Igun Wicaksono, menyayangkan pemerintah lantaran belum ada
                       kepastian hukum sampai detik ini mengenai status
@@ -369,16 +447,16 @@ const LandingPage = () => {
                       juga berharap agar para pengemudi ojek <i>online</i> dapat
                       diubah menjadi karyawan tetap.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       “Kita ingin membuka peluang dari rekan-rekan pengemudi ini
                       agar bisa menjadi karyawan atau pekerja tetap di
-                      perusahaan aplikasi dengan status sebagai driver, karena
-                      dengan posisi saat ini yang disebut mitra, kami menilai
-                      ini hal yang tidak jelas. Mitra seperti apa yang dimaksud
-                      oleh mereka? kami ini juga sebenarnya adalah konsumen,”
-                      ujar Igun.
+                      perusahaan aplikasi dengan status sebagai <i>driver</i>,
+                      karena dengan posisi saat ini yang disebut mitra, kami
+                      menilai ini hal yang tidak jelas. Mitra seperti apa yang
+                      dimaksud oleh mereka? kami ini juga sebenarnya adalah
+                      konsumen,” ujar Igun.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       Menurut Ketum Asosiasi Pengemudi Ojek Daring Garda
                       Indonesia itu, para pengemudi ojek <i>online</i> yang saat
                       ini berstatus sebagai “mitra” juga merupakan bagian dari
@@ -389,18 +467,19 @@ const LandingPage = () => {
                       makanan, sehingga dirinya menyebut mitra juga merupakan
                       bagian dari konsumen.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       Pekerja ekonomi gig, dalam hal ini pengemudi ojek {""}
                       <i>online</i>, memiliki ciri tersendiri dengan merujuk
                       pada model bisnis di mana pekerja gig memiliki tingkat
                       fleksibilitas dibanding pekerja tetap. Hal ini juga yang
-                      menjadi keunggulan bagi para pekerja gig economy karena
-                      ketersediaan waktu yang fleksibel menjadi hal yang sangat
-                      berharga bagi individu yang juga memiliki tanggung jawab
-                      lain, seperti kegiatan belajar, tanggung jawab keluarga,
-                      atau bahkan aspirasi untuk bekerja paruh waktu tambahan.
+                      menjadi keunggulan bagi para pekerja <i>gig economy</i>{" "}
+                      karena ketersediaan waktu yang fleksibel menjadi hal yang
+                      sangat berharga bagi individu yang juga memiliki tanggung
+                      jawab lain, seperti kegiatan belajar, tanggung jawab
+                      keluarga, atau bahkan aspirasi untuk bekerja paruh waktu
+                      tambahan.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       Asosiasi Pengemudi Ojek Daring Garda Indonesia merupakan
                       perkumpulan yang terbentuk akibat peristiwa demonstrasi
                       yang dilakukan oleh para pengemudi ojek <i>online</i> di
@@ -408,7 +487,7 @@ const LandingPage = () => {
                       Aksi tersebut diberi nama dengan “Gabungan Aksi Roda dua
                       Indonesia” atau disingkat Garda Indonesia.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       Aksi demo tersebut digelar untuk menuntut hak kepada
                       pemerintah atas pendapatan yang terus menurun pada saat
                       itu, demo juga digelar dengan tujuan supaya tidak timbul
@@ -417,7 +496,7 @@ const LandingPage = () => {
                       diatur oleh pihak pemerintah dan juga legalitas dari ojek
                       <i>online</i>.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       Berangkat dari aksi tersebut, pada awal Agustus tahun 2018
                       lalu, Kementerian Perhubungan mengundang seluruh elemen
                       ojek <i>online</i> untuk mendiskusikan permasalahan yang
@@ -430,7 +509,7 @@ const LandingPage = () => {
                       dan ketiadaan sanksi apabila terdapat aplikator yang
                       melanggar melebihi batas tarif.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       “Aturan yang sudah ditentukan oleh Kementerian Perhubungan
                       masih sebatas diskresi menteri perhubungan, bukan sebagai
                       acuan undang-undang atau bukan sebagai legalitas, sehingga
@@ -440,7 +519,7 @@ const LandingPage = () => {
                       liar karena tidak ada sanksi hukum dari para pelaku
                       aplikator,” ujarnya.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       Peraturan Menteri Perhubungan Nomor PM. 12 Tahun 2019
                       merupakan peraturan pertama yang mengatur ojek{" "}
                       <i>online</i> di Indonesia. Peraturan ini awalnya dianggap
@@ -451,7 +530,7 @@ const LandingPage = () => {
                       ruang lingkup serta kurang optimalnya pengawasan dan
                       pelaksanaannya.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       Berselang empat tahun kemudian, yakni pada Agustus 2022
                       lalu, Kementerian Perhubungan menerbitkan aturan yakni
                       Keputusan Menteri Perhubungan nomor 564 tahun 2022
@@ -462,13 +541,13 @@ const LandingPage = () => {
                       <i>online</i> dengan merinci biaya jasa penggunaan sepeda
                       motor.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       Isu mengenai tarif kerap kali menjadi persoalan yang
                       banyak dikeluhkan. Hal ini dikarenakan terdapat aplikator
                       yang bermain di “tarif bawah” sehingga menimbulkan
                       kerugian bagi para pengemudi.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       “Jadi ada satu perusahaan aplikasi, sebut saja perusahaan
                       A,misalkan perusahaan ini patuh sesuai peraturan Menteri
                       Perhubungan, dengan tarif Rp. 2.500 per kilometer. Namun,
@@ -479,24 +558,23 @@ const LandingPage = () => {
                       di sini terjadilah perang tarif, dan ini yang akan
                       dirugikan adalah para pengemudi,” tegas Igun.
                     </p>
-                    <p className="mb-2">
-                      Persaingan antara aplikasi layanan transportasi
-                      <i>online</i>
-                      seringkali menjadi perlombaan untuk mendapatkan lebih
-                      banyak pelanggan dengan menawarkan tarif yang lebih rendah
-                      daripada yang seharusnya. Hal tersebut sangat disayangkan
-                      karena ojol tidak dapat bersaing secara sehat sesuai tarif
-                      yang ditentukan oleh pemerintah, sehingga Igun mendorong
-                      pemerintah untuk membuat undang-undang perihal sanksi
-                      hukum apabila terdapat aplikator yang melanggar melebihi
-                      batas tarif.
+                    <p className="mb-6">
+                      Persaingan antara aplikasi layanan transportasi{" "}
+                      <i>online</i> seringkali menjadi perlombaan untuk
+                      mendapatkan lebih banyak pelanggan dengan menawarkan tarif
+                      yang lebih rendah daripada yang seharusnya. Hal tersebut
+                      sangat disayangkan karena ojol tidak dapat bersaing secara
+                      sehat sesuai tarif yang ditentukan oleh pemerintah,
+                      sehingga Igun mendorong pemerintah untuk membuat
+                      undang-undang perihal sanksi hukum apabila terdapat
+                      aplikator yang melanggar melebihi batas tarif.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       “Ini (masalah tarif) yang banyak dikeluhkan. Maka itu kami
                       memerlukan adanya undang-undang,” timpalnya.
                     </p>
-                    <p className="mb-2">
-                      Kini sudah hampir satu dekade usai kehadiran transportasi
+                    <p className="mb-6">
+                      Kini sudah hampir satu dekade usai kehadiran transportasi{" "}
                       <i>online</i> membuka peluang bagi ekonomi gig di
                       Indonesia. Pertumbuhan ekonomi gig yang semakin pesat
                       tidak diikuti oleh regulasi yang memadai untuk memberikan
@@ -506,7 +584,7 @@ const LandingPage = () => {
                       dapat menjamin kesejahteraan pekerja pengemudi ojek
                       <i>online</i>.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       “Kami berharap pemerintah selanjutnya adalah baik itu
                       legislatif maupun eksekutif yang akan menjabat di periode
                       yang baru ini bisa mendorong undang-undang legalitas bagi
@@ -517,7 +595,7 @@ const LandingPage = () => {
                       tidak langsung. Dengan adanya undang-undang, jaminan
                       perlindungan sosial bisa dapatkan,” terangnya.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       Menurut Igun, dengan adanya undang-undang diharapkan dapat
                       membantu para pengemudi dalam mendapatkan perlindungan
                       kesehatan dan keselamatan kerja yang memadai. Pasalnya
@@ -527,7 +605,7 @@ const LandingPage = () => {
                       merupakan aset dari aplikator sehingga aplikator harus
                       menjaga para mitra ojol dengan baik.
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-6">
                       “Sebagai contoh mungkin dalam undang-undang itu pihak
                       perusahaan aplikasi wajib untuk memberikan santunan sosial
                       apabila si pengemudi terlibat kecelakaan dan akhirnya
@@ -564,8 +642,8 @@ const LandingPage = () => {
                     Kesejahteraan Pengemudi Ojol
                   </h1>
                 </div>
-                <div className="content text-sm text-[#525252]">
-                  <p className="py-3">
+                <div className="content text-justify text-sm text-[#525252]">
+                  <p className="py-6">
                     Sudah satu tahun berlalu usai Direktorat Jenderal Pembinaan
                     Hubungan Industrial dan Jaminan Sosial Kementerian
                     Ketenagakerjaan, Indah Anggoro Putri, menyatakan bahwa
@@ -573,7 +651,7 @@ const LandingPage = () => {
                     terkait ojek <i>online</i>, meliputi :
                   </p>
                   <img src={diagramSect4} className="py-5" alt="" />
-                  <p className="pb-3">
+                  <p className="pb-6">
                     Walaupun hingga saat ini memang belum ada peraturan yang
                     jelas yang dikhususkan kepada mitra ojek <i>online</i>,
                     Kementerian Ketenagakerjaan menegaskan bahwa pihaknya masih
@@ -603,15 +681,15 @@ const LandingPage = () => {
                   </button>
                 </div>
               </div>
-              <div className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-8 mt-40">
+              <div className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-8 mt-20">
                 <div className="heading flex justify-center">
                   <h1 className="text-[#3D3D3D] text-3xl font-bold flex justify-center text-center">
                     Pandangan Ahli mengenai Dinamika Pekerja Kontrak di Industri
-                    Transportasi Online
+                    Transportasi <i>Online</i>
                   </h1>
                 </div>
-                <div className="content text-sm text-[#525252]">
-                  <p className="py-3">
+                <div className="content text-justify text-sm text-[#525252]">
+                  <p className="py-6">
                     Tren pekerja lepas atau pekerja kontrak saat ini nampaknya
                     tengah menjadi pekerjaan yang cukup digemari di Indonesia,
                     hal ini yang disebut sebagai ekonomi gig atau pekerja gig
@@ -622,7 +700,7 @@ const LandingPage = () => {
                     beberapa kelebihan lainnya menjadi alasan mengapa pekerjaan
                     ini cukup diminati oleh berbagai masyarakat saat ini.
                   </p>
-                  <p className="pb-3">
+                  <p className="pb-6">
                     “Ekonomi gig dapat dikatakan sebagai ekonomi yang memberikan
                     fleksibilitas bagi para pelaku usaha di ekonomi tersebut.
                     Kalau melihat data Survei Angkatan Kerja Nasional (Sakernas)
@@ -634,7 +712,7 @@ const LandingPage = () => {
                     menduduki jabatan sebagai direktur ekonomi digital Center of
                     Economic and Law Studies (CELIOS).
                   </p>
-                  <p className="pb-3">
+                  <p className="pb-6">
                     Ekonomi gig terbagi menjadi dua jenis, yang pertama adalah
                     ekonomi gig <i>online</i> base, di mana para pekerjanya
                     dapat bekerja tanpa perlu berinteraksi tatap muka secara
@@ -643,16 +721,17 @@ const LandingPage = () => {
                     ekonomi gig location based, sesuai dengan namanya, jenis
                     ekonomi ini membutuhkan kehadiran fisik dalam melakukan
                     suatu pekerjaan di lokasi tertentu, salah satu contohnya
-                    ialah driver ataupun mitra dari transportasi <i>online</i>.
+                    ialah <i>driver</i> ataupun mitra dari transportasi{" "}
+                    <i>online</i>.
                   </p>
-                  <p className="pb-3">
+                  <p className="pb-6">
                     Unik. Kalimat itulah yang dilontarkan Nailul Huda selaku
                     pakar ekonomi digital dalam memandang sistem ekonomi ini.
                     Menurutnya, ekonomi gig sangat mengedepankan fleksibilitas
                     bagi para pekerja sehingga hal ini yang menjadi salah satu
                     keistimewaan.
                   </p>
-                  <p className="pb-3">
+                  <p className="pb-6">
                     “Jam kerja di ekonomi gig itu sangat fleksibel, bisa dalam
                     satu hari itu kita kerja cuman 2 jam, 3 jam, atau bahkan 12
                     jam, tergantung dari pekerjaan dan output yang kita
@@ -661,7 +740,7 @@ const LandingPage = () => {
                     berlangsung selama bertahun tahun, ini salah satu
                     karakteristik unik dari ekonomi gig,” ujarnya.
                   </p>
-                  <p className="pb-3">
+                  <p className="pb-6">
                     Walaupun di sisi lain ekonomi gig ini tidak memberikan
                     pendapatan yang stabil dan pasti, keunggulan lain dari gig
                     worker menurut direktur ekonomi digital tersebut adalah
@@ -686,10 +765,10 @@ const LandingPage = () => {
                   <span className="text-[#EE99C2]">Karyawan Tetap</span>
                 </h1>
               </div>
-              <div className="content text-[#3D3D3D] ">
+              <div className="content text-[#3D3D3D] text-justify ">
                 <p className="my-5">
                   Ekonomi gig mulai ramai diperbincangkan di Tanah Air ketika
-                  platform Gojek hadir pada 2015 lalu, sebuah perusahaan
+                  <i>platform</i> Gojek hadir pada 2015 lalu, sebuah perusahaan
                   teknologi yang menyediakan berbagai jasa layanan seperti antar
                   penumpang, antar makanan, antar barang, hingga beberapa
                   layanan lain. Dengan hadirnya Gojek dan beberapa perusahaan
@@ -713,10 +792,10 @@ const LandingPage = () => {
                 </p>
                 <p className="mb-5">
                   Istilah hubungan kemitraan tidak hanya diterapkan oleh
-                  platform-platform seperti Gojek, Grab, atau Maxim, tetapi juga
-                  umum digunakan oleh perusahaan-perusahaan e-commerce seperti
-                  Shopee Express, J&T Express yang menggunakan skema hubungan
-                  mitra untuk mempekerjakan kurirnya.
+                  <i>platform-platform</i> seperti Gojek, Grab, atau Maxim,
+                  tetapi juga umum digunakan oleh perusahaan-perusahaan
+                  e-commerce seperti Shopee Express, J&T Express yang
+                  menggunakan skema hubungan mitra untuk mempekerjakan kurirnya.
                 </p>
                 <p className="mb-5">
                   Namun, nampaknya hingga saat ini penyebutan “mitra” sebagai
@@ -1072,7 +1151,6 @@ const LandingPage = () => {
                   <video
                     className="z-50 w-full rounded rounded-lg"
                     controls={true}
-                    autoPlay={true}
                   >
                     <source src={ahliVideo} type="video/mp4" />
                     Browser Anda tidak mendukung tag video.
@@ -1095,7 +1173,8 @@ const LandingPage = () => {
                   upah minimum, tetapi hal tersebut juga akan mengurangi
                   fleksibilitas yang dimiliki oleh mitra pengemudi, mereka tidak
                   lagi dapat bekerja sesuai dengan jadwal, peluang untuk bekerja
-                  di berbagai tempat pun sedikit,bahkan identitas gig economy
+                  di berbagai tempat pun sedikit,bahkan identitas{" "}
+                  <i>gig economy</i>
                   dalam konteks ini juga akan menjadi hilang karena statusnya
                   diubah menjadi pekerja formal.
                 </p>
@@ -1110,7 +1189,7 @@ const LandingPage = () => {
                   “Fleksibilitas dari mitra itu akan hilang ketika dia jadi
                   statusnya naik jadi pekerja, makanya yang kita dorong itu
                   bukan status jadi mitra dari pekerja, tetapi keberlindungan
-                  ataupun keberpihakan platform dan pemerintah untuk bisa
+                  ataupun keberpihakan <i>platform</i> dan pemerintah untuk bisa
                   melindungi mitranya, memberikan jaminan sosial, dan memberikan
                   pelayanan tambahan bagi mitra, sehingga mereka bisa keluar
                   dari garis kemiskinan atau ya istilahnya bisa lebih sejahtera
@@ -1144,10 +1223,10 @@ const LandingPage = () => {
                       Mengikuti Jejaknya?
                     </h1>
                   </div>
-                  <div className="content  text-[#3D3D3D]">
+                  <div className="content  text-[#3D3D3D] text-justify ">
                     <p className="text-[#3D3D3D]">
                       Pioner perusahaan teknologi asal Inggris yang menyediakan
-                      jasa layanan transportasi {" "} <i>online</i>, tak lain dan tak
+                      jasa layanan transportasi <i>online</i>, tak lain dan tak
                       bukan ialah Uber, mengubah status para pengemudi yang
                       tadinya mitra menjadi karyawan tetap pada 2021 lalu. Hal
                       tersebut dikabulkan oleh Mahkamah Agung
@@ -1172,7 +1251,7 @@ const LandingPage = () => {
                       Terlibat dalam Hubungan Kemitraan yang Tidak Menguntungkan
                     </h1>
                   </div>
-                  <div className="content text-[#3D3D3D]">
+                  <div className="content text-[#3D3D3D] text-justify ">
                     <p className="text-[#3D3D3D]">
                       Beberapa dari Anda mungkin mempertanyakan mengapa masih
                       banyak orang yang bersedia menjadi mitra meskipun hubungan
@@ -1198,17 +1277,19 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={human} className="size-1/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Antara Terpaksa dan Pilihan, Alasan Pengemudi Ojol
-                      Terlibat dalam Hubungan Kemitraan yang Tidak Menguntungkan
+                      Pro kontra  <i>Sharing Economy</i> pada Transportasi{" "}
+                      <i>Online</i> Indonesia
                     </h1>
                   </div>
-                  <div className="content text-[#3D3D3D]">
-                    <p className="text-[#3D3D3D]">
-                      Beberapa dari Anda mungkin mempertanyakan mengapa masih
-                      banyak orang yang bersedia menjadi mitra meskipun hubungan
-                      kemitraan tersebut dianggap merugikan diri mereka sendiri?
-                      Penjelasan atas pertanyaan ini terkait erat dengan kondisi
-                      pasar kerja
+                  <div className="content text-[#3D3D3D] text-justify ">
+                    <p className="text-[#3D3D3D] ">
+                      “Kalau kita lihat dari <i>sharing economy</i>, yang
+                      memiliki modal (sumber daya) pasti dia akan mendapatkan
+                      bagian terbesar, mitra yang mendapatkan sharing{" "}
+                      <i>revenue</i>
+                      yang paling besar, karena modal (motor/mobil) dari mereka
+                      , tenaga kerja juga mereka sendiri, kemudian juga banyak
+                      hal lain yang mereka tanggung sendiri,” kata Nailul Huda.
                     </p>
                     <button
                       className=" flex items-center mt-2"
@@ -1228,16 +1309,16 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={tandaSeru} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Low Skill Labor Trap, Jebakan Pekerjaan Keterampilan
-                      Rendah yang Menjamur
+                      <i>Low Skill Labor Trap</i>, Jebakan Pekerjaan
+                      Keterampilan Rendah yang Menjamur
                     </h1>
                   </div>
-                  <div className="content text-[#3D3D3D]">
+                  <div className="content text-[#3D3D3D] text-justify">
                     <p className="text-[#3D3D3D]">
                       Para pekerja gig pada dasarnya memiliki risiko
                       terperangkap dalam pekerjaan dengan keterampilan rendah,
-                      yang dikenal sebagai istilah low skilled labor trap,
-                      pekerja di sektor gig yang memiliki kualitas rendah dan
+                      yang dikenal sebagai istilah <i>low skilled labor trap</i>
+                      , pekerja di sektor gig yang memiliki kualitas rendah dan
                       tidak mempunyai daya tawar tinggi
                     </p>
                     <button
@@ -1256,11 +1337,11 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={puzzle} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Mengurangi Keterkaitan Sharing Economy dan Economy Gig
-                      dari Perspektif Transportasi Online
+                      Mengurai Keterkaitan <i>Sharing Economy</i> dan Economy
+                      Gig dari Perspektif Transportasi <i>Online</i>
                     </h1>
                   </div>
-                  <div className="content text-[#3D3D3D]">
+                  <div className="content text-[#3D3D3D] text-justify ">
                     <p className="text-[#3D3D3D]">
                       Ketika mendengar kata "berbagi", mungkin yang terlintas di
                       benak Anda adalah saling memberi atau membagi sesuatu
@@ -1288,24 +1369,21 @@ const LandingPage = () => {
             <img src={vectorEnd} className="absolute z-0 bg-[#FFE3CA]" alt="" />
             <div className="flex justify-center bg-orange-bg">
               <div className="relative flex flex-col my-12 bg-[#FFE3CA] w-8/12 px-8 py-10 rounded rounded-b-2xl">
-                <div className="head flex justify-center">
-                  <h1 className="font-bold text-2xl mb-5">
-                    Title Heading Will Go Here
-                  </h1>
-                </div>
-                <div className="content text-[#3D3D3D]">
+                <div className="head flex justify-center"></div>
+                <div className="content text-[#3D3D3D] text-justify  ">
                   <p className="mb-5">
                     Pada akhirnya, nasib para pengemudi ojek <i>online</i> saat
                     ini, masih jauh dari “kesejahteraan” dan “kesetaraan”. Hal
                     ini terbukti dari banyaknya pengemudi ojek <i>online</i>{" "}
                     yang berstatus sebagai pekerja lepas tanpa jaminan keamanan
                     kerja, jaminan sosial, atau manfaat lainnya yang seringkali
-                    diberikan kepada pekerja tetap. Ketergantungan pada platform
+                    diberikan kepada pekerja tetap. Ketergantungan pada{" "}
+                    <i>platform</i>
                     juga menjadi faktor lain lantaran pengemudi ojek
                     <i>online</i> sering kali harus mengikuti kebijakan dan
-                    tarif yang ditetapkan oleh platform, tanpa banyak pilihan
-                    untuk bernegosiasi atau mengatur kondisi kerja mereka
-                    sendiri.
+                    tarif yang ditetapkan oleh <i>platform</i>, tanpa banyak
+                    pilihan untuk bernegosiasi atau mengatur kondisi kerja
+                    mereka sendiri.
                   </p>
                   <p className="mb-5">
                     Semua faktor ini berkontribusi pada ketidaksetaraan dan
@@ -1316,24 +1394,25 @@ const LandingPage = () => {
                   <p className="mb-5">
                     Rendahnya daya tawar ojek pada ojek <i>online</i> Juga
                     mengakibatkan mereka terpaksa menerima berbagai keputusan
-                    penting yang diambil oleh platform tanpa melibatkan mereka
-                    sama sekali. Keputusan-keputusan ini termasuk penurunan
-                    tarif per kilometer, pemberian sanksi seperti penangguhan
-                    atau pemutusan hubungan kerja, pengurangan dan penentuan
-                    bonus yang lebih sulit, hingga peningkatan jumlah minimum
-                    penerimaan pesanan.
+                    penting yang diambil oleh <i>platform</i> tanpa melibatkan
+                    mereka sama sekali. Keputusan-keputusan ini termasuk
+                    penurunan tarif per kilometer, pemberian sanksi seperti
+                    penangguhan atau pemutusan hubungan kerja, pengurangan dan
+                    penentuan bonus yang lebih sulit, hingga peningkatan jumlah
+                    minimum penerimaan pesanan.
                   </p>
                   <p className="mb-5">
-                    Di sisi lain, untuk menangani low skill labor trap,
+                    Di sisi lain, untuk menangani <i>low skill labor trap</i>,
                     diperlukan adanya pelatihan, menggabungkan pendidikan, dan
                     kesempatan kerja yang lebih baik.
                   </p>
                   <p className="mb-5">
                     Dibutuhkan kolaborasi antara berbagai pihak yang terlibat,
-                    baik itu pemerintah ataupun platform, untuk mengembangkan
-                    program-program yang inovatif dalam meningkatkan kualifikasi
-                    dan keterampilan para pekerja di ekonomi gig. Khususnya
-                    peningkatan keterampilan bagi para gig worker.
+                    baik itu pemerintah ataupun <i>platform</i>, untuk
+                    mengembangkan program-program yang inovatif dalam
+                    meningkatkan kualifikasi dan keterampilan para pekerja di
+                    ekonomi gig. Khususnya peningkatan keterampilan bagi para
+                    gig <i>worker</i>.
                   </p>
                   <p className="mb-5">
                     Pekerja gig memerlukan perlindungan sosial yang perlu
