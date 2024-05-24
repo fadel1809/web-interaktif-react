@@ -28,6 +28,22 @@ import Asset1Mobile from "../assets/images/Gojek/asset-1-mobile.png"
 import Asset2Mobile from "../assets/images/Gojek/asset-2-mobile.png"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import { motion } from "framer-motion"
+
+const fadeUpContent = {
+    hidden: { opacity: 0, y: 200 },
+    visible: { opacity: 2, y: 0, transition: { duration: 1.2 } }
+};
+
+const fadeUpParagraph = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+}
+
+const slideLeftHeadline = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } }
+}
 
 const images = [
     { src: Data1, alt: 'Data1' },

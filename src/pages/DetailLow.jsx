@@ -6,6 +6,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { GiFullMotorcycleHelmet } from "react-icons/gi";
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const fadeUpContent = {
   hidden: { opacity: 0, y: 200 },
@@ -29,6 +30,10 @@ const DetailLow = () => {
     navigate("/")
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
   return (
     <Wrapper>
       <div>
@@ -41,7 +46,7 @@ const DetailLow = () => {
             />
 
             <motion.div id="content" className="relative z-10 p-10 text-justify rounded-xl mt-10 md:-mt-0 mx-6 mb-40 md:p-10 md:mb-60 md:rounded-3xl md:mx-64 bg-white" variants={fadeUpContent} initial="hidden" animate="visible">
-              <motion.button className="flex items-center space-x-2 mb-8 md:mb-4 text-lg font-bold text-pink-primary" onClick={buttonClickHome} whileHover={{ scale: 1.2 }}>
+              <motion.button className="flex items-center space-x-2 mb-8 md:mb-4 text-lg font-bold text-pink-primary" onClick={buttonClickHome} whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}>
                 <FaArrowLeft />
                 <span>Home</span>
               </motion.button>
@@ -51,12 +56,12 @@ const DetailLow = () => {
                 <img src={IconSecurity} alt="Icon Jam" className="w-10 h-10 mr-2" />
               </div>
 
-              <motion.h1 className="text-2xl text-start font-bold mb-6"  variants={slideLeftHeadline} initial="hidden" animate="visible"><i>Low Skill Labor Trap</i>, Jebakan Pekerjaan Keterampilan Rendah yang Menjamur</motion.h1>
-              <motion.p className="mb-6" variants={fadeUpParagraph} initial="hidden" animate="visible">Para pekerja gig pada dasarnya memiliki risiko terperangkap dalam pekerjaan dengan keterampilan rendah, yang dikenal sebagai istilah <i>low skilled labor trap</i>, pekerja di sektor gig yang memiliki kualitas rendah dan tidak mempunyai daya tawar tinggi sehingga rentan di eksploitasi. Masalah ini sangat relevan dalam ekonomi gig, terutama di sektor pengemudi ojek maupun taksi <i>online</i>.</motion.p>
-              <motion.p className='mb-6' variants={fadeUpParagraph} initial="hidden" animate="visible">“Kekhawatiran saya adalah kita terjebak dalam <i>low skill labor trap</i>, pekerja yang memiliki kualitas <i>skill</i> yang rendah, atau bisa kita bilang masih belum menyentuh level tertinggi dari satu kualitas tenaga kerja, ini bisa dilihat dari ketika lulusan SMA ataupun lulusan SMP, dia punya surat izin mengemudi lalu ia bekerja sebagai mitra dari transportasi <i>online</i>,  sebagian masyarakat sudah menganggap itu sudah oke gitu, karena mereka mendapatkan pendapatan dan menganggap bisa mencukupi kebutuhan, tapi meninggalkan kebutuhan akan meningkatkan <i>skill</i> dari pekerja gig itu sendiri, makanya kita juga dorong pemerintah aplikator dan sebagainya untuk bisa memberikan pelatihan,” </motion.p>
-              <motion.p className='mb-6' variants={fadeUpParagraph} initial="hidden" animate="visible">“Sebaliknya ketika pekerja ini sifatnya <i>high skill labor</i>, dia bisa memberikan daya tawar lebih tinggi,” ujarnya. Ia berharap masyarakat tidak menganggap pekerjaan transportasi <i>online</i> sebagai pekerjaan utama,” jelas Nailul Huda.</motion.p>
-              <motion.p className='mb-6' variants={fadeUpParagraph} initial="hidden" animate="visible">Mereka mungkin terjebak dalam pekerjaan yang tidak menawarkan banyak kesempatan untuk meningkatkan kapabilitasnya, tetapi nasi sudah menjadi bubur. Saat ini yang dibutuhkan bagi para pekerja gig adalah dukungan berupa insentif dan fasilitas yang memungkinkan mereka untuk meningkatkan kemampuan dan mendapatkan pekerjaan dengan tingkat keterampilan yang lebih tinggi. Prioritas pemerintah yakni memberikan pelatihan keterampilan kepada para pekerja gig, khususnya mereka yang sifatnya <i>low skill labor</i>.</motion.p>
-              <motion.p className='mb-6' variants={fadeUpParagraph} initial="hidden" animate="visible">Kini, yang perlu menjadi perhatian bagi Kementerian Ketenagakerjaan maupun aplikator adalah memastikan sosialiasi dan penyebaran program yang cukup luas kepada para pengemudi ojek <i>online</i>, sehingga mereka dapat mengetahui dan memanfaatkan program tersebut dengan sebaik mungkin.</motion.p>
+              <motion.h1 className="text-2xl text-start font-bold mb-6" variants={slideLeftHeadline} initial="hidden" animate="visible"><i>Low Skill Labor Trap</i>, Jebakan Pekerjaan Keterampilan Rendah yang Menjamur</motion.h1>
+              <motion.p className="mb-6" variants={fadeUpParagraph} viewport={{once:true}} initial="hidden" whileInView="visible">Para pekerja gig pada dasarnya memiliki risiko terperangkap dalam pekerjaan dengan keterampilan rendah, yang dikenal sebagai istilah <i>low skilled labor trap</i>, pekerja di sektor gig yang memiliki kualitas rendah dan tidak mempunyai daya tawar tinggi sehingga rentan di eksploitasi. Masalah ini sangat relevan dalam ekonomi gig, terutama di sektor pengemudi ojek maupun taksi <i>online</i>.</motion.p>
+              <motion.p className='mb-6' variants={fadeUpParagraph} viewport={{once:true}} initial="hidden" whileInView="visible">“Kekhawatiran saya adalah kita terjebak dalam <i>low skill labor trap</i>, pekerja yang memiliki kualitas <i>skill</i> yang rendah, atau bisa kita bilang masih belum menyentuh level tertinggi dari satu kualitas tenaga kerja, ini bisa dilihat dari ketika lulusan SMA ataupun lulusan SMP, dia punya surat izin mengemudi lalu ia bekerja sebagai mitra dari transportasi <i>online</i>,  sebagian masyarakat sudah menganggap itu sudah oke gitu, karena mereka mendapatkan pendapatan dan menganggap bisa mencukupi kebutuhan, tapi meninggalkan kebutuhan akan meningkatkan <i>skill</i> dari pekerja gig itu sendiri, makanya kita juga dorong pemerintah aplikator dan sebagainya untuk bisa memberikan pelatihan,” </motion.p>
+              <motion.p className='mb-6' variants={fadeUpParagraph} viewport={{once:true}} initial="hidden" whileInView="visible">“Sebaliknya ketika pekerja ini sifatnya <i>high skill labor</i>, dia bisa memberikan daya tawar lebih tinggi,” ujarnya. Ia berharap masyarakat tidak menganggap pekerjaan transportasi <i>online</i> sebagai pekerjaan utama,” jelas Nailul Huda.</motion.p>
+              <motion.p className='mb-6' variants={fadeUpParagraph} viewport={{once:true}} initial="hidden" whileInView="visible">Mereka mungkin terjebak dalam pekerjaan yang tidak menawarkan banyak kesempatan untuk meningkatkan kapabilitasnya, tetapi nasi sudah menjadi bubur. Saat ini yang dibutuhkan bagi para pekerja gig adalah dukungan berupa insentif dan fasilitas yang memungkinkan mereka untuk meningkatkan kemampuan dan mendapatkan pekerjaan dengan tingkat keterampilan yang lebih tinggi. Prioritas pemerintah yakni memberikan pelatihan keterampilan kepada para pekerja gig, khususnya mereka yang sifatnya <i>low skill labor</i>.</motion.p>
+              <motion.p className='mb-6' variants={fadeUpParagraph} viewport={{once:true}} initial="hidden" whileInView="visible">Kini, yang perlu menjadi perhatian bagi Kementerian Ketenagakerjaan maupun aplikator adalah memastikan sosialiasi dan penyebaran program yang cukup luas kepada para pengemudi ojek <i>online</i>, sehingga mereka dapat mengetahui dan memanfaatkan program tersebut dengan sebaik mungkin.</motion.p>
             </motion.div>
 
             <div className="relative text-white bg-pink-primary mx-auto px-8 py-6 md:px-60 z-0">

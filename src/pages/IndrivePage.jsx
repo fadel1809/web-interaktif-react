@@ -10,6 +10,33 @@ import Navbar from "../components/Navbar"
 import { GiFullMotorcycleHelmet } from "react-icons/gi"
 import { useNavigate } from "react-router-dom"
 import { FaArrowLeft } from "react-icons/fa"
+import { useEffect } from "react"
+import { motion } from "framer-motion"
+
+const fadeUpContent = {
+    hidden: { opacity: 0, y: 200 },
+    visible: { opacity: 2, y: 0, transition: { duration: 1.5 } }
+};
+
+const fadeUpParagraph = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+}
+
+const slideLeftHeadline = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } }
+}
+
+const slideRightParagraph = {
+    hidden: { opacity: 0, x: -150 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1.2 } }
+}
+
+const slideLeftParagraph = {
+    hidden: { opacity: 0, x: 150 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1.2 } }
+}
 
 const IndrivePage = () => {
 
@@ -18,6 +45,9 @@ const IndrivePage = () => {
     const buttonClickHome = () => {
         navigate("/")
     }
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <Wrapper>
@@ -42,9 +72,9 @@ const IndrivePage = () => {
                             <div className="absolute inset-0 w-fit h-fit">
                                 <img src={BackgroundIndrive} />
                             </div>
-                            <div className="relative z-10 ml-12 mt-[4.3rem] w-7/12 md:mt-[6rem] md:w-[58%] md:ml-16">
+                            <motion.div variants={slideLeftHeadline} initial="hidden" animate="visible" className="relative z-10 ml-12 mt-[4.3rem] w-7/12 md:mt-[6rem] md:w-[58%] md:ml-16">
                                 <img src={BackgroundIndriveMotor} />
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

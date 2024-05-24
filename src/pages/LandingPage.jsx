@@ -89,6 +89,7 @@ const LandingPage = () => {
      controls.start("show");
    }
  }, [controls, inView]);
+ 
   return (
     <Wrapper>
       <div className="bg-[#FFE3CA]">

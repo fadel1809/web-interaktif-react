@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 import Background from "../assets/images/background-detail.png";
 import IconJam from "../assets/images/icon-jam.png";
 import Video from "../assets/video/video-detail-transformasi.mp4";
+import { useEffect } from "react";
 
 const fadeUpContent = {
   hidden: { opacity: 0, y: 200 },
@@ -30,6 +31,10 @@ const DetailTransformasi = () => {
     navigate("/");
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Wrapper>
       <div>
@@ -51,7 +56,8 @@ const DetailTransformasi = () => {
               <motion.button
                 className="flex items-center space-x-2 mb-8 md:mb-4 text-lg font-bold text-pink-primary"
                 onClick={buttonClickHome}
-                whileHover={{scale : 1.2}}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 1.2 }}
               >
                 <FaArrowLeft />
                 <span>Home</span>
@@ -64,25 +70,25 @@ const DetailTransformasi = () => {
               <motion.h1 className="text-2xl font-bold mb-6 text-start" variants={slideLeftHeadline} initial="hidden" animate="visible">
                 Transformasi Status Pengemudi Uber Dari Mitra ke Karyawan Tetap di Inggris, Bagaimana Dampak bagi Indonesia jika Mengikuti Jejaknya?
               </motion.h1>
-              <motion.p className="mb-6" variants={fadeUpParagraph} initial="hidden" animate="visible">
+              <motion.p className="mb-6" variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">
                 Pioner perusahaan teknologi asal Inggris yang menyediakan jasa layanan transportasi <i>online</i>, tak lain dan tak bukan ialah Uber, mengubah status para pengemudi yang tadinya mitra menjadi karyawan tetap pada 2021 lalu. Hal tersebut dikabulkan oleh Mahkamah Agung Inggris karena tuntutan yang dilakukan oleh dua mantan pengemudi Uber yang menggugat perusahaan tersebut atas dasar ketidakadilan.
               </motion.p>
-              <motion.p className="mb-6" variants={fadeUpParagraph} initial="hidden" animate="visible">
+              <motion.p className="mb-6" variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">
                 Namun, dengan berubahnya status mitra menjadi karyawan tetap pada Uber, hal ini tak berjalan mulus bahkan menimbulkan dampak negatif lain bagi para pekerjanya. Nailul Huda melihat bahwa Uber melakukan tindakan memberhentikan karyawan secara sementara karena permintaan pasar yang menurun.
               </motion.p>
-              <motion.p className="mb-6" variants={fadeUpParagraph} initial="hidden" animate="visible">
+              <motion.p className="mb-6" variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">
                 “Kalau setahu saya di UK sana, memang Uber mengubah status para mitranya menjadi pekerja tetap. Namun, di satu sisi Uber melakukan rasionalisasi, jadi kayak semacam pekerja aja ketika dia tengah turun permintaannya, otomatis juga dia akan melakukan <i>layoff</i> kepada para pekerjanya,” Kata Huda.
               </motion.p>
-              <motion.p className="mb-6" variants={fadeUpParagraph} initial="hidden" animate="visible">
+              <motion.p className="mb-6" variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">
                 Ahli ekonomi digital itu berharap bahwa kejadian serupa tidak akan terjadi di <i>platform</i> layanan transportasi <i>online</i> di Indonesia. Rekomendasi pengaturan yang ketat dengan mengubah status mitranya diubah menjadi pekerja tetap bukanlah sebagai solusi yang tepat. Menurut Huda, hal yang paling dibutuhkan bagi para mitra pengemudi merupakan kesetaraan.
               </motion.p>
               <div className="mb-6">
-                <video className="w-full h-52 md:w-full md:h-full md:rounded-xl">
+                <video className="w-full h-52 md:w-fit md:h-fit md:rounded-xl" controls={true}>
                   <source src={Video} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <motion.p className="mb-6" variants={fadeUpParagraph} initial="hidden" animate="visible">
+              <motion.p className="mb-6" variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">
                 Uber sempat beroperasi di Indonesia pada tahun 2015. Namun, setelah beberapa tahun beroperasi, Uber menghentikan layanannya di Indonesia pada tahun 2018, Uber menjual bisnisnya di Asia Tenggara kepada Grab, yang kemudian mengambil alih operasi Uber di wilayah tersebut. Beberapa faktor mengapa Uber tidak dapat bertahan lama di Indonesia karena Uber menghadapi persaingan ketat dari layanan transportasi <i>online</i> lokal, seperti Gojek dan Grab.
               </motion.p>
             </motion.div>
