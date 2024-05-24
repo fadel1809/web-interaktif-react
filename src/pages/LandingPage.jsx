@@ -32,7 +32,7 @@ import tandaSeru from "../assets/images/tanda-seru.png"
 import puzzle from "../assets/images/puzzle.png"
 import vectorEnd from "../assets/images/vector-end.png"
 import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4"
-import  { useState,useRef  } from "react";
+import  { useState,useRef,useEffect  } from "react";
 import { motion} from "framer-motion";
 
 const LandingPage = () => {
@@ -83,6 +83,10 @@ const LandingPage = () => {
 
   }
   
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   return (
     <Wrapper>
