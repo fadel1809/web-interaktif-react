@@ -34,6 +34,7 @@ import vectorEnd from "../assets/images/vector-end.png"
 import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4"
 import  { useState,useRef,useEffect  } from "react";
 import { motion} from "framer-motion";
+import foto from "../assets/images/foto.png"
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -187,7 +188,7 @@ const LandingPage = () => {
                 transition: {
                   duration: 2,
                   ease: "easeInOut",
-                  delay: 2,
+                  delay: 1,
                 },
               },
             }}
@@ -341,8 +342,8 @@ const LandingPage = () => {
                             type: "spring",
                             stiffness: 100,
                             damping: 10,
-                            duration: 5,
-                            delay: 0.5,
+                            duration: 1,
+                            delay: 0.2,
                           },
                         },
                       }}
@@ -612,26 +613,34 @@ const LandingPage = () => {
                       juga berharap agar para pengemudi ojek <i>online</i> dapat
                       diubah menjadi karyawan tetap.
                     </p>
-                    <p className="mb-6">
-                      “Kita ingin membuka peluang dari rekan-rekan pengemudi ini
-                      agar bisa menjadi karyawan atau pekerja tetap di
-                      perusahaan aplikasi dengan status sebagai <i>driver</i>,
-                      karena dengan posisi saat ini yang disebut mitra, kami
-                      menilai ini hal yang tidak jelas. Mitra seperti apa yang
-                      dimaksud oleh mereka? kami ini juga sebenarnya adalah
-                      konsumen,” ujar Igun.
-                    </p>
-                    <p className="mb-6">
-                      Menurut Ketum Asosiasi Pengemudi Ojek Daring Garda
-                      Indonesia itu, para pengemudi ojek <i>online</i> yang saat
-                      ini berstatus sebagai “mitra” juga merupakan bagian dari
-                      konsumen. Igun menyatakan bahwa mitra menggunakan aplikasi
-                      yang dimiliki oleh perusahaan. Tak hanya itu, mitra juga
-                      diharuskan membayar potongan yang diterima dari para
-                      pelanggan, baik itu penumpang, antaran barang maupun
-                      makanan, sehingga dirinya menyebut mitra juga merupakan
-                      bagian dari konsumen.
-                    </p>
+                    <div className="flex justify-center">
+                      <div className="head">
+                        <img className="w-full " src={foto} alt="" />
+                      </div>
+                      <div className="content">
+                        <p className="mb-6">
+                          “Kita ingin membuka peluang dari rekan-rekan pengemudi
+                          ini agar bisa menjadi karyawan atau pekerja tetap di
+                          perusahaan aplikasi dengan status sebagai{" "}
+                          <i>driver</i>, karena dengan posisi saat ini yang
+                          disebut mitra, kami menilai ini hal yang tidak jelas.
+                          Mitra seperti apa yang dimaksud oleh mereka? kami ini
+                          juga sebenarnya adalah konsumen,” ujar Igun.
+                        </p>
+                        <p className="mb-6">
+                          Menurut Ketum Asosiasi Pengemudi Ojek Daring Garda
+                          Indonesia itu, para pengemudi ojek <i>online</i> yang
+                          saat ini berstatus sebagai “mitra” juga merupakan
+                          bagian dari konsumen. Igun menyatakan bahwa mitra
+                          menggunakan aplikasi yang dimiliki oleh perusahaan.
+                          Tak hanya itu, mitra juga diharuskan membayar potongan
+                          yang diterima dari para pelanggan, baik itu penumpang,
+                          antaran barang maupun makanan, sehingga dirinya
+                          menyebut mitra juga merupakan bagian dari konsumen.
+                        </p>
+                      </div>
+                    </div>
+
                     <p className="mb-6">
                       Pekerja ekonomi gig, dalam hal ini pengemudi ojek {""}
                       <i>online</i>, memiliki ciri tersendiri dengan merujuk
@@ -1353,12 +1362,7 @@ const LandingPage = () => {
                               <p className="py-2">Rp 2.500 - Rp. 4.000</p>
                             </td>
                           </tr>
-                          <tr>
-                            <td>
-                              <p className="py-2">10%</p>
-                            </td>
-                            <td>: 17.8%</td>
-                          </tr>
+                         
                           <tr>
                             <td>
                               <p className="py-2">(N = 147)</p>
@@ -1409,40 +1413,40 @@ const LandingPage = () => {
                             <td>
                               <p className="py-2">80%</p>
                             </td>
-                            <td>: Rp 2.500 - Rp. 2.800</td>
+                            <td>: 2.2%</td>
                           </tr>
 
                           <tr>
                             <td>
                               <p className="py-2">85%</p>
                             </td>
-                            <td>: Rp 2.500 - Rp. 4.000</td>
+                            <td>: 10.7%</td>
                           </tr>
                           <tr>
                             <td className="bg-[#E1F7E7] rounded rounded-l-md">
                               <p className="py-2">90%</p>
                             </td>
                             <td className="bg-[#E1F7E7] rounded rounded-r-md ">
-                              : 17.8%
+                              : 25.3%
                             </td>
                           </tr>
                           <tr>
                             <td>
                               <p className="py-2">95%</p>
                             </td>
-                            <td>: 17.8%</td>
+                            <td>: 20.9%</td>
                           </tr>
                           <tr>
                             <td>
                               <p className="py-2">97%</p>
                             </td>
-                            <td>: 17.8%</td>
+                            <td>: 2.2%</td>
                           </tr>
                           <tr>
                             <td>
                               <p className="py-2">Tidak Menjawab</p>
                             </td>
-                            <td>: 17.8%</td>
+                            <td>: 38.7%</td>
                           </tr>
                         </table>
                       </div>
@@ -1487,27 +1491,27 @@ const LandingPage = () => {
                             <td>
                               <p className="py-2">4 - 4,4</p>
                             </td>
-                            <td>: Rp 2.500 - Rp. 2.800</td>
+                            <td>: 2.2%</td>
                           </tr>
                           <tr>
                             <td>
                               <p className="py-2">4,5</p>
                             </td>
-                            <td>: Rp 2.500 - Rp. 4.000</td>
+                            <td>: 9.3%</td>
                           </tr>
                           <tr className="">
                             <td className="bg-[#E1F7E7] rounded rounded-l-md ">
                               <p className="py-2">4,6</p>
                             </td>
                             <td className="bg-[#E1F7E7] rounded rounded-r-md ">
-                              : 17.8%
+                              : 15.6%
                             </td>
                           </tr>
                           <tr>
                             <td>
                               <p className="py-2">4,7</p>
                             </td>
-                            <td>: 17.8%</td>
+                            <td>: 14.7%%</td>
                           </tr>
                           <tr>
                             <td>
@@ -1519,7 +1523,7 @@ const LandingPage = () => {
                             <td>
                               <p className="py-2">Tidak Menjawab</p>
                             </td>
-                            <td>: 17.8%</td>
+                            <td>: 52.9%%</td>
                           </tr>
                         </table>
                       </div>
@@ -1539,7 +1543,7 @@ const LandingPage = () => {
                             stiffness: 70,
                             damping: 10,
                             duration: 5,
-                            delay: 1.6,
+                            delay: 1,
                           },
                         },
                       }}
@@ -1568,7 +1572,7 @@ const LandingPage = () => {
                                 Setiap hari berhasil mendapatkan bonus
                               </p>
                             </td>
-                            <td>: Rp 2.500 - Rp. 2.800</td>
+                            <td>: 3.6%</td>
                           </tr>
 
                           <tr>
@@ -1578,7 +1582,7 @@ const LandingPage = () => {
                                 beberapa kali sepekan
                               </p>
                             </td>
-                            <td>: Rp 2.500 - Rp. 4.000</td>
+                            <td>: 20.0%</td>
                           </tr>
                           <tr>
                             <td className="bg-[#E1F7E7] rounded rounded-l-md">
@@ -1588,14 +1592,14 @@ const LandingPage = () => {
                               </p>
                             </td>
                             <td className="bg-[#E1F7E7] rounded rounded-r-md">
-                              : 17.8%
+                              : 38.7%
                             </td>
                           </tr>
                           <tr>
                             <td>
                               <p className="py-2">Tidak Menjawab</p>
                             </td>
-                            <td>: 17.8%</td>
+                            <td>: 37.8%</td>
                           </tr>
                         </table>
                       </div>
