@@ -7,7 +7,6 @@ import Navbar from '../components/Navbar';
 import Background from "../assets/images/background-detail.png";
 import IconJam from "../assets/images/icon-jam.png";
 import Video from "../assets/video/video-detail-transformasi.mp4";
-
 const fadeUpContent = {
   hidden: { opacity: 0, y: 200 },
   visible: { opacity: 2, y: 0, transition: { duration: 1.2 } }
