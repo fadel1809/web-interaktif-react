@@ -7,7 +7,6 @@ import Navbar from '../components/Navbar';
 import Background from "../assets/images/background-detail.png";
 import IconJam from "../assets/images/icon-jam.png";
 import Video from "../assets/video/video-detail-transformasi.mp4";
-import { useEffect } from "react";
 
 const fadeUpContent = {
   hidden: { opacity: 0, y: 200 },

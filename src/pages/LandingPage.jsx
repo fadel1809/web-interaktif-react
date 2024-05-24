@@ -32,12 +32,12 @@ import tandaSeru from "../assets/images/tanda-seru.png"
 import puzzle from "../assets/images/puzzle.png"
 import vectorEnd from "../assets/images/vector-end.png"
 import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4"
-import  { useState, useRef, useEffect } from "react";
-import { motion, useViewportScroll, useTransform,useAnimation,useInView } from "framer-motion";
+import  { useState,useRef  } from "react";
+import { motion} from "framer-motion";
 
 const LandingPage = () => {
   const navigate = useNavigate();
-
+  const [btnSect3,setBtnSect3] = useState(false)
   const buttonClickGrab = () => {
     navigate("/grabPage")
   }
@@ -77,19 +77,13 @@ const LandingPage = () => {
   const buttonClickMengurai = () => {
     navigate('/detailMengurai');
   };
- 
- const controls = useAnimation();
- const { ref, inView } = useInView({
-   triggerOnce: true, // Animasi hanya dipicu sekali saat elemen masuk ke dalam viewport
-   threshold: 0.1, // Persentase elemen yang harus terlihat di viewport sebelum memicu animasi
- });
+   const section3Ref = useRef(null);
+  const handleButtonSect3 = () => {
+    setBtnSect3(!btnSect3)
 
- useEffect(() => {
-   if (inView) {
-     controls.start("show");
-   }
- }, [controls, inView]);
- 
+  }
+  
+
   return (
     <Wrapper>
       <div className="bg-[#FFE3CA]">
@@ -177,11 +171,43 @@ const LandingPage = () => {
 
         <section id="section-1" className="bg-white">
           <img src={Stroke} alt="" className="mt-10 z-0 bg-[#FFE3CA]" />
-          <img src={cloud2} alt="" className="absolute z-50 w-64 top-[760px]" />
-          <img
+          <motion.img
+            src={cloud2}
+            alt=""
+            className="absolute z-50 w-64 top-[760px]"
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              show: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 2,
+                  ease: "easeInOut",
+                  delay: 2,
+                },
+              },
+            }}
+            whileInView={"show"}
+            viewport={{ once: true }}
+            initial={"hidden"}
+          />
+          <motion.img
             src={cloud3}
             alt=""
             className="absolute w-44 top-[550px] right-0 "
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              show: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 2,
+                  ease: "easeInOut",
+                },
+              },
+            }}
+            initial={"hidden"}
+            animate={"show"}
           />
         </section>
         {/* !!SECTION-1 */}
@@ -189,32 +215,47 @@ const LandingPage = () => {
         {/* SECTION-1 part 2 */}
         <section id="section-1-2" className="bg-[#EE99C2] h-[700px] relative ">
           <img src={building} className="absolute w-full z-0" alt="" />
-          <img
+          <motion.img
             src={cloud1}
             className="absolute w-80 top-[63px] right-0"
             alt=""
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              show: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 2,
+                  ease: "easeInOut",
+                },
+              },
+            }}
+            whileInView={"show"}
+            viewport={{ once: true }}
+            initial={"hidden"}
           />
-          <div className="flex flex-col justify-center items-center absolute z-10 top-[150px] ">
+          <motion.div
+            className="flex flex-col justify-center items-center absolute z-10 top-[150px] "
+            variants={{
+              hidden: { opacity: 0, y: 150 }, // Elemen tersembunyi di awal dan di luar layar di sumbu X
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 7,
+                  ease: "easeInOut",
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 10,
+                },
+              },
+            }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
             <div className="bg-white w-7/12 rounded rounded-[13px] ">
-              <motion.div
-                ref={ref}
-                className="text-[#525252] text-justify text-md px-8 py-5"
-                variants={{
-                  hidden: { opacity: 0, x: -100 }, // Elemen tersembunyi di awal dan di luar layar di sumbu X
-                  show: {
-                    opacity: 1,
-                    x: 0, // Elemen bergerak ke posisi aslinya di sumbu X
-                    transition: {
-                      delay: 0.5, // Delay animasi selama 0.5 detik
-                      type: "spring",
-                      stiffness: 100, // Kekakuan pegas
-                      damping: 10, // Peredaman pegas
-                    },
-                  },
-                }}
-                initial="hidden"
-                animate={controls}
-              >
+              <div className="text-[#525252] text-justify text-md px-8 py-5">
                 <p className="mb-6">
                   Diantara kebisingan mesin sepeda motor yang menelusuri
                   jalan-jalan, terdapat ketidakpastian yang menyelimuti para
@@ -245,9 +286,9 @@ const LandingPage = () => {
                   uang, melainkan rasa aman, kesehatan, dan perlindungan memadai
                   yang setara dengan dedikasi mereka.
                 </p>
-              </motion.div>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </section>
         {/* !!SECTION-1 part 2 */}
         {/* Section 2  */}
@@ -256,17 +297,54 @@ const LandingPage = () => {
             <div id="padding" className="px-20 py-40 flex justify-center">
               <div id="box">
                 <div id="heading" className="flex justify-center mb-20">
-                  <h1 className="text-3xl font-bold text-[#3D3D3D] ">
+                  <motion.h1
+                    className="text-3xl font-bold text-[#3D3D3D]"
+                    variants={{
+                      hidden: { opacity: 0.1, y: 50 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 3,
+                          type: "spring",
+                          ease: "easeIn",
+                          stiffness: 150,
+                          damping: 10,
+                        },
+                      },
+                    }}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{ once: true }}
+                  >
                     Cerita{" "}
                     <span className="text-[#EE99C2]">
                       Ojek <i>Online</i>
                     </span>
-                  </h1>
+                  </motion.h1>
                 </div>
 
                 <div id="box-ojol">
                   <div className="grid lg:grid-cols-4 sm:grid-cols-1 flex justify-center">
-                    <div
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 50 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            ease: "easeIn",
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 10,
+                            duration: 5,
+                            delay: 0.5,
+                          },
+                        },
+                      }}
+                      initial={"hidden"}
+                      whileInView={"show"}
+                      viewport={{ once: true }}
                       id="box-1"
                       className="bg-[#FFCC00] rounded rounded-[14px] px-5 h-fit py-8 mr-5"
                     >
@@ -301,8 +379,26 @@ const LandingPage = () => {
                           </button>
                         </div>
                       </div>
-                    </div>
-                    <div
+                    </motion.div>
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 50 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            ease: "easeIn",
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 10,
+                            duration: 5,
+                            delay: 0.7,
+                          },
+                        },
+                      }}
+                      initial={"hidden"}
+                      whileInView={"show"}
+                      viewport={{ once: true }}
                       id="box-2"
                       className="bg-[#00AA13] rounded rounded-[14px] px-5 py-8 h-fit mx-5"
                     >
@@ -338,8 +434,26 @@ const LandingPage = () => {
                           </button>
                         </div>
                       </div>
-                    </div>
-                    <div
+                    </motion.div>
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 50 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            ease: "easeIn",
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 10,
+                            duration: 5,
+                            delay: 0.9,
+                          },
+                        },
+                      }}
+                      initial={"hidden"}
+                      whileInView={"show"}
+                      viewport={{ once: true }}
                       id="box-3"
                       className="bg-[#B4E750] rounded rounded-[14px] px-5 py-8 ml-5 h-fit"
                     >
@@ -375,8 +489,26 @@ const LandingPage = () => {
                           </button>
                         </div>
                       </div>
-                    </div>
-                    <div
+                    </motion.div>
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 50 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            ease: "easeIn",
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 10,
+                            duration: 5,
+                            delay: 1.1,
+                          },
+                        },
+                      }}
+                      initial={"hidden"}
+                      whileInView={"show"}
+                      viewport={{ once: true }}
                       id="box-4"
                       className="bg-[#00B14F] rounded rounded-[14px] px-5 py-6 h-fit ml-10"
                     >
@@ -411,7 +543,7 @@ const LandingPage = () => {
                           </button>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -422,8 +554,26 @@ const LandingPage = () => {
         {/* Sectionn 3  */}
         <section id="section-3">
           <div className="bg-[#FFE3CA]">
-            <div id="padding-sect3" className="px-40 py-14 ">
-              <div
+            <div id="padding-sect3" className="px-40 py-14 " ref={section3Ref}>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      ease: "easeIn",
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      duration: 5,
+                      delay: 0.7,
+                    },
+                  },
+                }}
+                initial={"hidden"}
+                whileInView={"show"}
+                viewport={{ once: true }}
                 id="box-sect3"
                 className="bg-[#0C359E] rounded rounded-[13px] mb-20"
               >
@@ -433,12 +583,22 @@ const LandingPage = () => {
                       Menolak Status 'Mitra, Ketua Asosiasi Ojek Daring Dorong
                       Perubahan Status Pengemudi Ojol
                     </h1>
-                    <button>
-                      <FaChevronDown className="text-white" />
+                    <button type="button" onClick={handleButtonSect3}>
+                      <FaChevronDown
+                        className={`text-white ${
+                          btnSect3 && "rotate-180"
+                        } transition-transform ease-in-out duration-500`}
+                      />
                     </button>
                   </div>
 
-                  <div className=" text-white text-justify ">
+                  <div
+                    className={`text-white text-justify transition-all duration-500 ease-in-out ${
+                      btnSect3
+                        ? "opacity-100 max-h-[400svh]"
+                        : "opacity-0 max-h-0"
+                    } overflow-hidden`}
+                  >
                     <p className="my-6">
                       Ketua Umum Asosiasi Pengemudi Ojek Daring Garda Indonesia,
                       Igun Wicaksono, menyayangkan pemerintah lantaran belum ada
@@ -494,7 +654,7 @@ const LandingPage = () => {
                       itu, demo juga digelar dengan tujuan supaya tidak timbul
                       monopoli dari perusahaan aplikasi. Pada aksi demonstrasi
                       itu juga para pengemudi ojek <i>online</i> meminta tarif
-                      diatur oleh pihak pemerintah dan juga legalitas dari ojek
+                      diatur oleh pihak pemerintah dan juga legalitas dari ojek{" "}
                       <i>online</i>.
                     </p>
                     <p className="mb-6">
@@ -621,12 +781,22 @@ const LandingPage = () => {
                 </div>
                 <div className="flex-col justify-center w-full ">
                   <hr className="border-1 w-full" />
-                  <p className="flex justify-center items-center py-2 text-white">
+                  <p
+                    className="flex justify-center items-center py-2 text-white cursor-pointer"
+                    onClick={() => {
+                      setBtnSect3(false);
+                      setTimeout(() => {
+                        section3Ref.current.scrollIntoView({
+                          behavior: "smooth",
+                        });
+                      }, 150);
+                    }}
+                  >
                     Tutup
                     <FaChevronUp className="ml-3 text-black-50 text-sm" />
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -636,7 +806,27 @@ const LandingPage = () => {
           <img src={vectorSect4} className="absolute z-0 bg-[#FFE3CA]" alt="" />
           <div className="relative flex flex-col justify-center">
             <div className="pt-[4.5rem] px-72" id="box-1-sect4">
-              <div className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-10">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      ease: "easeIn",
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      duration: 5,
+                      delay: 0.7,
+                    },
+                  },
+                }}
+                initial={"hidden"}
+                whileInView={"show"}
+                viewport={{ once: true }}
+                className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-10"
+              >
                 <div className="heading flex justify-center">
                   <h1 className="text-[#3D3D3D] text-3xl font-bold flex justify-center text-center">
                     Upaya Kementerian Ketenagakerjaan untuk Meningkatkan
@@ -681,8 +871,28 @@ const LandingPage = () => {
                     Read More
                   </button>
                 </div>
-              </div>
-              <div className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-8 mt-20">
+              </motion.div>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      ease: "easeIn",
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      duration: 5,
+                      delay: 0.7,
+                    },
+                  },
+                }}
+                initial={"hidden"}
+                whileInView={"show"}
+                viewport={{ once: true }}
+                className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-8 mt-20"
+              >
                 <div className="heading flex justify-center">
                   <h1 className="text-[#3D3D3D] text-3xl font-bold flex justify-center text-center">
                     Pandangan Ahli mengenai Dinamika Pekerja Kontrak di Industri
@@ -751,7 +961,7 @@ const LandingPage = () => {
                     berbagai tempat.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -761,28 +971,96 @@ const LandingPage = () => {
           <div className="bg-[#FFE3CA]">
             <div className="flex flex-col justify-center py-32 px-72 mt-14">
               <div className="heading">
-                <h1 className="text-2xl font-bold text-[#3D3D3D] text-center px-48">
+                <motion.h1
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeIn",
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                        duration: 5,
+                        delay: 0.2,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="text-2xl font-bold text-[#3D3D3D] text-center px-48"
+                >
                   Dilema Mengubah Status Mitra Menjadi {"            "}
                   <span className="text-[#EE99C2]">Karyawan Tetap</span>
-                </h1>
+                </motion.h1>
               </div>
               <div className="content text-[#3D3D3D] text-justify ">
-                <p className="my-5">
-                  Ekonomi gig mulai ramai diperbincangkan di Tanah Air ketika
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="my-5"
+                >
+                  Ekonomi gig mulai ramai diperbincangkan di Tanah Air ketika{" "}
                   <i>platform</i> Gojek hadir pada 2015 lalu, sebuah perusahaan
                   teknologi yang menyediakan berbagai jasa layanan seperti antar
                   penumpang, antar makanan, antar barang, hingga beberapa
                   layanan lain. Dengan hadirnya Gojek dan beberapa perusahaan
                   serupa lainnya, hal tersebut berhasil membuat angka
                   pengangguran terbuka di Indonesia menurun drastis.
-                </p>
-                <p className="mb-5">
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mb-5"
+                >
                   “Jasa transportasi <i>online</i> ini mengurangi tingkat
                   pengangguran terbuka yang sangat efektif setelah booming nya
                   transportasi ojek <i>online</i> tahun 2016,” terang Nailul
                   Huda.
-                </p>
-                <p className="mb-5">
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mb-5"
+                >
                   Hal yang membedakan ekonomi gig dari segi hukum
                   ketenagakerjaan dalam konteks transportasi <i>online</i>
                   apabila dilihat dari jenis pekerjaan lain, yakni terdapat pada
@@ -790,22 +1068,70 @@ const LandingPage = () => {
                   Mereka tidak dianggap memiliki hubungan kerja dengan
                   perusahaan gig, tetapi hanya dianggap sebagai mitra atau rekan
                   kerja.
-                </p>
-                <p className="mb-5">
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mb-5"
+                >
                   Istilah hubungan kemitraan tidak hanya diterapkan oleh
                   <i>platform-platform</i> seperti Gojek, Grab, atau Maxim,
                   tetapi juga umum digunakan oleh perusahaan-perusahaan
                   e-commerce seperti Shopee Express, J&T Express yang
                   menggunakan skema hubungan mitra untuk mempekerjakan kurirnya.
-                </p>
-                <p className="mb-5">
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mb-5"
+                >
                   Namun, nampaknya hingga saat ini penyebutan “mitra” sebagai
                   status kerja dianggap sebagai alasan untuk menghindari
                   memberikan pengemudi ojek <i>online</i> dari jaminan upah
                   minimum, jaminan kesehatan, pesangon, upah lembur, hingga
                   kebebasan untuk berserikat bagi para pekerjanya.
-                </p>
-                <p className="mb-5">
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mb-5"
+                >
                   Sulistiyani, dalam bukunya yang berjudul “Kemitraan dan
                   Model-model Pemberdayaan” mendefinisikan mitra sebagai bentuk
                   persekutuan antara dua pihak atau lebih yang membentuk suatu
@@ -816,8 +1142,26 @@ const LandingPage = () => {
                   sendiri menegaskan bahwa kemitraan harus memiliki kedudukan
                   yang setara, sebagaimana yang dimaksud dalam Undang-undang
                   Republik Indonesia nomor 20 tahun 2008 sebagai berikut:
-                </p>
-                <div
+                </motion.p>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                        duration: 5,
+                        delay: 0.5,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
                   className="text-[#FCFCFC] bg-white border border-[#EE99C2]  rounded rounded-lg px-5 py-4 my-5"
                   style={{ boxShadow: "5px 10px #EE99C2" }}
                 >
@@ -835,16 +1179,52 @@ const LandingPage = () => {
                       perundang-undangan.
                     </li>
                   </ol>
-                </div>
-                <p className="mt-5">
+                </motion.div>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mt-5"
+                >
                   Sayangnya, apa yang terjadi di lapangan berbeda dengan
                   seharusnya prinsip kesetaraan yang dimaksud. Perusahaan
                   aplikasi sangat mendominasi, seperti masalah suspend atau
                   keputusan sanksi terhadap mitra dilakukan pihak aplikator
                   secara sepihak, hingga dilarang untuk membentuk serikat
                   pekerja
-                </p>
-                <div className="rounded rounded-2xl bg-[#0C359E] px-5 py-7 my-5">
+                </motion.p>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                        duration: 5,
+                        delay: 0.5,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="rounded rounded-2xl bg-[#0C359E] px-5 py-7 my-5"
+                >
                   <div className="flex justify-between items-center">
                     <h1 className="text-white text-2xl font-bold">
                       Lemah Mitra, Timpang Kontrak
@@ -856,7 +1236,26 @@ const LandingPage = () => {
                     jabodetabek, 2023
                   </p>
                   <div className="grid grid-cols-2 my-3 flex justify-items-center">
-                    <div
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 50, scale: 0.5 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          scale: 1,
+                          transition: {
+                            ease: "easeInOut",
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 10,
+                            duration: 5,
+                            delay: 0.7,
+                          },
+                        },
+                      }}
+                      initial={"hidden"}
+                      whileInView={"show"}
+                      viewport={{ once: true }}
                       id="persen"
                       className=" bg-[#FCFCFC] rounded-2xl px-3 py-2 w-11/12"
                     >
@@ -899,8 +1298,27 @@ const LandingPage = () => {
                           </tr>
                         </table>
                       </div>
-                    </div>
-                    <div
+                    </motion.div>
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 50, scale: 0.5 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          scale: 1,
+                          transition: {
+                            ease: "easeInOut",
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 10,
+                            duration: 5,
+                            delay: 0.9,
+                          },
+                        },
+                      }}
+                      initial={"hidden"}
+                      whileInView={"show"}
+                      viewport={{ once: true }}
                       id="peta"
                       className=" bg-[#FCFCFC] rounded-2xl px-3 py-2 w-11/12"
                     >
@@ -944,10 +1362,29 @@ const LandingPage = () => {
                           </tr>
                         </table>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                   <div className="grid grid-cols-2 flex justify-items-center">
-                    <div
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 50, scale: 0.5 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          scale: 1,
+                          transition: {
+                            ease: "easeInOut",
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 10,
+                            duration: 5,
+                            delay: 1.1,
+                          },
+                        },
+                      }}
+                      initial={"hidden"}
+                      whileInView={"show"}
+                      viewport={{ once: true }}
                       id="dolar"
                       className=" bg-[#FCFCFC] rounded-2xl px-3 py-2 w-11/12"
                     >
@@ -1005,8 +1442,27 @@ const LandingPage = () => {
                           </tr>
                         </table>
                       </div>
-                    </div>
-                    <div
+                    </motion.div>
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 50, scale: 0.5 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          scale: 1,
+                          transition: {
+                            ease: "easeInOut",
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 10,
+                            duration: 5,
+                            delay: 1.3,
+                          },
+                        },
+                      }}
+                      initial={"hidden"}
+                      whileInView={"show"}
+                      viewport={{ once: true }}
                       id="bintangungu"
                       className=" bg-[#FCFCFC] rounded-2xl px-3 py-2 w-11/12"
                     >
@@ -1063,10 +1519,29 @@ const LandingPage = () => {
                           </tr>
                         </table>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                   <div className="flex justify-center">
-                    <div
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 50, scale: 0.5 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          scale: 1,
+                          transition: {
+                            ease: "easeInOut",
+                            type: "spring",
+                            stiffness: 70,
+                            damping: 10,
+                            duration: 5,
+                            delay: 1.6,
+                          },
+                        },
+                      }}
+                      initial={"hidden"}
+                      whileInView={"show"}
+                      viewport={{ once: true }}
                       id="bintangungu"
                       className=" bg-[#FCFCFC] rounded-2xl px-3 py-2  w-6/12 mt-3"
                     >
@@ -1120,13 +1595,29 @@ const LandingPage = () => {
                           </tr>
                         </table>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                   <footer className="text-[#FCFCFC] flex justify-center">
                     <p>Sumber : Survei IDEAS, 15 April - 14 Mei 2023</p>
                   </footer>
-                </div>
-                <p className="">
+                </motion.div>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className=""
+                >
                   Hingga berbagai kontra pun muncul, beragam masalah mulai dari
                   upah yang dianggap menyiksa para pengemudi ojek <i>online</i>{" "}
                   karena potongan yang terlalu besar, pengemudi ojek
@@ -1139,26 +1630,76 @@ const LandingPage = () => {
                   sebagai “mitra”, pekerja berada di posisi yang rentan karena
                   para pengemudi tidak mendapatkan hak dan perlindungan hukum
                   selayaknya orang yang bekerja pada suatu perusahaan.
-                </p>
-                <p className="mt-5">
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mt-5"
+                >
                   Namun, alih-alih menjadi solusi yang tepat, direktur ekonomi
                   digital Center of Economic and Law Studies itu menegaskan
                   bahwa mengubah status mitra dengan menjadikannya karyawan
                   tetap (pekerja formal) tidaklah menyelesaikan masalah,
                   melainkan hanya akan menimbulkan masalah baru lantaran bisa
                   menjadi bumerang bagi perusahaan maupun mitra.
-                </p>
+                </motion.p>
                 <div className="z-50 flex justify-center my-8">
-                  <video
+                  <motion.video
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          type: "spring",
+                          stiffness: 70,
+                          damping: 10,
+                          duration: 5,
+                          delay: 0.7,
+                        },
+                      },
+                    }}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    viewport={{ once: true }}
                     className="z-50 w-full rounded rounded-lg"
                     controls={true}
                   >
                     <source src={ahliVideo} type="video/mp4" />
                     Browser Anda tidak mendukung tag video.
-                  </video>
+                  </motion.video>
                 </div>
 
-                <p className="mt-5">
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mt-5"
+                >
                   “Apabila itu (diubah menjadi pekerja formal) dijadikan sebagai
                   sebuah solusi, saya rasa itu malah bisa jadi backfire bagi
                   mitra sendiri yang dia bisa terkena PHK atau layoff, karena
@@ -1166,8 +1707,24 @@ const LandingPage = () => {
                   kehilangan identitas dari pekerja gig-nya. Kalau dijadikan
                   pekerja, dia harus memenuhi syarat untuk jam kerjanya, lalu
                   mereka juga harus menentui syarat kualifikasinya,” jelas Huda.
-                </p>
-                <p className="mt-5">
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mt-5"
+                >
                   Walaupun mengubah status mitra menjadi karyawan tetap dapat
                   memberi mereka akses kepada hak dan perlindungan yang lebih
                   luas seperti jaminan sosial, asuransi kesehatan, cuti, dan
@@ -1178,15 +1735,47 @@ const LandingPage = () => {
                   <i>gig economy</i>
                   dalam konteks ini juga akan menjadi hilang karena statusnya
                   diubah menjadi pekerja formal.
-                </p>
-                <p className="mt-5">
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mt-5"
+                >
                   Nailul Huda mengatakan bahwa hal yang paling penting untuk
                   dilakukan saat ini adalah bukan semata mata mengubah status
                   mitra ojek <i>online</i> menjadi pekerja formal, tetapi
                   memberikan jaminan sosial untuk kesejahteraan para pengemudi
                   ojek <i>online</i>.
-                </p>
-                <p className="mt-5">
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mt-5"
+                >
                   “Fleksibilitas dari mitra itu akan hilang ketika dia jadi
                   statusnya naik jadi pekerja, makanya yang kita dorong itu
                   bukan status jadi mitra dari pekerja, tetapi keberlindungan
@@ -1195,13 +1784,29 @@ const LandingPage = () => {
                   pelayanan tambahan bagi mitra, sehingga mereka bisa keluar
                   dari garis kemiskinan atau ya istilahnya bisa lebih sejahtera
                   hidupnya,”
-                </p>
-                <p className="mt-5">
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mt-5"
+                >
                   “Kalau kita lihat ketika pendapatan itu kurang dan sebagainya,
                   tapi dia sudah ada jaminan sosial yang sudah melingkupi
                   keluarga dari pekerja gig, itu sangat membantu sekali,”
                   tambahnya
-                </p>
+                </motion.p>
               </div>
             </div>
           </div>
@@ -1212,7 +1817,26 @@ const LandingPage = () => {
           <div className="bg-[#FFE3CA]">
             <div className="flex flex-col justify-center py-30 px-52">
               <div className="grid grid-cols-2 flex justify-items-center">
-                <div
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 50, scale: 0.5 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      transition: {
+                        ease: "easeInOut",
+                        type: "spring",
+                        stiffness: 70,
+                        damping: 10,
+                        duration: 5,
+                        delay: 0.5,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
                   id="jam-pasir"
                   className="bg-white rounded rounded-2xl py-8 px-7 w-10/12"
                 >
@@ -1232,6 +1856,7 @@ const LandingPage = () => {
                       tadinya mitra menjadi karyawan tetap pada 2021 lalu. Hal
                       tersebut dikabulkan oleh Mahkamah Agung
                     </p>
+
                     <button
                       className=" flex items-center mt-2"
                       onClick={buttonClickTransformasi}
@@ -1240,8 +1865,27 @@ const LandingPage = () => {
                       <MdArrowOutward />
                     </button>
                   </div>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 50, scale: 0.5 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      transition: {
+                        ease: "easeInOut",
+                        type: "spring",
+                        stiffness: 70,
+                        damping: 10,
+                        duration: 5,
+                        delay: 0.7,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
                   id="tanda-tanya"
                   className="bg-white rounded rounded-2xl py-8 px-7 w-10/12"
                 >
@@ -1268,9 +1912,30 @@ const LandingPage = () => {
                       <MdArrowOutward />
                     </button>
                   </div>
-                </div>
+                </motion.div>
               </div>
-              <div className="flex justify-center my-7">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 50, scale: 0.5 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      ease: "easeInOut",
+                      type: "spring",
+                      stiffness: 70,
+                      damping: 10,
+                      duration: 5,
+                      delay: 0.9,
+                    },
+                  },
+                }}
+                initial={"hidden"}
+                whileInView={"show"}
+                viewport={{ once: true }}
+                className="flex justify-center my-7"
+              >
                 <div
                   id="human"
                   className="bg-white rounded rounded-2xl py-8 px-7 w-11/12"
@@ -1278,7 +1943,7 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={human} className="size-1/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Pro kontra  <i>Sharing Economy</i> pada Transportasi{" "}
+                      Pro kontra <i>Sharing Economy</i> pada Transportasi{" "}
                       <i>Online</i> Indonesia
                     </h1>
                   </div>
@@ -1301,9 +1966,28 @@ const LandingPage = () => {
                     </button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
               <div className="grid grid-cols-2 flex justify-items-center">
-                <div
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 50, scale: 0.5 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      transition: {
+                        ease: "easeInOut",
+                        type: "spring",
+                        stiffness: 70,
+                        damping: 10,
+                        duration: 5,
+                        delay: 1.1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
                   id="tanda-seru"
                   className="bg-white rounded rounded-2xl py-8 px-7 w-10/12"
                 >
@@ -1330,8 +2014,27 @@ const LandingPage = () => {
                       <MdArrowOutward />
                     </button>
                   </div>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 50, scale: 0.5 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      transition: {
+                        ease: "easeInOut",
+                        type: "spring",
+                        stiffness: 70,
+                        damping: 10,
+                        duration: 5,
+                        delay: 1.3,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
                   id="puzzle"
                   className="bg-white rounded rounded-2xl py-8 px-7 w-10/12"
                 >
@@ -1358,7 +2061,7 @@ const LandingPage = () => {
                       <MdArrowOutward />
                     </button>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -1372,7 +2075,23 @@ const LandingPage = () => {
               <div className="relative flex flex-col my-12 bg-[#FFE3CA] w-8/12 px-8 py-10 rounded rounded-b-2xl">
                 <div className="head flex justify-center"></div>
                 <div className="content text-[#3D3D3D] text-justify  ">
-                  <p className="mb-5">
+                  <motion.p
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          duration: 1,
+                        },
+                      },
+                    }}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    viewport={{ once: true }}
+                    className="mb-5"
+                  >
                     Pada akhirnya, nasib para pengemudi ojek <i>online</i> saat
                     ini, masih jauh dari “kesejahteraan” dan “kesetaraan”. Hal
                     ini terbukti dari banyaknya pengemudi ojek <i>online</i>{" "}
@@ -1385,14 +2104,46 @@ const LandingPage = () => {
                     tarif yang ditetapkan oleh <i>platform</i>, tanpa banyak
                     pilihan untuk bernegosiasi atau mengatur kondisi kerja
                     mereka sendiri.
-                  </p>
-                  <p className="mb-5">
+                  </motion.p>
+                  <motion.p
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          duration: 1,
+                        },
+                      },
+                    }}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    viewport={{ once: true }}
+                    className="mb-5"
+                  >
                     Semua faktor ini berkontribusi pada ketidaksetaraan dan
                     ketidaksejahteraan bagi pengemudi ojek <i>online</i>, dan
                     menunjukkan perlunya reformasi kebijakan dan perlindungan
                     yang lebih baik bagi pekerja dalam ekonomi gig.
-                  </p>
-                  <p className="mb-5">
+                  </motion.p>
+                  <motion.p
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          duration: 1,
+                        },
+                      },
+                    }}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    viewport={{ once: true }}
+                    className="mb-5"
+                  >
                     Rendahnya daya tawar ojek pada ojek <i>online</i> Juga
                     mengakibatkan mereka terpaksa menerima berbagai keputusan
                     penting yang diambil oleh <i>platform</i> tanpa melibatkan
@@ -1401,21 +2152,69 @@ const LandingPage = () => {
                     penangguhan atau pemutusan hubungan kerja, pengurangan dan
                     penentuan bonus yang lebih sulit, hingga peningkatan jumlah
                     minimum penerimaan pesanan.
-                  </p>
-                  <p className="mb-5">
+                  </motion.p>
+                  <motion.p
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          duration: 1,
+                        },
+                      },
+                    }}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    viewport={{ once: true }}
+                    className="mb-5"
+                  >
                     Di sisi lain, untuk menangani <i>low skill labor trap</i>,
                     diperlukan adanya pelatihan, menggabungkan pendidikan, dan
                     kesempatan kerja yang lebih baik.
-                  </p>
-                  <p className="mb-5">
+                  </motion.p>
+                  <motion.p
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          duration: 1,
+                        },
+                      },
+                    }}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    viewport={{ once: true }}
+                    className="mb-5"
+                  >
                     Dibutuhkan kolaborasi antara berbagai pihak yang terlibat,
                     baik itu pemerintah ataupun <i>platform</i>, untuk
                     mengembangkan program-program yang inovatif dalam
                     meningkatkan kualifikasi dan keterampilan para pekerja di
                     ekonomi gig. Khususnya peningkatan keterampilan bagi para
                     gig <i>worker</i>.
-                  </p>
-                  <p className="mb-5">
+                  </motion.p>
+                  <motion.p
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          duration: 1,
+                        },
+                      },
+                    }}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    viewport={{ once: true }}
+                    className="mb-5"
+                  >
                     Pekerja gig memerlukan perlindungan sosial yang perlu
                     disesuaikan dengan karakteristik pekerjaan yang tidak
                     menentu. Hal-hal seperti asuransi kesehatan, asuransi
@@ -1424,8 +2223,24 @@ const LandingPage = () => {
                     Ini yang menandakan bahwa pekerja gig memiliki opsi untuk
                     berpartisipasi dalam program-program perlindungan sosial
                     sesuai dengan variasi pendapatan yang mereka terima.
-                  </p>
-                  <p className="">
+                  </motion.p>
+                  <motion.p
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          duration: 1,
+                        },
+                      },
+                    }}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    viewport={{ once: true }}
+                    className=""
+                  >
                     Pada akhirnya, perlindungan sosial yang fleksibel bukanlah
                     opsi, melainkan suatu kewajiban. Keberlanjutan pekerjaan
                     yang aman bagi pekerja gig bergantung pada kemampuan kita
@@ -1433,7 +2248,7 @@ const LandingPage = () => {
                     pekerjaan mereka. Kini sudah sepatutnya pemerintah segera
                     mewujudkan perlindungan yang lebih baik bagi pekerja gig di
                     Indonesia yang kian terus bertambah jumlahnya.
-                  </p>
+                  </motion.p>
                 </div>
               </div>
             </div>
