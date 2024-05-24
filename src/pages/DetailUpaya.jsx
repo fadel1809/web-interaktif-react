@@ -8,6 +8,8 @@ import ImageUpah from "../assets/images/asset-upaya.png"
 import ImageKemnaker from "../assets/images/image-kemnaker.png"
 import { motion } from "framer-motion"
 import { useEffect } from 'react';
+import Asset2 from "../assets/images/asset-upaya-1.png"
+import Asset1 from "../assets/images/asset-upaya-2.png"
 
 const fadeUpContent = {
   hidden: { opacity: 0, y: 200 },
@@ -132,7 +134,12 @@ const DetailUpaya = () => {
                 <motion.p className='mb-6' variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">Selain Program Tenaga Kerja Mandiri (TKM), Kementerian Ketenagakerja mempunyai fasilitas berupa aplikasi bernama SiapKerja yang diluncurkan pada tahun 2022 lalu. Aplikasi tersebut dirancang untuk individu yang tertarik dalam mencari pekerjaan, mengikuti pelatihan, mendapatkan sertifikasi profesional, dan berpartisipasi dalam kegiatan bisnis. Tak hanya itu, Siap Kera juga menyajikan beragam layanan publik serta kegiatan terkait ketenagakerja.</motion.p>
                 <motion.p className='mb-6' variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">Perbedaan utama antara Program Tenaga Kerja Mandiri dan aplikasi Siap Kerja adalah tujuan dan pendekatannya. TKM bertujuan untuk memberdayakan masyarakat dengan memfasilitasi pendirian usaha mandiri, sedangkan Siap Kerja bertujuan untuk membantu para pencari kerja dalam mempersiapkan diri mereka untuk memasuki pasar kerja dengan memberikan akses ke berbagai sumber daya dan informasi.</motion.p>
                 <motion.p className='mb-6' variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">“Kita punya Siap Kerja juga, itu bisa diakses untuk misalkan bagaimana memperoleh untuk mengakses program-program Kemnaker, mulai dari yang tadi terkait pekerjaan mandiri, terkait dengan pelatihan dan pemagangan dan vokasi. Kita juga punya aparatur-aparatur di daerah yang siap membantu apabila ada dari kalangan mereka yang membutuhkan akses untuk bisa menerima program tersebut,” </motion.p>
+               
+                <motion.img variants={slideRightParagraph} viewport={{ once: true }} initial= "hidden" whileInView="visible" whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }}src={Asset1} className="size-fit md:mr-4 mb-6 md:float-start md:w-fit md:h-fit"></motion.img>
+                
                 <motion.p className='mb-6' variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">Walaupun Kemnaker telah menyediakan beberapa program tersebut yang ditujukan untuk membantu siapapun masyarakat yang membutuhkan, termasuk para pekerja informal yang notabenenya bersifat <i>low skill</i>, tetapi tidak dapat dipungkiri hal ini masih menjadi tantangan Kemnaker sendiri untuk memastikan bahwa program tersebut tersosialisasikan dengan baik agar tidak hanya menjadi “formalitas” semata. </motion.p>
+                
+                <motion.img variants={slideLeftParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" whileHover={{ scale: 1.2 }} whileTap={{ scale: 1.2 }} src={Asset2} className="size-fit md:ml-4 mb-6 md:float-end md:w-5/12"></motion.img>
                 <motion.p className='mb-6' variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">Faktanya, masih banyak pengemudi ojek <i>online</i> di lapangan yang masih tidak tahu menahu adanya program Kemnaker. Lantas, apa gunanya program yang sudah ada jika para masyarakat yang menjadi target bantuan tidak mengetahui keberadaan program yang disediakan oleh Kemnaker.</motion.p>
                 <motion.p className='mb-6' variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">“Jadi memang pada dasarnya programnya sudah ada, sarana untuk mengaksesnya pun sudah ada, cuma memang kita akui bahwa <i>hype</i> nya itu masih kurang, belum banyak yang tau, akan diupayakan untuk lebih menjangkau para driver itu,” Arjuna mengakui.</motion.p>
               </motion.div>
