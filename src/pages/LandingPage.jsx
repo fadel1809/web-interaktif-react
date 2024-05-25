@@ -32,13 +32,13 @@ import tandaSeru from "../assets/images/tanda-seru.png"
 import puzzle from "../assets/images/puzzle.png"
 import vectorEnd from "../assets/images/vector-end.png"
 import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4"
-import  { useState,useRef,useEffect  } from "react";
-import { motion} from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import foto from "../assets/images/foto.png"
 
 const LandingPage = () => {
   const navigate = useNavigate();
-  const [btnSect3,setBtnSect3] = useState(false)
+  const [btnSect3, setBtnSect3] = useState(false)
   const buttonClickGrab = () => {
     navigate("/grabPage")
   }
@@ -78,12 +78,12 @@ const LandingPage = () => {
   const buttonClickMengurai = () => {
     navigate('/detailMengurai');
   };
-   const section3Ref = useRef(null);
+  const section3Ref = useRef(null);
   const handleButtonSect3 = () => {
     setBtnSect3(!btnSect3)
 
   }
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -301,34 +301,6 @@ const LandingPage = () => {
           <div className="bg-[#FFE3CA]">
             <div id="padding" className="px-20 py-40 flex justify-center">
               <div id="box">
-                <div id="heading" className="flex justify-center mb-20">
-                  <motion.h1
-                    className="text-3xl font-bold text-[#3D3D3D]"
-                    variants={{
-                      hidden: { opacity: 0.1, y: 50 },
-                      show: {
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                          duration: 3,
-                          type: "spring",
-                          ease: "easeIn",
-                          stiffness: 150,
-                          damping: 10,
-                        },
-                      },
-                    }}
-                    initial="hidden"
-                    whileInView={"show"}
-                    viewport={{ once: true }}
-                  >
-                    Cerita{" "}
-                    <span className="text-[#EE99C2]">
-                      Ojek <i>Online</i>
-                    </span>
-                  </motion.h1>
-                </div>
-
                 <div id="box-ojol">
                   <div className="grid lg:grid-cols-4 sm:grid-cols-1 flex justify-center">
                     <motion.div
@@ -585,24 +557,22 @@ const LandingPage = () => {
                 <div className="row-sect-3 flex flex-col items-center justify-center px-8 py-5">
                   <div className="flex">
                     <h1 className="text-white text-3xl font-bold">
-                      Menolak Status 'Mitra, Ketua Asosiasi Ojek Daring Dorong
+                      Menolak Status 'Mitra, Ketua Asosiasi Ojek <i>Online</i> Dorong
                       Perubahan Status Pengemudi Ojol
                     </h1>
                     <button type="button" onClick={handleButtonSect3}>
                       <FaChevronDown
-                        className={`text-white ${
-                          btnSect3 && "rotate-180"
-                        } transition-transform ease-in-out duration-500`}
+                        className={`text-white ${btnSect3 && "rotate-180"
+                          } transition-transform ease-in-out duration-500`}
                       />
                     </button>
                   </div>
 
                   <div
-                    className={`text-white text-justify transition-all duration-500 ease-in-out ${
-                      btnSect3
-                        ? "opacity-100 max-h-[400svh]"
-                        : "opacity-0 max-h-0"
-                    } overflow-hidden`}
+                    className={`text-white text-justify transition-all duration-500 ease-in-out ${btnSect3
+                      ? "opacity-100 max-h-[400svh]"
+                      : "opacity-0 max-h-0"
+                      } overflow-hidden`}
                   >
                     <p className="my-6">
                       Ketua Umum Asosiasi Pengemudi Ojek Daring Garda Indonesia,
@@ -613,33 +583,26 @@ const LandingPage = () => {
                       juga berharap agar para pengemudi ojek <i>online</i> dapat
                       diubah menjadi karyawan tetap.
                     </p>
-                    <div className="flex justify-center">
-                      <div className="head">
-                        <img className="w-full " src={foto} alt="" />
-                      </div>
-                      <div className="content">
-                        <p className="mb-6">
-                          “Kita ingin membuka peluang dari rekan-rekan pengemudi
-                          ini agar bisa menjadi karyawan atau pekerja tetap di
-                          perusahaan aplikasi dengan status sebagai{" "}
-                          <i>driver</i>, karena dengan posisi saat ini yang
-                          disebut mitra, kami menilai ini hal yang tidak jelas.
-                          Mitra seperti apa yang dimaksud oleh mereka? kami ini
-                          juga sebenarnya adalah konsumen,” ujar Igun.
-                        </p>
-                        <p className="mb-6">
-                          Menurut Ketum Asosiasi Pengemudi Ojek Daring Garda
-                          Indonesia itu, para pengemudi ojek <i>online</i> yang
-                          saat ini berstatus sebagai “mitra” juga merupakan
-                          bagian dari konsumen. Igun menyatakan bahwa mitra
-                          menggunakan aplikasi yang dimiliki oleh perusahaan.
-                          Tak hanya itu, mitra juga diharuskan membayar potongan
-                          yang diterima dari para pelanggan, baik itu penumpang,
-                          antaran barang maupun makanan, sehingga dirinya
-                          menyebut mitra juga merupakan bagian dari konsumen.
-                        </p>
-                      </div>
-                    </div>
+                    <p className="mb-6">
+                      “Kita ingin membuka peluang dari rekan-rekan pengemudi
+                      ini agar bisa menjadi karyawan atau pekerja tetap di
+                      perusahaan aplikasi dengan status sebagai{" "}
+                      <i>driver</i>, karena dengan posisi saat ini yang
+                      disebut mitra, kami menilai ini hal yang tidak jelas.
+                      Mitra seperti apa yang dimaksud oleh mereka? kami ini
+                      juga sebenarnya adalah konsumen,” ujar Igun.
+                    </p>
+                    <p className="mb-6">
+                      Menurut Ketum Asosiasi Pengemudi Ojek Daring Garda
+                      Indonesia itu, para pengemudi ojek <i>online</i> yang
+                      saat ini berstatus sebagai “mitra” juga merupakan
+                      bagian dari konsumen. Igun menyatakan bahwa mitra
+                      menggunakan aplikasi yang dimiliki oleh perusahaan.
+                      Tak hanya itu, mitra juga diharuskan membayar potongan
+                      yang diterima dari para pelanggan, baik itu penumpang,
+                      antaran barang maupun makanan, sehingga dirinya
+                      menyebut mitra juga merupakan bagian dari konsumen.
+                    </p>
 
                     <p className="mb-6">
                       Pekerja ekonomi gig, dalam hal ini pengemudi ojek {""}
@@ -818,7 +781,7 @@ const LandingPage = () => {
         <section id="section-4">
           <img src={vectorSect4} className="absolute z-0 bg-[#FFE3CA]" alt="" />
           <div className="relative flex flex-col justify-center">
-            <div className="pt-[4.5rem] px-72" id="box-1-sect4">
+            <div className="pt-[3rem] px-72" id="box-1-sect4">
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 50 },
@@ -838,7 +801,7 @@ const LandingPage = () => {
                 initial={"hidden"}
                 whileInView={"show"}
                 viewport={{ once: true }}
-                className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-10"
+                className="bg-[#F4F4F4] boxx-1 rounded-[18px] px-8 py-12"
               >
                 <div className="heading flex justify-center">
                   <h1 className="text-[#3D3D3D] text-3xl font-bold flex justify-center text-center">
@@ -904,7 +867,7 @@ const LandingPage = () => {
                 initial={"hidden"}
                 whileInView={"show"}
                 viewport={{ once: true }}
-                className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-8 mt-20"
+                className="bg-[#F4F4F4] boxx-1 rounded rounded-[18px] px-8 py-8 mt-12"
               >
                 <div className="heading flex justify-center">
                   <h1 className="text-[#3D3D3D] text-3xl font-bold flex justify-center text-center">
@@ -912,18 +875,29 @@ const LandingPage = () => {
                     Transportasi <i>Online</i>
                   </h1>
                 </div>
-                <div className="content text-justify text-sm text-[#525252]">
-                  <p className="py-6">
-                    Tren pekerja lepas atau pekerja kontrak saat ini nampaknya
-                    tengah menjadi pekerjaan yang cukup digemari di Indonesia,
-                    hal ini yang disebut sebagai ekonomi gig atau pekerja gig
-                    (gig worker). Pasalnya, dengan keunggulan yang dimiliki oleh
-                    ekonomi gig seperti jam kerja yang fleksibel, kebebasan
-                    untuk mengejar suatu proyek, peluang untuk mendapatkan
-                    penghasilan yang tidak hanya dari satu sumber saja, hingga
-                    beberapa kelebihan lainnya menjadi alasan mengapa pekerjaan
-                    ini cukup diminati oleh berbagai masyarakat saat ini.
-                  </p>
+                <div className=" mt-6 content text-justify text-sm text-[#525252]">
+                  <div className="flex justify-center items-center">
+                    <div className="">
+                      <figure>
+                        <img src={foto} className="w-full" />
+                        <figcaption className="text-black text-xs text-center" >Sumber: LinkedIn</figcaption>
+                      </figure>
+                    </div>
+                    <div className="content">
+                      <p className="py-6 tracking-wide leading-relaxed">
+                        Tren pekerja lepas atau pekerja kontrak saat ini nampaknya
+                        tengah menjadi pekerjaan yang cukup digemari di Indonesia,
+                        hal ini yang disebut sebagai ekonomi gig atau pekerja gig
+                        (gig worker). Pasalnya, dengan keunggulan yang dimiliki oleh
+                        ekonomi gig seperti jam kerja yang fleksibel, kebebasan
+                        untuk mengejar suatu proyek, peluang untuk mendapatkan
+                        penghasilan yang tidak hanya dari satu sumber saja, hingga
+                        beberapa kelebihan lainnya menjadi alasan mengapa pekerjaan
+                        ini cukup diminati oleh berbagai masyarakat saat ini.
+                      </p>
+
+                    </div>
+                  </div>
                   <p className="pb-6">
                     “Ekonomi gig dapat dikatakan sebagai ekonomi yang memberikan
                     fleksibilitas bagi para pelaku usaha di ekonomi tersebut.
@@ -1362,7 +1336,7 @@ const LandingPage = () => {
                               <p className="py-2">Rp 2.500 - Rp. 4.000</p>
                             </td>
                           </tr>
-                         
+
                           <tr>
                             <td>
                               <p className="py-2">(N = 147)</p>
@@ -2100,18 +2074,8 @@ const LandingPage = () => {
                     viewport={{ once: true }}
                     className="mb-5"
                   >
-                    Pada akhirnya, nasib para pengemudi ojek <i>online</i> saat
-                    ini, masih jauh dari “kesejahteraan” dan “kesetaraan”. Hal
-                    ini terbukti dari banyaknya pengemudi ojek <i>online</i>{" "}
-                    yang berstatus sebagai pekerja lepas tanpa jaminan keamanan
-                    kerja, jaminan sosial, atau manfaat lainnya yang seringkali
-                    diberikan kepada pekerja tetap. Ketergantungan pada{" "}
-                    <i>platform</i>
-                    juga menjadi faktor lain lantaran pengemudi ojek
-                    <i>online</i> sering kali harus mengikuti kebijakan dan
-                    tarif yang ditetapkan oleh <i>platform</i>, tanpa banyak
-                    pilihan untuk bernegosiasi atau mengatur kondisi kerja
-                    mereka sendiri.
+                    Pengemudi ojek <i>online</i> sangat ketergantungan kepada <i>platform</i> karena harus mengikuti kebijakan dan tarif yang ditetapkan oleh <i>platform</i> , tanpa banyak pilihan untuk bernegosiasi atau mengatur kondisi kerja mereka sendiri. Mereka juga ada pada situasi yang harus secara terpaksa menerima berbagai keputusan penting yang diambil oleh <i>platform</i> tanpa melibatkan mereka sama sekali.
+
                   </motion.p>
                   <motion.p
                     variants={{
@@ -2130,10 +2094,8 @@ const LandingPage = () => {
                     viewport={{ once: true }}
                     className="mb-5"
                   >
-                    Semua faktor ini berkontribusi pada ketidaksetaraan dan
-                    ketidaksejahteraan bagi pengemudi ojek <i>online</i>, dan
-                    menunjukkan perlunya reformasi kebijakan dan perlindungan
-                    yang lebih baik bagi pekerja dalam ekonomi gig.
+                    Keputusan-keputusan ini termasuk penurunan tarif per kilometer, pemberian sanksi seperti penangguhan atau pemutusan hubungan kerja, pengurangan dan penentuan bonus yang lebih sulit, hingga peningkatan jumlah minimum penerimaan pesanan.
+
                   </motion.p>
                   <motion.p
                     variants={{
@@ -2152,14 +2114,7 @@ const LandingPage = () => {
                     viewport={{ once: true }}
                     className="mb-5"
                   >
-                    Rendahnya daya tawar ojek pada ojek <i>online</i> Juga
-                    mengakibatkan mereka terpaksa menerima berbagai keputusan
-                    penting yang diambil oleh <i>platform</i> tanpa melibatkan
-                    mereka sama sekali. Keputusan-keputusan ini termasuk
-                    penurunan tarif per kilometer, pemberian sanksi seperti
-                    penangguhan atau pemutusan hubungan kerja, pengurangan dan
-                    penentuan bonus yang lebih sulit, hingga peningkatan jumlah
-                    minimum penerimaan pesanan.
+                    Aspirasi dari para mitra pengemudi ojek <i>online</i>  yakni mereka berharap adanya pembenahan sistem kerja yang lebih adil dan peningkatan kesejahteraan. Ini mencakup berbagai hal, seperti mengurangi persentase bagi hasil atau pemotongan yang dikenakan oleh aplikator kepada mitra, bantuan untuk perawatan dan perbaikan kendaraan, sistem bonus yang lebih transparan dan adil, jaminan sosial seperti keamanan, kesehatan, dan keselamatan kerja, penghasilan sesuai dengan standar upah minimum.
                   </motion.p>
                   <motion.p
                     variants={{
@@ -2178,9 +2133,7 @@ const LandingPage = () => {
                     viewport={{ once: true }}
                     className="mb-5"
                   >
-                    Di sisi lain, untuk menangani <i>low skill labor trap</i>,
-                    diperlukan adanya pelatihan, menggabungkan pendidikan, dan
-                    kesempatan kerja yang lebih baik.
+                    Di sisi lain, untuk menangani <i>low skill labor trap</i> , diperlukan adanya pelatihan,  menggabungkan pendidikan, dan kesempatan kerja yang lebih baik, khususnya peningkatan keterampilan bagi para <i>gig worker</i>. Diperlukan adanya sosialisasi yang lebih gencar oleh pemerintah, dalam hal ini Kemnaker untuk memastikan bahwa program yang telah dimiliki dapat diketahui dan dimanfaatkan oleh <i>gig worker</i> , khususnya pengemudi ojek <i>online</i>  karena memilki keterampilan yang cukup rendah.
                   </motion.p>
                   <motion.p
                     variants={{
@@ -2199,63 +2152,7 @@ const LandingPage = () => {
                     viewport={{ once: true }}
                     className="mb-5"
                   >
-                    Dibutuhkan kolaborasi antara berbagai pihak yang terlibat,
-                    baik itu pemerintah ataupun <i>platform</i>, untuk
-                    mengembangkan program-program yang inovatif dalam
-                    meningkatkan kualifikasi dan keterampilan para pekerja di
-                    ekonomi gig. Khususnya peningkatan keterampilan bagi para
-                    gig <i>worker</i>.
-                  </motion.p>
-                  <motion.p
-                    variants={{
-                      hidden: { opacity: 0, y: 50 },
-                      show: {
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                          ease: "easeInOut",
-                          duration: 1,
-                        },
-                      },
-                    }}
-                    initial={"hidden"}
-                    whileInView={"show"}
-                    viewport={{ once: true }}
-                    className="mb-5"
-                  >
-                    Pekerja gig memerlukan perlindungan sosial yang perlu
-                    disesuaikan dengan karakteristik pekerjaan yang tidak
-                    menentu. Hal-hal seperti asuransi kesehatan, asuransi
-                    kecelakaan, dan program pensiun harus direalisasikan sesuai
-                    dengan ciri khas utama dari gig worker, yaitu fleksibilitas.
-                    Ini yang menandakan bahwa pekerja gig memiliki opsi untuk
-                    berpartisipasi dalam program-program perlindungan sosial
-                    sesuai dengan variasi pendapatan yang mereka terima.
-                  </motion.p>
-                  <motion.p
-                    variants={{
-                      hidden: { opacity: 0, y: 50 },
-                      show: {
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                          ease: "easeInOut",
-                          duration: 1,
-                        },
-                      },
-                    }}
-                    initial={"hidden"}
-                    whileInView={"show"}
-                    viewport={{ once: true }}
-                    className=""
-                  >
-                    Pada akhirnya, perlindungan sosial yang fleksibel bukanlah
-                    opsi, melainkan suatu kewajiban. Keberlanjutan pekerjaan
-                    yang aman bagi pekerja gig bergantung pada kemampuan kita
-                    untuk mengadaptasi sistem yang ada dengan perubahan realitas
-                    pekerjaan mereka. Kini sudah sepatutnya pemerintah segera
-                    mewujudkan perlindungan yang lebih baik bagi pekerja gig di
-                    Indonesia yang kian terus bertambah jumlahnya.
+                    Tentu <i>platform</i>  bukanlah yayasan sosial, <i>platform</i> sebagai entitas bisnis yang tentunya ingin mendapatkan keuntungan bagi keberlangsungan usahanya. Oleh karena itu, hubungan kemitraan ini harus menguntungkan kedua belah pihak antara mitra dan juga <i>platform</i>, hingga nantinya juga tidak memberatkan konsumen sebagai pengguna jasa akhir. Apabila kita melihat harga yang diberikan terlalu tinggi , konsumen tidak akan tertarik menggunakan transportasi <i>online</i>, sehingga dalam hal ini yang akan dirugikan bukan hanya konsumen, tetapi yang dirugikan juga mitra transportasi <i>online</i> lantaran permintaan terhadap jasanya relatif menurun. Kini sudah sepatutnya pemerintah segera mewujudkan perlindungan yang lebih baik bagi pekerja gig  di Indonesia yang kian  terus bertambah jumlahnya.
                   </motion.p>
                 </div>
               </div>

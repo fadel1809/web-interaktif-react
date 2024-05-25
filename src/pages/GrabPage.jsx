@@ -118,7 +118,7 @@ const GrabPage = () => {
             {/* SECTION 2 */}
             <section id="section-2" className="relative flex flex-col bg-[#FEF0C7] min-h-full">
                 <div className="relative mx-10 md:my-20 md:mx-44 text-justify text-md mt-10">
-                    <motion.figure variants={slideRightImage} viewport={{ once: true }} initial="hidden" whileInView="visible" className='md:mr-10 size-fit mb-6 md:mb-0 md:float-start md:size-6/12'>
+                    <motion.figure variants={slideRightImage} viewport={{ once: true }} initial="hidden" whileInView="visible" className='hidden md:block md:mr-10 size-fit mb-6 md:mb-0 md:float-start md:size-6/12'>
                         <img src={Asset1} className="w-full h-full" alt="Foto: Natania Rizky" />
                         <figcaption className="text-center mt-1 md:mt-3 text-sm md:text-md">Foto: Natania Rizky</figcaption>
                     </motion.figure>
