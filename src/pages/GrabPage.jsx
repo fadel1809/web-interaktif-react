@@ -137,15 +137,15 @@ const GrabPage = () => {
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">“Ada tingkatannya gitu mbak, yang paling tinggi namanya jawara, kalau yang paling bawah ada di level anggota,  ini saya sekarang ada di level kesatria,” ujarnya menerangkan.</motion.p>
                     <div className="flex flex-col md:flex-row justify-between md:space-x-4 mt-10">
                         <motion.figure variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="hidden md:size-indrive">
-                            <img src={Asset2} className="rounded-2xl uniform-size" alt="Indrive 1" />
+                            <img src={Asset1} className="rounded-2xl uniform-size" alt="Indrive 1" />
                             <figcaption className="text-center text-sm mt-1">Foto: Natania Rizky</figcaption>
                         </motion.figure>
                         <motion.figure variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="md:hidden md:size-fit mb-6">
-                            <img src={Asset2} className="rounded-2xl uniform-size" alt="Indrive 1" />
+                            <img src={Asset1} className="rounded-2xl uniform-size" alt="Indrive 1" />
                             <figcaption className="text-center text-sm mt-1">Foto: Natania Rizky</figcaption>
                         </motion.figure>
                         <motion.figure variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="hidden md:size-indrive">
-                            <img src={Asset3} className="rounded-2xl uniform-size" alt="Indrive 2" />
+                            <img src={Asset2} className="rounded-2xl uniform-size" alt="Indrive 2" />
                             <figcaption className="text-center text-sm mt-1">Foto: Natania Rizky</figcaption>
                         </motion.figure>
                         <motion.figure variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="md:hidden md:size-fit mb-6">
@@ -156,7 +156,7 @@ const GrabPage = () => {
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">Walaupun Taryana bekerja sebagai pengemudi ojek <i>online</i> pada 2019, dirinya pernah mencicipi masa kejayaan layaknya ojek <i>online</i> yang baru beroperasi di Indonesia pada 2015 lalu, ketika penghasilan para pengemudi ojek <i>online</i> bisa mendapatkan lebih dari Rp6 juta per bulannya. Kini, Taryana merasa lama kelamaan pihak aplikasi menurunkan harga tarif maupun bonus, berbeda seperti masa sebelum pandemi melanda.</motion.p>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">“Awal-awal ojek <i>online</i> baru beroperasi memang teman-teman bisa mendapatkan Rp10juta per bulan, saya waktu tahun 2019 aja dapat penghasilannya bisa Rp400 ribu sehari dan itu di luar bonus, gampang banget nyari uang segitu. Di bawah tahun 2019 itu bisa Rp700-800 ribu per hari,” lanjutnya.</motion.p>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">Grab memiliki sistem bonus dengan cara mengumpulkan berlian perharinya. Berlian ibarat poin yang harus dikumpulkan oleh para pengemudi apabila ingin mendapatkan uang tambahan. Berlian didapatkan dari hasil <i>orderan</i>, setiap satu <i>orderan</i> dari pelanggan, para pengemudi akan mendapat sembilan berlian. Para pengemudi dapat menentukan pilihannya di antara  150 atau 250 berlian untuk mendapatkan bonus.</motion.p>
-                    <motion.figure variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className='hidden md:block size-fit mb-6 mx-auto md:size-10/12'>
+                    <motion.figure variants={slideRightImage} viewport={{ once: true }} initial="hidden" whileInView="visible" className='mb-6 mx-auto md:size-fit'>
                         <img src={Asset3} className="w-full h-full" alt="Foto: Natania Rizky" />
                         <figcaption className="text-center mt-1 md:mt-3 text-sm md:text-md">Foto: Natania Rizky</figcaption>
                     </motion.figure>

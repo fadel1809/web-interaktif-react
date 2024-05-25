@@ -193,7 +193,7 @@ const GojekPage = () => {
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">Layaknya seorang ibu pada umumnya, perempuan itu tengah menyuapi sang anak di sela-sela waktu istirahat bekerja di sebuah warung makan sederhana. Berada di daerah Kemang Timur, warung makan tersebut juga merupakan <i>basecamp</i> di mana Ines dan teman-teman pengemudi ojek <i>online</i> lainnya biasa berkumpul.</motion.p>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">Sebagai seorang ibu mengasuh dua anaknya yang masih balita, menjalani profesi sebagai pengemudi ojek <i>online</i> bukanlah hal yang mudah. Ibu dua anak tersebut mengaku tidak terlalu memaksakan diri untuk mencari nafkah. Menurutnya, sebagai seorang perempuan masih banyak hal-hal yang harus menjadi prioritas.</motion.p>
                     <motion.figure variants={slideRightImage} viewport={{ once: true }} initial="hidden" whileInView="visible" className="md:hidden md:size-fit mb-6">
-                        <img src={Asset3} className="rounded-2xl" alt="Indrive 1" />
+                        <img src={Asset3} className="rounded-2xl " alt="Indrive 1" />
                         <figcaption className="text-center text-sm mt-1">Foto: Natania Rizky</figcaption>
                     </motion.figure>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">“Saya yang juga ibu berumah tangga, untuk ngojeknya itu nggak difokusin harus dari pagi sampai malam, karena kan kita juga harus urusin yang di rumah juga ya,”</motion.p>
@@ -210,7 +210,7 @@ const GojekPage = () => {
                     showIndicators={true}
                     showStatus={false}
                     infiniteLoop={true}
-                    swipeable={true}
+                    swipeable={true} gi
                     emulateTouch={true}
                     centerMode={true}
                     centerSlidePercentage={centerSlidePercentage}
