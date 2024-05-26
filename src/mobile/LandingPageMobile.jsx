@@ -1,4 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
+import cloud1 from "../assets/images/cloud1.png";
+import cloud2 from "../assets/images/cloud2.png";
+import cloud3 from "../assets/images/cloud3.png";
 import Wrapper from "../assets/wrapper/landingPage";
 import Navbar from "../components/Navbar";
 import Stroke from "../assets/images/stroke.png";
@@ -27,7 +30,6 @@ import ahliVideo from "../assets/video/Ahli ekonomi part 1.mp4";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import foto from "../assets/images/foto.png";
-
 const LandingPageMobile = () => {
   const [btnSect3, setBtnSect3] = useState(false);
   const section3Ref = useRef(null);
@@ -130,14 +132,72 @@ const LandingPageMobile = () => {
             </div>
           </div>
           <img src={Stroke} className="bg-[#FFE3CA] block" alt="" />
+          <motion.img
+            src={cloud2}
+            alt=""
+            className="absolute z-10 w-32 top-[350px]"
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              show: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 2,
+                  ease: "easeInOut",
+                  delay: 1,
+                },
+              },
+            }}
+            whileInView={"show"}
+            viewport={{ once: true }}
+            initial={"hidden"}
+          />
+          <motion.img
+            src={cloud3}
+            alt=""
+            className="absolute w-32 z-1 top-[1290px] right-0 "
+            variants={{
+              hidden: { opacity: 0.5, x: 50 },
+              show: {
+                opacity: 1,
+                x: -300,
+                transition: {
+                  duration: 5,
+                  ease: "easeInOut",
+                },
+              },
+            }}
+            initial={"hidden"}
+            whileInView={"show"}
+          />
         </section>
         {/* !!SECTION-1 */}
 
         {/* SECTION-1 part 2 */}
         <section id="section-1-2">
+          <motion.img
+            src={cloud1}
+            className="absolute z-10 w-32 top-[50px] right-0"
+            alt=""
+            variants={{
+              hidden: { opacity: 0.5, x: 70 },
+              show: {
+                opacity: 1,
+                x: -300,
+                transition: {
+                  duration: 5,
+                  ease: "easeInOut",
+                  repeatType:"loop"
+                },
+              },
+            }}
+            whileInView={"show"}
+            viewport={{ once: true }}
+            initial={"hidden"}
+          />
           <div className="bg-[#EE99C2]">
             <div className="px-5 pb-10">
-              <div className="bg-white rounded-lg px-3 py-3 ">
+              <div className="bg-white  rounded-lg px-3 py-3 ">
                 <div className="content text-justify">
                   <motion.p
                     variants={{
@@ -156,7 +216,7 @@ const LandingPageMobile = () => {
                     viewport={{ once: true }}
                     className="mb-6"
                   >
-                    Diantara kebisingan mesin sepeda motor yang menelusuri
+                    Di antara kebisingan mesin sepeda motor yang menelusuri
                     jalan-jalan, terdapat ketidakpastian yang menyelimuti para
                     pengemudi ojek <i>online</i>. Mereka tidak hanya membawa
                     penumpang, tetapi juga beban harapan dan kebutuhan setiap
@@ -227,7 +287,6 @@ const LandingPageMobile = () => {
           <div className="bg-[#FFE3CA]">
             <div className="px-5 py-10">
               <div id="boxs">
-
                 <div id="box-ojol">
                   <div className="grid grid-cols-1 flex flex-col justify-center">
                     <motion.div
@@ -468,22 +527,24 @@ const LandingPageMobile = () => {
                 >
                   <div className="flex">
                     <h1 className="text-white text-3xl font-bold">
-                      Menolak Status 'Mitra, Ketua Asosiasi Ojek <i>online</i> Dorong
-                      Perubahan Status Pengemudi Ojol
+                      Menolak Status 'Mitra, Ketua Asosiasi Ojek <i>online</i>{" "}
+                      Dorong Perubahan Status Pengemudi Ojol
                     </h1>
                     <button type="button" onClick={handleButtonSect3}>
                       <FaChevronDown
-                        className={`text-white ${btnSect3 && "rotate-180"
-                          } transition-transform ease-in-out duration-500`}
+                        className={`text-white ${
+                          btnSect3 && "rotate-180"
+                        } transition-transform ease-in-out duration-500`}
                       />
                     </button>
                   </div>
 
                   <div
-                    className={`text-white text-justify transition-all duration-500 ease-in-out ${btnSect3
-                      ? "opacity-100 max-h-[795svh]"
-                      : "opacity-0 max-h-0"
-                      } overflow-hidden`}
+                    className={`text-white text-justify transition-all duration-500 ease-in-out ${
+                      btnSect3
+                        ? "opacity-100 max-h-[795svh]"
+                        : "opacity-0 max-h-0"
+                    } overflow-hidden`}
                   >
                     <p className="my-6">
                       Ketua Umum Asosiasi Pengemudi Ojek Daring Garda Indonesia,
@@ -495,24 +556,24 @@ const LandingPageMobile = () => {
                       diubah menjadi karyawan tetap.
                     </p>
                     <p className="mb-6">
-                      “Kita ingin membuka peluang dari rekan-rekan pengemudi
-                      ini agar bisa menjadi karyawan atau pekerja tetap di
-                      perusahaan aplikasi dengan status sebagai{" "}
-                      <i>driver</i>, karena dengan posisi saat ini yang
-                      disebut mitra, kami menilai ini hal yang tidak jelas.
-                      Mitra seperti apa yang dimaksud oleh mereka? kami ini
-                      juga sebenarnya adalah konsumen,” ujar Igun.
+                      “Kita ingin membuka peluang dari rekan-rekan pengemudi ini
+                      agar bisa menjadi karyawan atau pekerja tetap di
+                      perusahaan aplikasi dengan status sebagai <i>driver</i>,
+                      karena dengan posisi saat ini yang disebut mitra, kami
+                      menilai ini hal yang tidak jelas. Mitra seperti apa yang
+                      dimaksud oleh mereka? kami ini juga sebenarnya adalah
+                      konsumen,” ujar Igun.
                     </p>
                     <p className="mb-6">
                       Menurut Ketum Asosiasi Pengemudi Ojek Daring Garda
-                      Indonesia itu, para pengemudi ojek <i>online</i> yang
-                      saat ini berstatus sebagai “mitra” juga merupakan
-                      bagian dari konsumen. Igun menyatakan bahwa mitra
-                      menggunakan aplikasi yang dimiliki oleh perusahaan.
-                      Tak hanya itu, mitra juga diharuskan membayar potongan
-                      yang diterima dari para pelanggan, baik itu penumpang,
-                      antaran barang maupun makanan, sehingga dirinya
-                      menyebut mitra juga merupakan bagian dari konsumen.
+                      Indonesia itu, para pengemudi ojek <i>online</i> yang saat
+                      ini berstatus sebagai “mitra” juga merupakan bagian dari
+                      konsumen. Igun menyatakan bahwa mitra menggunakan aplikasi
+                      yang dimiliki oleh perusahaan. Tak hanya itu, mitra juga
+                      diharuskan membayar potongan yang diterima dari para
+                      pelanggan, baik itu penumpang, antaran barang maupun
+                      makanan, sehingga dirinya menyebut mitra juga merupakan
+                      bagian dari konsumen.
                     </p>
                     <p className="mb-6">
                       Pekerja ekonomi gig, dalam hal ini pengemudi ojek {""}
@@ -788,9 +849,10 @@ const LandingPageMobile = () => {
                   <div className="flex flex-col mt-6">
                     <figure>
                       <img src={foto} className="w-full" />
-                      <figcaption className="text-black text-xs text-center" >Sumber: LinkedIn</figcaption>
+                      <figcaption className="text-black text-xs text-center">
+                        Sumber: LinkedIn
+                      </figcaption>
                     </figure>
-
                   </div>
                   <p className="py-6">
                     Tren pekerja lepas atau pekerja kontrak saat ini nampaknya
@@ -979,10 +1041,10 @@ const LandingPageMobile = () => {
                   viewport={{ once: true }}
                   className="mb-5"
                 >
-                  Istilah hubungan kemitraan tidak hanya diterapkan oleh
+                  Istilah hubungan kemitraan tidak hanya diterapkan oleh{" "}
                   <i>platform-platform </i> seperti Gojek, Grab, atau Maxim,
                   tetapi juga umum digunakan oleh perusahaan-perusahaan
-                  e-commerce seperti Shopee Express, J&T Express yang
+                  <i>e-commerce</i> seperti Shopee Express, J&T Express yang
                   menggunakan skema hubungan mitra untuk mempekerjakan kurirnya.
                 </motion.p>
                 <motion.p
@@ -1239,7 +1301,7 @@ const LandingPageMobile = () => {
                               <p className="py-2">Jam Sibuk </p>
                             </td>
                             <td className="bg-[#E1F7E7] rounded rounded-r-md">
-                              <p className="py-2">Rp 2.500 - Rp. 4.000</p>
+                              <p className="py-2">: Rp 2.500 - Rp. 4.000</p>
                             </td>
                           </tr>
 
@@ -1619,10 +1681,10 @@ const LandingPageMobile = () => {
                   upah minimum, tetapi hal tersebut juga akan mengurangi
                   fleksibilitas yang dimiliki oleh mitra pengemudi, mereka tidak
                   lagi dapat bekerja sesuai dengan jadwal, peluang untuk bekerja
-                  di berbagai tempat pun sedikit,bahkan identitas{" "}
-                  <i>gig economy</i>
-                  dalam konteks ini juga akan menjadi hilang karena statusnya
-                  diubah menjadi pekerja formal.
+                  di berbagai tempat pun sedikit,bahkan identitas
+                  {"  "}
+                  <i>gig economy</i> dalam konteks ini juga akan menjadi hilang
+                  karena statusnya diubah menjadi pekerja formal.
                 </motion.p>
                 <motion.p
                   variants={{
@@ -1774,7 +1836,7 @@ const LandingPageMobile = () => {
                   whileInView={"show"}
                   viewport={{ once: true }}
                   id="tanda-tanya"
-                  className="bg-white rounded rounded-md py-8 px-7 w-10/12"
+                  className="bg-white rounded rounded-md py-8 px-7 w-10/12 mb-7"
                 >
                   <div className="head flex flex-col justify-start">
                     <img src={tandaTanya} className="size-2/12 mb-4" alt="" />
@@ -1801,57 +1863,7 @@ const LandingPageMobile = () => {
                   </div>
                 </motion.div>
               </div>
-              <div className="flex justify-center my-7">
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, y: 50, scale: 0.5 },
-                    show: {
-                      opacity: 1,
-                      y: 0,
-                      scale: 1,
-                      transition: {
-                        ease: "easeInOut",
-                        type: "spring",
-                        stiffness: 70,
-                        damping: 10,
-                        duration: 5,
-                        delay: 0.9,
-                      },
-                    },
-                  }}
-                  initial={"hidden"}
-                  whileInView={"show"}
-                  viewport={{ once: true }}
-                  id="human"
-                  className="bg-white rounded rounded-md py-8 px-5 w-10/12"
-                >
-                  <div className="head flex flex-col justify-start">
-                    <img src={human} className="size-1/12 mb-4" alt="" />
-                    <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Pro kontra <i>Sharing Economy</i> pada Transportasi{" "}
-                      <i>Online</i> Indonesia
-                    </h1>
-                  </div>
-                  <div className="content text-[#3D3D3D] text-justify">
-                    <p className="text-[#3D3D3D]">
-                      “Kalau kita lihat dari <i>sharing economy</i>, yang
-                      memiliki modal (sumber daya) pasti dia akan mendapatkan
-                      bagian terbesar, mitra yang mendapatkan sharing{" "}
-                      <i>revenue</i>
-                      yang paling besar, karena modal (motor/mobil) dari mereka
-                      , tenaga kerja juga mereka sendiri, kemudian juga banyak
-                      hal lain yang mereka tanggung sendiri,” kata Nailul Huda.
-                    </p>
-                    <button
-                      className=" flex items-center mt-2"
-                      onClick={buttonClickPro}
-                    >
-                      Baca Detail
-                      <MdArrowOutward />
-                    </button>
-                  </div>
-                </motion.div>
-              </div>
+
               <div className="grid grid-cols-1 flex justify-items-center">
                 <motion.div
                   variants={{
@@ -1921,12 +1933,12 @@ const LandingPageMobile = () => {
                   whileInView={"show"}
                   viewport={{ once: true }}
                   id="puzzle"
-                  className="bg-white rounded rounded-md py-8 px-7 w-10/12"
+                  className="bg-white rounded rounded-md py-8 px-7 mb-7 w-10/12"
                 >
                   <div className="head flex flex-col justify-start">
                     <img src={puzzle} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Mengurangi Keterkatan <i>Sharing Economy</i> dan Economy
+                      Mengurai Keterkaitan <i>Sharing Economy</i> dan Economy
                       Gig dari Perspektif Transportasi <i>Online</i>
                     </h1>
                   </div>
@@ -1941,6 +1953,55 @@ const LandingPageMobile = () => {
                     <button
                       className=" flex items-center mt-2"
                       onClick={buttonClickMengurai}
+                    >
+                      Baca Detail
+                      <MdArrowOutward />
+                    </button>
+                  </div>
+                </motion.div>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 50, scale: 0.5 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      transition: {
+                        ease: "easeInOut",
+                        type: "spring",
+                        stiffness: 70,
+                        damping: 10,
+                        duration: 5,
+                        delay: 0.9,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  id="human"
+                  className="bg-white rounded rounded-md py-8 px-5 w-10/12"
+                >
+                  <div className="head flex flex-col justify-start">
+                    <img src={human} className="size-2/12 mb-4" alt="" />
+                    <h1 className="font-bold text-lg text-[#3D3D3D]">
+                      Pro kontra <i>Sharing Economy</i> pada Transportasi{" "}
+                      <i>Online</i> Indonesia
+                    </h1>
+                  </div>
+                  <div className="content text-[#3D3D3D] text-justify">
+                    <p className="text-[#3D3D3D]">
+                      “Kalau kita lihat dari <i>sharing economy</i>, yang
+                      memiliki modal (sumber daya) pasti dia akan mendapatkan
+                      bagian terbesar, mitra yang mendapatkan sharing{" "}
+                      <i>revenue</i>
+                      yang paling besar, karena modal (motor/mobil) dari mereka
+                      , tenaga kerja juga mereka sendiri, kemudian juga banyak
+                      hal lain yang mereka tanggung sendiri,” kata Nailul Huda.
+                    </p>
+                    <button
+                      className=" flex items-center mt-2"
+                      onClick={buttonClickPro}
                     >
                       Baca Detail
                       <MdArrowOutward />
@@ -1974,8 +2035,13 @@ const LandingPageMobile = () => {
                   viewport={{ once: true }}
                   className="mb-5"
                 >
-                  Pengemudi ojek <i>online</i> sangat ketergantungan kepada <i>platform</i> karena harus mengikuti kebijakan dan tarif yang ditetapkan oleh <i>platform</i> , tanpa banyak pilihan untuk bernegosiasi atau mengatur kondisi kerja mereka sendiri. Mereka juga ada pada situasi yang harus secara terpaksa menerima berbagai keputusan penting yang diambil oleh <i>platform</i> tanpa melibatkan mereka sama sekali.
-
+                  Pengemudi ojek <i>online</i> sangat ketergantungan kepada{" "}
+                  <i>platform</i> karena harus mengikuti kebijakan dan tarif
+                  yang ditetapkan oleh <i>platform</i> , tanpa banyak pilihan
+                  untuk bernegosiasi atau mengatur kondisi kerja mereka sendiri.
+                  Mereka juga ada pada situasi yang harus secara terpaksa
+                  menerima berbagai keputusan penting yang diambil oleh{" "}
+                  <i>platform</i> tanpa melibatkan mereka sama sekali.
                 </motion.p>
                 <motion.p
                   variants={{
@@ -1994,8 +2060,10 @@ const LandingPageMobile = () => {
                   viewport={{ once: true }}
                   className="mb-5"
                 >
-                  Keputusan-keputusan ini termasuk penurunan tarif per kilometer, pemberian sanksi seperti penangguhan atau pemutusan hubungan kerja, pengurangan dan penentuan bonus yang lebih sulit, hingga peningkatan jumlah minimum penerimaan pesanan.
-
+                  Keputusan-keputusan ini termasuk penurunan tarif per
+                  kilometer, pemberian sanksi seperti penangguhan atau pemutusan
+                  hubungan kerja, pengurangan dan penentuan bonus yang lebih
+                  sulit, hingga peningkatan jumlah minimum penerimaan pesanan.
                 </motion.p>
                 <motion.p
                   variants={{
@@ -2014,7 +2082,15 @@ const LandingPageMobile = () => {
                   viewport={{ once: true }}
                   className="mb-5"
                 >
-                  Aspirasi dari para mitra pengemudi ojek <i>online</i>  yakni mereka berharap adanya pembenahan sistem kerja yang lebih adil dan peningkatan kesejahteraan. Ini mencakup berbagai hal, seperti mengurangi persentase bagi hasil atau pemotongan yang dikenakan oleh aplikator kepada mitra, bantuan untuk perawatan dan perbaikan kendaraan, sistem bonus yang lebih transparan dan adil, jaminan sosial seperti keamanan, kesehatan, dan keselamatan kerja, penghasilan sesuai dengan standar upah minimum.
+                  Aspirasi dari para mitra pengemudi ojek <i>online</i> yakni
+                  mereka berharap adanya pembenahan sistem kerja yang lebih adil
+                  dan peningkatan kesejahteraan. Ini mencakup berbagai hal,
+                  seperti mengurangi persentase bagi hasil atau pemotongan yang
+                  dikenakan oleh aplikator kepada mitra, bantuan untuk perawatan
+                  dan perbaikan kendaraan, sistem bonus yang lebih transparan
+                  dan adil, jaminan sosial seperti keamanan, kesehatan, dan
+                  keselamatan kerja, penghasilan sesuai dengan standar upah
+                  minimum.
                 </motion.p>
                 <motion.p
                   variants={{
@@ -2033,7 +2109,15 @@ const LandingPageMobile = () => {
                   viewport={{ once: true }}
                   className="mb-5"
                 >
-                  Di sisi lain, untuk menangani <i>low skill labor trap</i> , diperlukan adanya pelatihan,  menggabungkan pendidikan, dan kesempatan kerja yang lebih baik, khususnya peningkatan keterampilan bagi para <i>gig worker</i>. Diperlukan adanya sosialisasi yang lebih gencar oleh pemerintah, dalam hal ini Kemnaker untuk memastikan bahwa program yang telah dimiliki dapat diketahui dan dimanfaatkan oleh <i>gig worker</i> , khususnya pengemudi ojek <i>online</i>  karena memilki keterampilan yang cukup rendah.
+                  Di sisi lain, untuk menangani <i>low skill labor trap</i> ,
+                  diperlukan adanya pelatihan, menggabungkan pendidikan, dan
+                  kesempatan kerja yang lebih baik, khususnya peningkatan
+                  keterampilan bagi para <i>gig worker</i>. Diperlukan adanya
+                  sosialisasi yang lebih gencar oleh pemerintah, dalam hal ini
+                  Kemnaker untuk memastikan bahwa program yang telah dimiliki
+                  dapat diketahui dan dimanfaatkan oleh <i>gig worker</i> ,
+                  khususnya pengemudi ojek <i>online</i> karena memilki
+                  keterampilan yang cukup rendah.
                 </motion.p>
                 <motion.p
                   variants={{
@@ -2052,7 +2136,20 @@ const LandingPageMobile = () => {
                   viewport={{ once: true }}
                   className="mb-5"
                 >
-                  Tentu <i>platform</i>  bukanlah yayasan sosial, <i>platform</i> sebagai entitas bisnis yang tentunya ingin mendapatkan keuntungan bagi keberlangsungan usahanya. Oleh karena itu, hubungan kemitraan ini harus menguntungkan kedua belah pihak antara mitra dan juga <i>platform</i>, hingga nantinya juga tidak memberatkan konsumen sebagai pengguna jasa akhir. Apabila kita melihat harga yang diberikan terlalu tinggi , konsumen tidak akan tertarik menggunakan transportasi <i>online</i>, sehingga dalam hal ini yang akan dirugikan bukan hanya konsumen, tetapi yang dirugikan juga mitra transportasi <i>online</i> lantaran permintaan terhadap jasanya relatif menurun. Kini sudah sepatutnya pemerintah segera mewujudkan perlindungan yang lebih baik bagi pekerja gig  di Indonesia yang kian  terus bertambah jumlahnya.
+                  Tentu <i>platform</i> bukanlah yayasan sosial, <i>platform</i>{" "}
+                  sebagai entitas bisnis yang tentunya ingin mendapatkan
+                  keuntungan bagi keberlangsungan usahanya. Oleh karena itu,
+                  hubungan kemitraan ini harus menguntungkan kedua belah pihak
+                  antara mitra dan juga <i>platform</i>, hingga nantinya juga
+                  tidak memberatkan konsumen sebagai pengguna jasa akhir.
+                  Apabila kita melihat harga yang diberikan terlalu tinggi ,
+                  konsumen tidak akan tertarik menggunakan transportasi{" "}
+                  <i>online</i>, sehingga dalam hal ini yang akan dirugikan
+                  bukan hanya konsumen, tetapi yang dirugikan juga mitra
+                  transportasi <i>online</i> lantaran permintaan terhadap
+                  jasanya relatif menurun. Kini sudah sepatutnya pemerintah
+                  segera mewujudkan perlindungan yang lebih baik bagi pekerja
+                  gig di Indonesia yang kian terus bertambah jumlahnya.
                 </motion.p>
               </div>
             </div>
