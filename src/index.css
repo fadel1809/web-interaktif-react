@@ -8,6 +8,24 @@
     /* Ganti './fonts/satoshi.ttf' dengan path yang sesuai ke file font di proyek Anda */
 }
 
+@font-face {
+  font-family: 'SoccerLeague';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/SoccerLeague.ttf') format("truetype");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd
+}
+
+@font-face {
+  font-family: 'SoccerLeague';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/SoccerLeague.ttf') format("truetype");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd
+}
+
 @layer utilities {
     .shadow-blue-primary {
       box-shadow: 5px 5px 0 theme('colors.blue-primary');
@@ -22,8 +40,10 @@
       height: 400px; /* Set a fixed height */
       object-fit: cover; /* Ensure the image covers the set dimensions while maintaining aspect ratio */
     }
-    
-    /* Tambahkan ini di file CSS Anda */
+
+    .blockquote {
+      font-family: 'SoccerLeague', sans-serif;
+    }
 }
 
 @media (min-width: 768px) {

@@ -8,6 +8,7 @@ import Background from "../assets/images/background-detail.png";
 import IconJam from "../assets/images/icon-jam.png";
 import Video from "../assets/video/video-detail-transformasi.mp4";
 import { useEffect } from "react";
+import Asset from "../assets/images/tambahan.webp"
 
 const fadeUpContent = {
   hidden: { opacity: 0, y: 200 },
@@ -22,6 +23,10 @@ const fadeUpParagraph = {
 const slideLeftHeadline = {
   hidden: { opacity: 0, x: 100 },
   visible: { opacity: 1, x: 0, transition: { duration: 1 } }
+}
+const slideRightImage = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 1.5 } }
 }
 
 const DetailTransformasi = () => {
@@ -68,11 +73,15 @@ const DetailTransformasi = () => {
               </div>
 
               <motion.h1 className="text-2xl font-bold mb-6 text-start" variants={slideLeftHeadline} initial="hidden" animate="visible">
-                Transformasi Status Pengemudi Uber Dari Mitra ke Karyawan Tetap di Inggris, Bagaimana Dampak bagi Indonesia jika Mengikuti Jejaknya?
+                &quot;Transformasi Status Pengemudi Uber Dari Mitra ke Karyawan Tetap di Inggris, Bagaimana Dampak bagi Indonesia jika Mengikuti Jejaknya?&quot;
               </motion.h1>
               <motion.p className="mb-6" variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">
                 Pioner perusahaan teknologi asal Inggris yang menyediakan jasa layanan transportasi <i>online</i>, tak lain dan tak bukan ialah Uber, mengubah status para pengemudi yang tadinya mitra menjadi karyawan tetap pada 2021 lalu. Hal tersebut dikabulkan oleh Mahkamah Agung Inggris karena tuntutan yang dilakukan oleh dua mantan pengemudi Uber yang menggugat perusahaan tersebut atas dasar ketidakadilan.
               </motion.p>
+              <motion.figure className='my-6' variants={slideRightImage} viewport={{ once: true }} initial="hidden" whileInView="visible" whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }}>
+                <img src={Asset} className="container mx-auto size-fit border rounded-2xl md:size-fit" alt="Foto: Natania Rizky" />
+                <figcaption className="text-center text-sm mt-1">Foto: Shutterstock</figcaption>
+              </motion.figure>
               <motion.p className="mb-6" variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible">
                 Namun, dengan berubahnya status mitra menjadi karyawan tetap pada Uber, hal ini tak berjalan mulus bahkan menimbulkan dampak negatif lain bagi para pekerjanya. Nailul Huda melihat bahwa Uber melakukan tindakan memberhentikan karyawan secara sementara karena permintaan pasar yang menurun.
               </motion.p>

@@ -36,7 +36,6 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import foto from "../assets/images/foto.png"
 import ilustrasiSect3 from "../assets/images/ilustrasi_section3.png";
-import ilustrasiMenolak from "../assets/images/ilustrasi_menolak.png";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -576,19 +575,17 @@ const LandingPage = () => {
                     </h1>
                     <button type="button" onClick={handleButtonSect3}>
                       <FaChevronDown
-                        className={`text-white ${
-                          btnSect3 && "rotate-180"
-                        } transition-transform ease-in-out duration-500`}
+                        className={`text-white ${btnSect3 && "rotate-180"
+                          } transition-transform ease-in-out duration-500`}
                       />
                     </button>
                   </div>
 
                   <div
-                    className={`text-white text-justify transition-all duration-500 ease-in-out ${
-                      btnSect3
-                        ? "opacity-100 max-h-[400svh]"
-                        : "opacity-0 max-h-0"
-                    } overflow-hidden`}
+                    className={`text-white text-justify transition-all duration-500 ease-in-out ${btnSect3
+                      ? "opacity-100 max-h-[400svh]"
+                      : "opacity-0 max-h-0"
+                      } overflow-hidden`}
                   >
                     <p className="my-6">
                       Ketua Umum Asosiasi Pengemudi Ojek Daring Garda Indonesia,
@@ -933,8 +930,8 @@ const LandingPage = () => {
                     ekonomi gig <i>online</i> base, di mana para pekerjanya
                     dapat bekerja tanpa perlu berinteraksi tatap muka secara
                     langsung. Beberapa contoh ekonomi gig <i>online</i> base
-                    seperti graphic designer, programmer, dan lainnya. Sedangkan
-                    ekonomi gig location based, sesuai dengan namanya, jenis
+                    seperti <i>graphic designer</i>, <i>programmer</i>, dan lainnya. Sedangkan
+                    ekonomi gig <i>location based</i>, sesuai dengan namanya, jenis
                     ekonomi ini membutuhkan kehadiran fisik dalam melakukan
                     suatu pekerjaan di lokasi tertentu, salah satu contohnya
                     ialah <i>driver</i> ataupun mitra dari transportasi{" "}
@@ -1700,31 +1697,6 @@ const LandingPage = () => {
                   viewport={{ once: true }}
                   className="mt-5"
                 >
-                  “Apabila itu (diubah menjadi pekerja formal) dijadikan sebagai
-                  sebuah solusi, saya rasa itu malah bisa jadi backfire bagi
-                  mitra sendiri yang dia bisa terkena PHK atau layoff, karena
-                  rasionalisasi dari perusahaannya itu sendiri, lalu bisa
-                  kehilangan identitas dari pekerja gig-nya. Kalau dijadikan
-                  pekerja, dia harus memenuhi syarat untuk jam kerjanya, lalu
-                  mereka juga harus menentui syarat kualifikasinya,” jelas Huda.
-                </motion.p>
-                <motion.p
-                  variants={{
-                    hidden: { opacity: 0, y: 50 },
-                    show: {
-                      opacity: 1,
-                      y: 0,
-                      transition: {
-                        ease: "easeInOut",
-                        duration: 1,
-                      },
-                    },
-                  }}
-                  initial={"hidden"}
-                  whileInView={"show"}
-                  viewport={{ once: true }}
-                  className="mt-5"
-                >
                   Walaupun mengubah status mitra menjadi karyawan tetap dapat
                   memberi mereka akses kepada hak dan perlindungan yang lebih
                   luas seperti jaminan sosial, asuransi kesehatan, cuti, dan
@@ -1843,9 +1815,9 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={jamPasir} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Transformasi Status Pengemudi Uber Dari Mitra ke Karyawan
+                      &quot;Transformasi Status Pengemudi Uber Dari Mitra ke Karyawan
                       Tetap di Inggris, Bagaimana Dampak bagi Indonesia jika
-                      Mengikuti Jejaknya?
+                      Mengikuti Jejaknya?&quot;
                     </h1>
                   </div>
                   <div className="content  text-[#3D3D3D] text-justify ">
@@ -1892,8 +1864,8 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={tandaTanya} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Antara Terpaksa dan Pilihan, Alasan Pengemudi Ojol
-                      Terlibat dalam Hubungan Kemitraan yang Tidak Menguntungkan
+                      &quot;Antara Terpaksa dan Pilihan, Alasan Pengemudi Ojol
+                      Terlibat dalam Hubungan Kemitraan yang Tidak Menguntungkan&quot;
                     </h1>
                   </div>
                   <div className="content text-[#3D3D3D] text-justify ">
@@ -1941,8 +1913,8 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={tandaSeru} className="size-1/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      <i>Low Skill Labor Trap</i>, Jebakan Pekerjaan
-                      Keterampilan Rendah yang Menjamur
+                      &quot;<i>Low Skill Labor Trap</i>, Jebakan Pekerjaan
+                      Keterampilan Rendah yang Menjamur&quot;
                     </h1>
                   </div>
                   <div className="content text-[#3D3D3D] text-justify">
@@ -1991,8 +1963,8 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={puzzle} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      Mengurai Keterkaitan <i>Sharing Economy</i> dan Economy
-                      Gig dari Perspektif Transportasi <i>Online</i>
+                      &quot;Mengurai Keterkaitan <i>Sharing Economy</i> dan Economy
+                      Gig dari Perspektif Transportasi <i>Online</i>&quot;
                     </h1>
                   </div>
                   <div className="content text-[#3D3D3D] text-justify ">
@@ -2041,8 +2013,8 @@ const LandingPage = () => {
                     <div className="head flex flex-col justify-start">
                       <img src={human} className="size-2/12 mb-4" alt="" />
                       <h1 className="font-bold text-lg text-[#3D3D3D]">
-                        Pro kontra <i>Sharing Economy</i> pada Transportasi{" "}
-                        <i>Online</i> Indonesia
+                        &quot;Pro kontra <i>Sharing Economy</i> pada Transportasi{" "}
+                        <i>Online</i> Indonesia&quot;
                       </h1>
                     </div>
                     <div className="content text-[#3D3D3D] text-justify ">

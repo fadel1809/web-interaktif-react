@@ -96,7 +96,7 @@ const GrabPage = () => {
 
                     <div className="flex flex-col md:flex-row justify-between md:mt-[4rem]">
                         <div className="flex flex-col mt-20 md:mt-7 md:ml-7">
-                            <motion.img variants={slideRightLogo} initial="hidden" animate="visible" src={Logo} className="size-3/12 md:w-16 md:h-8 mb-8 md:mb-7 md:-ml-0 mx-auto"></motion.img>
+                            <motion.img variants={slideRightLogo} initial="hidden" animate="visible" src={Logo} className="size-3/12 md:w-20 md:h-8 mb-8 md:mb-7 md:-ml-0 mx-auto"></motion.img>
                             <motion.p variants={fadeUpParagraphSection1} initial="hidden" animate="visible" className="flex flex-row text-white font-semibold md:font-bold mx-auto md:-ml-0 text-2xl md:text-5xl md:text-nowrap mb-2">Dari Kejayaan Hingga</motion.p>
                             <motion.p variants={fadeUpParagraphSection1} initial="hidden" animate="visible" className="flex flex-row text-white font-semibold md:font-bold mx-auto md:-ml-0 text-2xl md:text-5xl md:text-nowrap mb-2">Kesulitan: Perubahan</motion.p>
                             <motion.p variants={fadeUpParagraphSection1} initial="hidden" animate="visible" className="flex flex-row text-white font-semibold md:font-bold mx-auto md:-ml-0 text-2xl md:text-5xl md:text-nowrap mb-2">Dinamis dalam Hidup</motion.p>
@@ -118,18 +118,10 @@ const GrabPage = () => {
             {/* SECTION 2 */}
             <section id="section-2" className="relative flex flex-col bg-[#FEF0C7] min-h-full">
                 <div className="relative mx-10 md:my-20 md:mx-44 text-justify text-md mt-10">
-                    <motion.figure variants={slideRightImage} viewport={{ once: true }} initial="hidden" whileInView="visible" className='hidden md:block md:mr-10 size-fit mb-6 md:mb-0 md:float-start md:size-6/12'>
-                        <img src={Asset1} className="w-full h-full" alt="Foto: Natania Rizky" />
-                        <figcaption className="text-center mt-1 md:mt-3 text-sm md:text-md">Foto: Natania Rizky</figcaption>
-                    </motion.figure>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">Usai mengantar makanan kepada sang pelanggan, pria itu mematikan mesin motornya dan berhenti sejenak untuk menghilangkan dahaga sembari mengecek <i>handphone</i> menunggu <i>orderan</i> yang masuk. Perjalanan yang ditempuh untuk mengantarkan kudapan kepada sang pelanggan itu tidaklah memakan waktu lama, hanya saja kendaraan yang Ia pakai bukanlah motor biasa melainkan motor listrik yang dipakai dalam kesehariannya mencari nafkah, sehingga pengantaran yang tadinya membutuhkan waktu cepat menjadi sedikit lebih lambat dari biasanya.</motion.p>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">“Banyak yang komplain kalau itu kurang cepatlah, apalah, ada juga yang bilang lama padahal kan kita udah usahain untuk nyampe secepatnya,” ujar Taryana (40), pengemudi ojek <i>online</i> yang sudah bekerja selama 5 tahun di Grab.</motion.p>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">Musibah sempat menimpa Taryana ketika Ia sedang mengais rezeki, motor miliknya hilang ketika sedang parkir saat hendak mengantar pesanan ke pelanggan, sehingga dirinya memutuskan untuk menyewa motor listrik per minggu.</motion.p>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">“Untuk motornya kemarin sempet hilang, saya parkir lalu hilang dan pihak aplikasi tidak bertanggung jawab atas hilangnya motor saya, bahkan asuransi kan saya masih cicilan juga tidak <i>dicover</i>,” ujarnya pasrah.</motion.p>
-                    <motion.figure variants={slideLeftImage} viewport={{ once: true }} initial="hidden" whileInView="visible" className='hidden md:block md:ml-10 size-fit mb-6 md:mb-0 md:float-right md:size-6/12'>
-                        <img src={Asset2} className="w-full h-full" alt="Foto: Natania Rizky" />
-                        <figcaption className="text-center mt-1 md:mt-3 text-sm md:text-md">Foto: Natania Rizky</figcaption>
-                    </motion.figure>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">Sama seperti transportasi <i>online</i> lain, hubungan antara perusahaan dan pengemudi ojek <i>online</i> merupakan hubungan kemitraan, sehingga jika terjadi insiden seperti Taryana, pihak aplikasi tidak akan membantu untuk menangani masalah yang menimpa para pengemudinya, hal ini juga yang memicu para ojol untuk melakukan demonstrasi beberapa tahun belakangan karena hubungannya sebagai mitra tidak merasa dilindungi. Bahkan, beberapa di antara mereka menginginkan status mitra diubah menjadi pekerja formal.</motion.p>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">Semenjak kehilangan motornya, pria kelahiran Sumedang itu hanya aktif melayani layanan Grabfood. Hal ini Ia lakukan  karena untuk mengantisipasi pelanggan yang tidak mau mentoleransi waktu pengantaran atau penjemputan yang lama lantaran Taryana menggunakan motor listrik.</motion.p>
                     <motion.p variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="mb-6">“Dalam sehari biasanya saya dapat 20 <i>orderan</i>, dari pagi sampai malam, saya khusus antar makanan aja sekarang, kadang Grabfood dan Grabmart. Nggak melayani pengantaran orang karena motor saya hilang,” pungkasnya.</motion.p>
@@ -150,6 +142,16 @@ const GrabPage = () => {
                         </motion.figure>
                         <motion.figure variants={fadeUpParagraph} viewport={{ once: true }} initial="hidden" whileInView="visible" className="md:hidden md:size-fit mb-6">
                             <img src={Asset2} className="rounded-2xl uniform-size" alt="Indrive 1" />
+                            <figcaption className="text-center text-sm mt-1">Foto: Natania Rizky</figcaption>
+                        </motion.figure>
+                    </div>
+                    <div className="flex flex-col md:flex-row justify-between md:space-x-4 mt-10">
+                        <motion.figure variants={slideRightImage} viewport={{ once: true }} initial="hidden" whileInView="visible" className="hidden md:block md:size-indrive">
+                            <img src={Asset1} className="rounded-2xl uniform-size" alt="Indrive 1" />
+                            <figcaption className="text-center text-sm mt-1">Foto: Natania Rizky</figcaption>
+                        </motion.figure>
+                        <motion.figure variants={slideLeftImage} viewport={{ once: true }} initial="hidden" whileInView="visible" className="hidden md:block md:size-indrive">
+                            <img src={Asset2} className="rounded-2xl uniform-size" alt="Indrive 2" />
                             <figcaption className="text-center text-sm mt-1">Foto: Natania Rizky</figcaption>
                         </motion.figure>
                     </div>
