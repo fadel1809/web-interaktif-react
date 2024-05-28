@@ -216,13 +216,7 @@ const LandingPageMobile = () => {
                     viewport={{ once: true }}
                     className="mb-6"
                   >
-                    Di antara kebisingan mesin sepeda motor yang menelusuri
-                    jalan-jalan, terdapat ketidakpastian yang menyelimuti para
-                    pengemudi ojek <i>online</i>. Mereka tidak hanya membawa
-                    penumpang, tetapi juga beban harapan dan kebutuhan setiap
-                    pelanggan, mereka mencari nafkah dari setiap perjalanan.
-                    Namun, di balik pekerjaan yang mereka lakukan, tersembunyi
-                    kenyataan pahit yang harus mereka hadapi.
+                    Di antara deru mesin sepeda motor yang menelusuri jalanan, terdapat ketidakpastian yang menyelimuti para pengemudi ojek <i>online</i>. Mereka tidak hanya membawa penumpang, tetapi juga beban harapan dan kebutuhan setiap pelanggan, mereka mengais nafkah dari setiap perjalanan. Namun, di balik pekerjaan yang mereka lakukan, tersembunyi kenyataan pahit yang harus mereka hadapi.
                   </motion.p>
                   <motion.p
                     variants={{
@@ -240,16 +234,7 @@ const LandingPageMobile = () => {
                     whileInView={"show"}
                     viewport={{ once: true }}
                   >
-                    Mitra merupakan status dari pengemudi ojek <i>online</i>{" "}
-                    yang memberikan kesan kerjasama dan hubungan kesetaraan yang
-                    erat. Namun, di balik status sebagai “mitra” kebenaran yang
-                    mendasarinya adalah ketidakjelasan hukum dan legalitasnya.
-                    Mereka menjalani pekerjaan tanpa jaminan, tanpa
-                    perlindungan, dan tanpa kepastian akan masa depan mereka.
-                    Para pengemudi menghadapi tantangan yang tak terhitung
-                    jumlahnya, termasuk ketidakpastian pendapatan, tekanan untuk
-                    mencapai target, dan risiko terjadinya kecelakaan di jalan
-                    hingga dapat merenggut nyawa.
+                    Mitra merupakan status dari pengemudi ojek <i>online</i> yang memberikan kesan kerja sama dan hubungan kesetaraan yang erat. Akan tetapi, di balik status sebagai “mitra” realita yang mendasarinya adalah ketidakjelasan aspek hukum dan legalitasnya. Padahal, pekerjaan mereka sejatinya rentan dengan berbagai risiko, mulai dari ketidakpastian pendapatan, tekanan untuk mencapai target, dan risiko terjadinya kecelakaan di jalan hingga dapat merenggut nyawa.
                   </motion.p>
                   <motion.p
                     variants={{
@@ -268,13 +253,26 @@ const LandingPageMobile = () => {
                     viewport={{ once: true }}
                     className="mt-6"
                   >
-                    Berbagai konsekuensi pekerjaan mereka lakukan. Namun, apakah
-                    langkah mereka yang cepat dan layanan yang efisien itu
-                    sejalan dengan hak dan kesejahteraan yang pantas mereka
-                    terima? Ataukah itu hanya gambaran ilusi dari mobilitas yang
-                    terus berputar? Kesejahteraan dan kesetaraan ini bukan hanya
-                    tentang uang, melainkan rasa aman, kesehatan, dan
-                    perlindungan memadai yang setara dengan dedikasi mereka.
+                    Menjadi mitra ojek <i>online</i> merupakan pilihan ekonomi bagi masyarakat yang berada dalam kondisi kekurangan yang tak dapat dielakkan sebagai upaya untuk bertahan hidup, bukan sebagai langkah meniti karier atau sebagai alternatif menunggu pekerjaan di sektor formal dengan penghasilan yang lebih stabil.
+                  </motion.p>
+                  <motion.p
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          ease: "easeInOut",
+                          duration: 1,
+                        },
+                      },
+                    }}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    viewport={{ once: true }}
+                    className="mt-6"
+                  >
+                    Berbagai konsekuensi pekerjaan mereka lakukan. Namun, apakah langkah mereka yang cepat dan layanan yang efisien itu sejalan dengan hak dan kesejahteraan yang pantas mereka terima? Ataukah itu hanya gambaran ilusi dari mobilitas yang terus berputar? Kesejahteraan dan kesetaraan ini bukan hanya tentang uang, melainkan rasa aman, kesehatan, dan perlindungan yang sepadan dengan cucuran keringat mereka.
                   </motion.p>
                 </div>
               </div>
