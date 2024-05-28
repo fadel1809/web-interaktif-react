@@ -101,7 +101,7 @@ const LandingPageMobile = () => {
                   animate="show"
                   className="text-white text-lg font-bold text-center"
                 >
-                  Kesejahteraan Ojek Daring, Murni atau Ilusi ?
+                  Kesejahteraan “Ojol” Nyata atau Ilusi ?
                 </motion.h1>
               </div>
               <div className="content flex justify-center mt-5">

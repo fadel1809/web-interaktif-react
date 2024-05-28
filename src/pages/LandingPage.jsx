@@ -119,7 +119,7 @@ const LandingPage = () => {
             />
 
             <h1 className="text-white text-4xl pt-16 text-center px-56 font-bold">
-              Kesejahteraan Ojek Daring, Murni atau Ilusi?
+              Kesejahteraan “Ojol” Nyata atau Ilusi ?
             </h1>
             <motion.img
               src={gojek1}
