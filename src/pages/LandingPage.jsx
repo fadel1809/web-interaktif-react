@@ -263,16 +263,40 @@ const LandingPage = () => {
             <div className="bg-white w-7/12 rounded-[13px] ">
               <div className="text-[#525252] text-justify text-md px-8 py-5">
                 <p className="mb-6">
-                  Di antara deru mesin sepeda motor yang menelusuri jalanan, terdapat ketidakpastian yang menyelimuti para pengemudi ojek <i>online</i>. Mereka tidak hanya membawa penumpang, tetapi juga beban harapan dan kebutuhan setiap pelanggan, mereka mengais nafkah dari setiap perjalanan. Namun, di balik pekerjaan yang mereka lakukan, tersembunyi kenyataan pahit yang harus mereka hadapi.
+                  Di antara deru mesin sepeda motor yang menelusuri jalanan,
+                  terdapat ketidakpastian yang menyelimuti para pengemudi ojek{" "}
+                  <i>online</i>. Mereka tidak hanya membawa penumpang, tetapi
+                  juga beban harapan dan kebutuhan setiap pelanggan, mereka
+                  mengais nafkah dari setiap perjalanan. Namun, di balik
+                  pekerjaan yang mereka lakukan, tersembunyi kenyataan pahit
+                  yang harus mereka hadapi.
                 </p>
                 <p>
-                  Mitra merupakan status dari pengemudi ojek <i>online</i> yang memberikan kesan kerja sama dan hubungan kesetaraan yang erat. Akan tetapi, di balik status sebagai “mitra” realita yang mendasarinya adalah ketidakjelasan aspek hukum dan legalitasnya. Padahal, pekerjaan mereka sejatinya rentan dengan berbagai risiko, mulai dari ketidakpastian pendapatan, tekanan untuk mencapai target, dan risiko terjadinya kecelakaan di jalan hingga dapat merenggut nyawa.
+                  Mitra merupakan status dari pengemudi ojek <i>online</i> yang
+                  memberikan kesan kerja sama dan hubungan kesetaraan yang erat.
+                  Akan tetapi, di balik status sebagai “mitra” realita yang
+                  mendasarinya adalah ketidakjelasan aspek hukum dan
+                  legalitasnya. Padahal, pekerjaan mereka sejatinya rentan
+                  dengan berbagai risiko, mulai dari ketidakpastian pendapatan,
+                  tekanan untuk mencapai target, dan risiko terjadinya
+                  kecelakaan di jalan hingga dapat merenggut nyawa.
                 </p>
                 <p className="mt-6">
-                  Menjadi mitra ojek <i>online</i> merupakan pilihan ekonomi bagi masyarakat yang berada dalam kondisi kekurangan yang tak dapat dielakkan sebagai upaya untuk bertahan hidup, bukan sebagai langkah meniti karier atau sebagai alternatif menunggu pekerjaan di sektor formal dengan penghasilan yang lebih stabil.
+                  Menjadi mitra ojek <i>online</i> merupakan pilihan ekonomi
+                  bagi masyarakat yang berada dalam kondisi kekurangan yang tak
+                  dapat dielakkan sebagai upaya untuk bertahan hidup, bukan
+                  sebagai langkah meniti karier atau sebagai alternatif menunggu
+                  pekerjaan di sektor formal dengan penghasilan yang lebih
+                  stabil.
                 </p>
                 <p className="mt-6">
-                  Berbagai konsekuensi pekerjaan mereka lakukan. Namun, apakah langkah mereka yang cepat dan layanan yang efisien itu sejalan dengan hak dan kesejahteraan yang pantas mereka terima? Ataukah itu hanya gambaran ilusi dari mobilitas yang terus berputar? Kesejahteraan dan kesetaraan ini bukan hanya tentang uang, melainkan rasa aman, kesehatan, dan perlindungan yang sepadan dengan cucuran keringat mereka.
+                  Berbagai konsekuensi pekerjaan mereka lakukan. Namun, apakah
+                  langkah mereka yang cepat dan layanan yang efisien itu sejalan
+                  dengan hak dan kesejahteraan yang pantas mereka terima?
+                  Ataukah itu hanya gambaran ilusi dari mobilitas yang terus
+                  berputar? Kesejahteraan dan kesetaraan ini bukan hanya tentang
+                  uang, melainkan rasa aman, kesehatan, dan perlindungan yang
+                  sepadan dengan cucuran keringat mereka.
                 </p>
               </div>
             </div>
@@ -557,17 +581,19 @@ const LandingPage = () => {
                     </h1>
                     <button type="button" onClick={handleButtonSect3}>
                       <FaChevronDown
-                        className={`text-white ${btnSect3 && "rotate-180"
-                          } transition-transform ease-in-out duration-500`}
+                        className={`text-white ${
+                          btnSect3 && "rotate-180"
+                        } transition-transform ease-in-out duration-500`}
                       />
                     </button>
                   </div>
 
                   <div
-                    className={`text-white text-justify transition-all duration-500 ease-in-out ${btnSect3
-                      ? "opacity-100 max-h-[400svh]"
-                      : "opacity-0 max-h-0"
-                      } overflow-hidden`}
+                    className={`text-white text-justify transition-all duration-500 ease-in-out ${
+                      btnSect3
+                        ? "opacity-100 max-h-[400svh]"
+                        : "opacity-0 max-h-0"
+                    } overflow-hidden`}
                   >
                     <p className="my-6">
                       Ketua Umum Asosiasi Pengemudi Ojek Daring Garda Indonesia,
@@ -912,12 +938,12 @@ const LandingPage = () => {
                     ekonomi gig <i>online</i> base, di mana para pekerjanya
                     dapat bekerja tanpa perlu berinteraksi tatap muka secara
                     langsung. Beberapa contoh ekonomi gig <i>online</i> base
-                    seperti <i>graphic designer</i>, <i>programmer</i>, dan lainnya. Sedangkan
-                    ekonomi gig <i>location based</i>, sesuai dengan namanya, jenis
-                    ekonomi ini membutuhkan kehadiran fisik dalam melakukan
-                    suatu pekerjaan di lokasi tertentu, salah satu contohnya
-                    ialah <i>driver</i> ataupun mitra dari transportasi{" "}
-                    <i>online</i>.
+                    seperti <i>graphic designer</i>, <i>programmer</i>, dan
+                    lainnya. Sedangkan ekonomi gig <i>location based</i>, sesuai
+                    dengan namanya, jenis ekonomi ini membutuhkan kehadiran
+                    fisik dalam melakukan suatu pekerjaan di lokasi tertentu,
+                    salah satu contohnya ialah <i>driver</i> ataupun mitra dari
+                    transportasi <i>online</i>.
                   </p>
                   <p className="pb-6">
                     Unik. Kalimat itulah yang dilontarkan Nailul Huda selaku
@@ -1187,6 +1213,41 @@ const LandingPage = () => {
                   keputusan sanksi terhadap mitra dilakukan pihak aplikator
                   secara sepihak, hingga dilarang untuk membentuk serikat
                   pekerja
+                </motion.p>
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        ease: "easeInOut",
+                        duration: 1,
+                      },
+                    },
+                  }}
+                  initial={"hidden"}
+                  whileInView={"show"}
+                  viewport={{ once: true }}
+                  className="mt-5"
+                >
+                  Perusahaan penyedia aplikasi menetapkan standar performa dan
+                  penilaian penumpang yang sangat tinggi bagi mitra ojek daring
+                  untuk memenuhi syarat mendapatkan bonus. Dari 225 responden
+                  yang disurvei, mayoritas menyatakan bahwa standar performa
+                  minimal yang ditetapkan oleh perusahaan untuk bonus berkisar
+                  antara 90 hingga 97 persen. Sedangkan untuk penilaian minimal
+                  dari penumpang, sebagian besar responden menyebutkan rentang
+                  4,6 hingga 4,8 dari skala 5.Dengan ketentuan yang semakin
+                  ketat dan sulit untuk mendapatkan bonus, pendapatan mitra ojek
+                  daring semakin tertekan. Hanya 3,6 persen responden yang
+                  mengaku mampu mendapatkan bonus setiap hari. Selain itu,
+                  tingkat performa dan penilaian yang rendah dari penumpang
+                  dapat berdampak serius bagi mitra ojek daring. Contohnya,
+                  mitra ojek daring yang menerima rating 1 dari pelanggan
+                  berisiko menerima sanksi berat hingga pemutusan kemitraan,
+                  yang seringkali dilakukan secara sepihak oleh perusahaan tanpa
+                  konfirmasi kepada mitra
                 </motion.p>
                 <motion.div
                   variants={{
@@ -1797,9 +1858,9 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={jamPasir} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      &quot;Transformasi Status Pengemudi Uber Dari Mitra ke Karyawan
-                      Tetap di Inggris, Bagaimana Dampak bagi Indonesia jika
-                      Mengikuti Jejaknya?&quot;
+                      &quot;Transformasi Status Pengemudi Uber Dari Mitra ke
+                      Karyawan Tetap di Inggris, Bagaimana Dampak bagi Indonesia
+                      jika Mengikuti Jejaknya?&quot;
                     </h1>
                   </div>
                   <div className="content  text-[#3D3D3D] text-justify ">
@@ -1847,7 +1908,8 @@ const LandingPage = () => {
                     <img src={tandaTanya} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
                       &quot;Antara Terpaksa dan Pilihan, Alasan Pengemudi Ojol
-                      Terlibat dalam Hubungan Kemitraan yang Tidak Menguntungkan&quot;
+                      Terlibat dalam Hubungan Kemitraan yang Tidak
+                      Menguntungkan&quot;
                     </h1>
                   </div>
                   <div className="content text-[#3D3D3D] text-justify ">
@@ -1945,8 +2007,9 @@ const LandingPage = () => {
                   <div className="head flex flex-col justify-start">
                     <img src={puzzle} className="size-2/12 mb-4" alt="" />
                     <h1 className="font-bold text-lg text-[#3D3D3D]">
-                      &quot;Mengurai Keterkaitan <i>Sharing Economy</i> dan Economy
-                      Gig dari Perspektif Transportasi <i>Online</i>&quot;
+                      &quot;Mengurai Keterkaitan <i>Sharing Economy</i> dan
+                      Economy Gig dari Perspektif Transportasi <i>Online</i>
+                      &quot;
                     </h1>
                   </div>
                   <div className="content text-[#3D3D3D] text-justify ">
@@ -1995,8 +2058,8 @@ const LandingPage = () => {
                     <div className="head flex flex-col justify-start">
                       <img src={human} className="size-2/12 mb-4" alt="" />
                       <h1 className="font-bold text-lg text-[#3D3D3D]">
-                        &quot;Pro kontra <i>Sharing Economy</i> pada Transportasi{" "}
-                        <i>Online</i> Indonesia&quot;
+                        &quot;Pro kontra <i>Sharing Economy</i> pada
+                        Transportasi <i>Online</i> Indonesia&quot;
                       </h1>
                     </div>
                     <div className="content text-[#3D3D3D] text-justify ">
